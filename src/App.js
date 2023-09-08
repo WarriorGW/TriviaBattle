@@ -1,10 +1,18 @@
 import "./App.css";
+import JoinForms from "./components/JoinForms";
 
 function App() {
 	return (
-		<div className="App">
-			<p className="lalezar">Eta es la fuente chida</p>
-		</div>
+		<>
+			<nav className="border-shadow">
+				<p></p>
+				<button className="border-shadow button-nav">Crear sala</button>
+			</nav>
+
+			<div className="container">
+				<JoinForms />
+			</div>
+		</>
 	);
 }
 

@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lalezar&family=Moo+Lah+Lah&display=swap");
 
-.lalezar {
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
 	font-family: "Lalezar", cursive;
 }
