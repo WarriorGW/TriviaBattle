@@ -8,3 +8,25 @@ h4,
 h5 {
 	font-family: "Lalezar", cursive;
 }
+
+nav {
+	background-color: #c230cf;
+	margin: 9px;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 62px;
+}
+
+.border-and-shadow {
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 14px;
+}
+
+.button-nav {
+	border-style: none;
+	height: 100%;
+	background: #8220ff;
+	padding: 0 20px;
+}

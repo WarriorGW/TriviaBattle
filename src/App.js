@@ -1,18 +1,59 @@
 import "./App.css";
-import JoinForms from "./components/JoinForms";
+import { Routes, Route, HashRouter, Link } from "react-router-dom";
+// import JoinForms from "./components/JoinForms";
+import UnirseSala from "./pages/UnirseSala";
+
+import BodyLayout from "./layout/BodyLayout";
 
 function App() {
 	return (
-		<>
-			<nav className="border-shadow">
-				<p></p>
-				<button className="border-shadow button-nav">Crear sala</button>
+		<HashRouter>
+			<nav className="border-and-shadow">
+				<Link to="/">Home</Link>
+				<Link to="/ProgressChino">Progreso del gei</Link>
+				<Link to="/Juego">Juego</Link>
+				<button
+					className="button-nav border-and-shadow"
+					onClick={() => {
+						console.log("Creanding");
+					}}
+				>
+					Crear sala
+				</button>
 			</nav>
-
-			<div className="container">
-				<JoinForms />
-			</div>
-		</>
+			<Routes>
+				<Route
+					path="/"
+					element={
+						<BodyLayout backgroundColor="#8630a5">
+							<div className="container">
+								<h1>Wenas</h1>
+							</div>
+						</BodyLayout>
+					}
+					exact
+				/>
+				<Route
+					path="/ProgressChino"
+					element={
+						<BodyLayout backgroundColor="#d86aff">
+							<UnirseSala />
+						</BodyLayout>
+					}
+					exact
+				/>
+				<Route
+					path="/Juego"
+					element={
+						<BodyLayout backgroundColor="#5f4b98">
+							<div className="container">
+								<h1>Aqui estara el juego</h1>
+							</div>
+						</BodyLayout>
+					}
+				/>
+			</Routes>
+		</HashRouter>
 	);
 }
 

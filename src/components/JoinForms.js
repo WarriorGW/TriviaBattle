@@ -3,7 +3,7 @@ import { Formik, Form } from "formik";
 
 function JoinForms() {
 	return (
-		<div className="box-container border-shadow centered">
+		<div className="">
 			<Formik
 				initialValues={{ coigo: "" }}
 				onSubmit={async () => {
@@ -12,19 +12,15 @@ function JoinForms() {
 			>
 				{({ handleChange, handleSubmit, isSubmitting }) => (
 					<Form onSubmit={handleSubmit}>
-						<div className="display-flex direction-column form">
+						<div className="">
 							<input
 								type="text"
-								className="text-form border-shadow"
+								className=""
 								placeholder="Ingresa el codigo..."
 								onChange={handleChange}
 								name="codigo"
 							></input>
-							<button
-								type="submit"
-								className="border-shadow button-code"
-								disabled={isSubmitting}
-							>
+							<button type="submit" className="" disabled={isSubmitting}>
 								Unirse
 							</button>
 						</div>
