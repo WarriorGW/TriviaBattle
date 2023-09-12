@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/TriviaBattle/static/css/main.c668e73e.css",
-    "main.js": "/TriviaBattle/static/js/main.b8b6d47f.js",
+    "main.css": "/TriviaBattle/static/css/main.ac195b60.css",
+    "main.js": "/TriviaBattle/static/js/main.df50b57e.js",
     "index.html": "/TriviaBattle/index.html",
-    "main.c668e73e.css.map": "/TriviaBattle/static/css/main.c668e73e.css.map",
-    "main.b8b6d47f.js.map": "/TriviaBattle/static/js/main.b8b6d47f.js.map"
+    "main.ac195b60.css.map": "/TriviaBattle/static/css/main.ac195b60.css.map",
+    "main.df50b57e.js.map": "/TriviaBattle/static/js/main.df50b57e.js.map"
   },
   "entrypoints": [
-    "static/css/main.c668e73e.css",
-    "static/js/main.b8b6d47f.js"
+    "static/css/main.ac195b60.css",
+    "static/js/main.df50b57e.js"
   ]
 }
