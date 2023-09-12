@@ -4,6 +4,7 @@ import { Routes, Route, HashRouter, Link } from "react-router-dom";
 import UnirseSala from "./pages/UnirseSala";
 
 import BodyLayout from "./layout/BodyLayout";
+import ButtonNav from "./components/ButtonNav";
 
 function App() {
 	return (
@@ -12,14 +13,7 @@ function App() {
 				<Link to="/">Home</Link>
 				<Link to="/ProgressChino">Progreso del gei</Link>
 				<Link to="/Juego">Juego</Link>
-				<button
-					className="button-nav border-and-shadow"
-					onClick={() => {
-						console.log("Creanding");
-					}}
-				>
-					Crear sala
-				</button>
+				<ButtonNav textInside="Crear sala" />
 			</nav>
 			<Routes>
 				<Route
