@@ -21,7 +21,7 @@ function App() {
 					element={
 						<BodyLayout backgroundColor="#8630a5">
 							<div className="container">
-								<h1>Wenas</h1>
+								<h1>Sala de home?</h1>
 							</div>
 						</BodyLayout>
 					}
