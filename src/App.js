@@ -38,7 +38,7 @@ function App() {
 				<Route
 					path="/JoinRoom"
 					element={
-						<BodyLayout bgColor="#d86aff">
+						<BodyLayout bgColor="#8630a5">
 							<JoinRoom />
 						</BodyLayout>
 					}
@@ -55,7 +55,7 @@ function App() {
 				<Route
 					path="/Register"
 					element={
-						<BodyLayout bgColor="#5f4b98">
+						<BodyLayout bgColor="#d86aff">
 							<Register />
 						</BodyLayout>
 					}
@@ -71,7 +71,7 @@ function App() {
 				<Route
 					path="/LogIn"
 					element={
-						<BodyLayout bgColor="#5f4b98">
+						<BodyLayout bgColor="#d86aff">
 							<LogIn />
 						</BodyLayout>
 					}
@@ -79,7 +79,7 @@ function App() {
 				<Route
 					path="/WorldScore"
 					element={
-						<BodyLayout bgColor="#5f4b98">
+						<BodyLayout bgColor="#b037db">
 							<WorldScore />
 						</BodyLayout>
 					}

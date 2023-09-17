@@ -21,12 +21,8 @@ function JoinRoom() {
 							onChange={handleChange}
 							placeholder="Ingresa el codigo..."
 						/>
-						<button
-							type="submit"
-							placeholder="Ingresar a la partida"
-							disabled={isSubmitting}
-						>
-							Unirse
+						<button type="submit" disabled={isSubmitting}>
+							Ingresar a la partida
 						</button>
 					</Form>
 				)}
