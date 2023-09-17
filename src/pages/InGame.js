@@ -1,10 +1,11 @@
 import React from "react";
+import ProgressBar from "../components/ProgressBar";
 
 function InGame() {
 	return (
 		<div className="container">
-			<div>
-				<p>Aqui debe de estar la barra de progreso asi bien larga</p>
+			<div className="d-flex">
+				<ProgressBar />
 			</div>
 			<h1>Sala de ...</h1>
 			<div>

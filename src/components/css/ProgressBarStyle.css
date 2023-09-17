@@ -1,0 +1,14 @@
+.progress-container {
+	background-color: white;
+	height: 20px;
+	width: 100%;
+	border-radius: 10px;
+	padding: 1.5px;
+}
+
+.progress-inside {
+	background: green;
+	height: 100%;
+	width: 50%;
+	border-radius: 10px;
+}
