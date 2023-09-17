@@ -8,7 +8,7 @@ function ButtonNav(props) {
 		<button
 			className="button-nav border-and-shadow"
 			onClick={() => {
-				navigate("/CrearSala");
+				navigate(props.to);
 			}}
 		>
 			{props.textInside}

@@ -1,7 +1,12 @@
 import "./App.css";
 import { Routes, Route, HashRouter, Link } from "react-router-dom";
-// import JoinForms from "./components/JoinForms";
-import UnirseSala from "./pages/UnirseSala";
+
+import AddQuestion from "./pages/AddQuestion";
+import InGame from "./pages/InGame";
+import JoinRoom from "./pages/JoinRoom";
+import LogIn from "./pages/LogIn";
+import Register from "./pages/Register";
+import WorldScore from "./pages/WorldScore";
 
 import BodyLayout from "./layout/BodyLayout";
 import ButtonNav from "./components/ButtonNav";
@@ -11,15 +16,18 @@ function App() {
 		<HashRouter>
 			<nav className="border-and-shadow">
 				<Link to="/">Home</Link>
-				<Link to="/ProgressChino">Progreso del gei</Link>
 				<Link to="/Juego">Juego</Link>
-				<ButtonNav textInside="Crear sala" />
+				<Link to="/Register">Register</Link>
+				<Link to="/LogIn">LogIn</Link>
+				<Link to="/WorldScore">WorldScore</Link>
+				<Link to="/AddQuestion">AddQuestion</Link>
+				<ButtonNav textInside="Unirse a sala" to="/JoinRoom" />
 			</nav>
 			<Routes>
 				<Route
 					path="/"
 					element={
-						<BodyLayout backgroundColor="#8630a5">
+						<BodyLayout bgColor="#8630a5">
 							<div className="container">
 								<h1>Sala de home?</h1>
 							</div>
@@ -28,10 +36,10 @@ function App() {
 					exact
 				/>
 				<Route
-					path="/ProgressChino"
+					path="/JoinRoom"
 					element={
-						<BodyLayout backgroundColor="#d86aff">
-							<UnirseSala />
+						<BodyLayout bgColor="#d86aff">
+							<JoinRoom />
 						</BodyLayout>
 					}
 					exact
@@ -39,10 +47,40 @@ function App() {
 				<Route
 					path="/Juego"
 					element={
-						<BodyLayout backgroundColor="#5f4b98">
-							<div className="container">
-								<h1>Aqui estara el juego</h1>
-							</div>
+						<BodyLayout bgColor="#5f4b98">
+							<InGame />
+						</BodyLayout>
+					}
+				/>
+				<Route
+					path="/Register"
+					element={
+						<BodyLayout bgColor="#5f4b98">
+							<Register />
+						</BodyLayout>
+					}
+				/>
+				<Route
+					path="/AddQuestion"
+					element={
+						<BodyLayout bgColor="#5f4b98">
+							<AddQuestion />
+						</BodyLayout>
+					}
+				/>
+				<Route
+					path="/LogIn"
+					element={
+						<BodyLayout bgColor="#5f4b98">
+							<LogIn />
+						</BodyLayout>
+					}
+				/>
+				<Route
+					path="/WorldScore"
+					element={
+						<BodyLayout bgColor="#5f4b98">
+							<WorldScore />
 						</BodyLayout>
 					}
 				/>

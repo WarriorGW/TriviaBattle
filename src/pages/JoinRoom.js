@@ -1,8 +1,8 @@
 import React from "react";
-import "./css/UnirseSalaStyle.css";
+import "./css/JoinRoomStyle.css";
 import { Formik, Form } from "formik";
 
-function UnirseSala() {
+function JoinRoom() {
 	return (
 		<div className="container">
 			<Formik
@@ -35,4 +35,4 @@ function UnirseSala() {
 	);
 }
 
-export default UnirseSala;
+export default JoinRoom;
