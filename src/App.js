@@ -6,6 +6,7 @@ import InGame from "./pages/InGame";
 import JoinRoom from "./pages/JoinRoom";
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
+import WaitRoom from "./pages/WaitRoom";
 import WorldScore from "./pages/WorldScore";
 
 import BodyLayout from "./layout/BodyLayout";
@@ -19,8 +20,9 @@ function App() {
 				<Link to="/Juego">Juego</Link>
 				<Link to="/Register">Register</Link>
 				<Link to="/LogIn">LogIn</Link>
-				<Link to="/WorldScore">WorldScore</Link>
-				<Link to="/AddQuestion">AddQuestion</Link>
+				<Link to="/WorldScore">Puntaje Global</Link>
+				<Link to="/AddQuestion">Agregar pregunta</Link>
+				<Link to="/WaitRoom">Crear sala</Link>
 				<ButtonNav textInside="Unirse a sala" to="/JoinRoom" />
 			</nav>
 			<Routes>
@@ -81,6 +83,14 @@ function App() {
 					element={
 						<BodyLayout bgColor="#b037db">
 							<WorldScore />
+						</BodyLayout>
+					}
+				/>
+				<Route
+					path="/WaitRoom"
+					element={
+						<BodyLayout bgColor="#b037db">
+							<WaitRoom />
 						</BodyLayout>
 					}
 				/>
