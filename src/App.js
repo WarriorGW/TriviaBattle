@@ -1,6 +1,7 @@
-import "./App.css";
+// Importar dependencias de librerias externas
 import { Routes, Route, HashRouter, Link } from "react-router-dom";
 
+// Importar paginas desde la carpeta de pages
 import AddQuestion from "./pages/AddQuestion";
 import InGame from "./pages/InGame";
 import JoinRoom from "./pages/JoinRoom";
@@ -9,12 +10,16 @@ import Register from "./pages/Register";
 import WaitRoom from "./pages/WaitRoom";
 import WorldScore from "./pages/WorldScore";
 
+// Impportar layout para el body
 import BodyLayout from "./layout/BodyLayout";
+
+// Importar componentes desde la carpta de components
 import ButtonNav from "./components/ButtonNav";
 
 function App() {
 	return (
 		<HashRouter>
+			{/* Navegador que tiene todos los links existentes */}
 			<nav className="border-and-shadow">
 				<Link to="/">Home</Link>
 				<Link to="/Juego">Juego</Link>
@@ -25,6 +30,7 @@ function App() {
 				<Link to="/WaitRoom">Crear sala</Link>
 				<ButtonNav textInside="Unirse a sala" to="/JoinRoom" />
 			</nav>
+			{/* Aqui es donde se crean las rutas usando react-router-dom */}
 			<Routes>
 				<Route
 					path="/"
