@@ -22,12 +22,6 @@ function App() {
 			{/* Navegador que tiene todos los links existentes */}
 			<nav className="border-and-shadow">
 				<Link to="/">Home</Link>
-				<Link to="/Juego">Juego</Link>
-				<Link to="/Register">Register</Link>
-				<Link to="/LogIn">LogIn</Link>
-				<Link to="/WorldScore">Puntaje Global</Link>
-				<Link to="/AddQuestion">Agregar pregunta</Link>
-				<Link to="/WaitRoom">Crear sala</Link>
 				<ButtonNav textInside="Unirse a sala" to="/JoinRoom" />
 			</nav>
 			{/* Aqui es donde se crean las rutas usando react-router-dom */}
@@ -38,6 +32,17 @@ function App() {
 						<BodyLayout bgColor="#8630a5">
 							<div className="container">
 								<h1>Sala de home?</h1>
+								<Link to="/Juego">Juego</Link>
+								<br />
+								<Link to="/Register">Register</Link>
+								<br />
+								<Link to="/LogIn">LogIn</Link>
+								<br />
+								<Link to="/WorldScore">Puntaje Global</Link>
+								<br />
+								<Link to="/AddQuestion">Agregar pregunta</Link>
+								<br />
+								<Link to="/WaitRoom">Crear sala</Link>
 							</div>
 						</BodyLayout>
 					}
@@ -55,7 +60,7 @@ function App() {
 				<Route
 					path="/Juego"
 					element={
-						<BodyLayout bgColor="#5f4b98">
+						<BodyLayout bgColor="#834798">
 							<InGame />
 						</BodyLayout>
 					}
