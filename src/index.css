@@ -19,6 +19,17 @@ nav {
 	height: 62px;
 }
 
+.footer-scores {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #d9d9d9; /* Cambia el color de fondo según tu preferencia */
+	text-align: center; /* Alinea el contenido al centro */
+	padding: 15px 50px; /* Agrega espacio alrededor del contenido del footer */
+	height: 15%;
+	box-sizing: border-box; /* Incluye el padding y el margen en el cálculo del tamaño total */
+}
+
 .border-and-shadow {
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 	border-radius: 14px;

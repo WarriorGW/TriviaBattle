@@ -1,8 +1,9 @@
 import React from "react";
 import ProgressBar from "../components/ProgressBar";
 
-import "./css/InGameStyle.css";
 import Answer from "../components/Answer";
+import "./css/InGameStyle.css";
+import UsersScore from "../components/UsersScore";
 
 function InGame() {
 	return (
@@ -11,19 +12,48 @@ function InGame() {
 				<ProgressBar />
 			</div>
 			<div className="container">
-				<div className="box-ingame col-12 d-flex border-and-shadow align-content-center justify-content-center">
-					<h2 className="question-title mt-5">Aqui estaran las preguntas</h2>
-					<div className="d-flex mt-5 row-answer">
-						<Answer text="Respuesta 1" />
-						<Answer text="Respuesta 2" />
-					</div>
-					<div className="d-flex my-5">
-						<Answer text="Respuesta 3" />
-						<Answer text="Respuesta 4" />
+				<div className="row justify-content-center align-content-center">
+					<div className="box-ingame mt-md-5 col-sm-12 col-md-10 d-flex border-and-shadow p-5 justify-content-center align-content-center">
+						<div className="d-flex justify-content-center align-content-center">
+							<h2 className="question-title">Aqui estaran las preguntas</h2>
+						</div>
+						<div className="row w-100">
+							<div className="col-md-6 mb-sm-3 mt-sm-3 mb-md-4 mt-md-5">
+								<Answer text="Respuesta 1" />
+							</div>
+							<div className="col-md-6 mb-sm-3 mt-sm-3 mb-md-4 mt-md-5">
+								<Answer text="Respuesta 2" />
+							</div>
+							<div className="col-md-6 mb-sm-3 mt-sm-3 mt-md-3">
+								<Answer text="Respuesta 3" />
+							</div>
+							<div className="col-md-6 mb-sm-3 mt-sm-3 mt-md-3">
+								<Answer text="Respuesta 4" />
+							</div>
+						</div>
 					</div>
 				</div>
-				<div>
-					<p>Aqui estaran los puntajes</p>
+			</div>
+			<div className="footer-scores">
+				<div className="row">
+					<div className="col-4 m-0 p-0">
+						<UsersScore name="Fernando" />
+					</div>
+					<div className="col-4 m-0 p-0">
+						<UsersScore name="Fernando" />
+					</div>
+					<div className="col-4 m-0 p-0">
+						<UsersScore name="Fernando" />
+					</div>
+					<div className="col-4 m-0 p-0">
+						<UsersScore name="Fernando" />
+					</div>
+					<div className="col-4 m-0 p-0">
+						<UsersScore name="Fernando" />
+					</div>
+					<div className="col-4 m-0 p-0">
+						<UsersScore name="Fernando" />
+					</div>
 				</div>
 			</div>
 		</>

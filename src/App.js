@@ -15,6 +15,7 @@ import BodyLayout from "./layout/BodyLayout";
 
 // Importar componentes desde la carpta de components
 import ButtonNav from "./components/ButtonNav";
+import ChangeUsername from "./pages/ChangeUsername";
 
 function App() {
 	return (
@@ -43,6 +44,8 @@ function App() {
 								<Link to="/AddQuestion">Agregar pregunta</Link>
 								<br />
 								<Link to="/WaitRoom">Crear sala</Link>
+								<br />
+								<Link to="/ChangeUsername">Cambiar username</Link>
 							</div>
 						</BodyLayout>
 					}
@@ -102,6 +105,14 @@ function App() {
 					element={
 						<BodyLayout bgColor="#b037db">
 							<WaitRoom />
+						</BodyLayout>
+					}
+				/>
+				<Route
+					path="/ChangeUsername"
+					element={
+						<BodyLayout bgColor="#b037db">
+							<ChangeUsername />
 						</BodyLayout>
 					}
 				/>
