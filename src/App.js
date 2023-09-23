@@ -1,22 +1,14 @@
 // Importar dependencias de librerias externas
 import { Routes, Route, HashRouter, Link } from "react-router-dom";
 
-// Importar paginas desde la carpeta de pages
-import AddQuestion from "./pages/AddQuestion";
-import InGame from "./pages/InGame";
-import JoinRoom from "./pages/JoinRoom";
-import LogIn from "./pages/LogIn";
-import Register from "./pages/Register";
-import WaitRoom from "./pages/WaitRoom";
-import WorldScore from "./pages/WorldScore";
-import TableQuestions from "./pages/TableQuestions";
+// Importar rutas desde la carpeta de routes
+import { routes } from "./routes.js";
 
 // Impportar layout para el body
 import BodyLayout from "./layout/BodyLayout";
 
 // Importar componentes desde la carpta de components
 import ButtonNav from "./components/ButtonNav";
-import ChangeUsername from "./pages/ChangeUsername";
 
 function App() {
 	return (
@@ -54,79 +46,18 @@ function App() {
 					}
 					exact
 				/>
-				<Route
-					path="/JoinRoom"
-					element={
-						<BodyLayout bgColor="#8630a5">
-							<JoinRoom />
-						</BodyLayout>
-					}
-					exact
-				/>
-				<Route
-					path="/Juego"
-					element={
-						<BodyLayout bgColor="#834798">
-							<InGame />
-						</BodyLayout>
-					}
-				/>
-				<Route
-					path="/Register"
-					element={
-						<BodyLayout bgColor="#d86aff">
-							<Register />
-						</BodyLayout>
-					}
-				/>
-				<Route
-					path="/AddQuestion"
-					element={
-						<BodyLayout bgColor="#5f4b98">
-							<AddQuestion />
-						</BodyLayout>
-					}
-				/>
-				<Route
-					path="/LogIn"
-					element={
-						<BodyLayout bgColor="#d86aff">
-							<LogIn />
-						</BodyLayout>
-					}
-				/>
-				<Route
-					path="/WorldScore"
-					element={
-						<BodyLayout bgColor="#b037db">
-							<WorldScore />
-						</BodyLayout>
-					}
-				/>
-				<Route
-					path="/WaitRoom"
-					element={
-						<BodyLayout bgColor="#b037db">
-							<WaitRoom />
-						</BodyLayout>
-					}
-				/>
-				<Route
-					path="/ChangeUsername"
-					element={
-						<BodyLayout bgColor="#b037db">
-							<ChangeUsername />
-						</BodyLayout>
-					}
-				/>
-				<Route
-					path="/TableQuestions"
-					element={
-						<BodyLayout bgColor="#b037db">
-							<TableQuestions />
-						</BodyLayout>
-					}
-				/>
+				{routes.map((route, index) => (
+					<Route
+						key={index}
+						path={route.path}
+						element={
+							<BodyLayout bgColor={route.bgColor}>
+								<route.component />
+							</BodyLayout>
+						}
+						exact={route.exact}
+					/>
+				))}
 			</Routes>
 		</HashRouter>
 	);
