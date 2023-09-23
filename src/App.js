@@ -9,6 +9,7 @@ import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
 import WaitRoom from "./pages/WaitRoom";
 import WorldScore from "./pages/WorldScore";
+import TableQuestions from "./pages/TableQuestions";
 
 // Impportar layout para el body
 import BodyLayout from "./layout/BodyLayout";
@@ -46,6 +47,8 @@ function App() {
 								<Link to="/WaitRoom">Crear sala</Link>
 								<br />
 								<Link to="/ChangeUsername">Cambiar username</Link>
+								<br />
+								<Link to="/TableQuestions">TableQuestions</Link>
 							</div>
 						</BodyLayout>
 					}
@@ -113,6 +116,14 @@ function App() {
 					element={
 						<BodyLayout bgColor="#b037db">
 							<ChangeUsername />
+						</BodyLayout>
+					}
+				/>
+				<Route
+					path="/TableQuestions"
+					element={
+						<BodyLayout bgColor="#b037db">
+							<TableQuestions />
 						</BodyLayout>
 					}
 				/>

@@ -17,7 +17,7 @@ function InGame() {
 						<div className="w-100">
 							<div className="d-flex justify-content-center align-content-center">
 								<h2 className="question-title">
-									Cual es la capital de francia?
+									<>¿</>Cual es la capital de francia<>?</>
 								</h2>
 							</div>
 							<div className="row w-100">
