@@ -16,7 +16,9 @@ function InGame() {
 					<div className="box-ingame mt-md-5 col-10 d-flex border-and-shadow p-5 justify-content-center align-content-center">
 						<div className="w-100">
 							<div className="d-flex justify-content-center align-content-center">
-								<h2 className="question-title">Preguntas</h2>
+								<h2 className="question-title">
+									Cual es la capital de francia?
+								</h2>
 							</div>
 							<div className="row w-100">
 								<div className="col-md-6 mb-sm-3 mt-sm-3 mb-md-4 mt-md-5">

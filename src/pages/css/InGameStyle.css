@@ -7,6 +7,24 @@
 }
 
 .question-title {
-	font-size: 50px;
+	font-size: 25px;
 	margin: 10px;
+}
+
+@media (min-width: 576px) {
+	.question-title {
+		font-size: 30px;
+	}
+}
+
+@media (min-width: 768px) {
+	.question-title {
+		font-size: 40px;
+	}
+}
+
+@media (min-width: 992px) {
+	.question-title {
+		font-size: 50px;
+	}
 }
