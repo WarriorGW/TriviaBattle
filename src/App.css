@@ -19,8 +19,19 @@ nav {
 
 nav a,
 .container a {
+	color: #00ced1;
 	text-decoration: none;
 	font-weight: bold;
+}
+
+nav a {
+	scale: 1.2;
+}
+
+nav a:hover,
+.container a:hover {
+	color: #ff69b4;
+	font-style: italic;
 }
 
 .border-and-shadow {
