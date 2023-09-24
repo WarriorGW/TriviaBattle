@@ -15,7 +15,9 @@
 .footer-scores {
 	position: absolute;
 	bottom: 0;
-	width: 100%;
+	right: 5px;
+	left: 5px;
+	width: 95%;
 	background-color: #d9d9d9;
 	text-align: center;
 	padding: 15px 50px;
@@ -24,6 +26,8 @@
 	overflow: hidden;
 	opacity: 0.9;
 	border-radius: 14px 14px 0 0;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 @media (max-width: 576px) {
