@@ -10,6 +10,9 @@ import BodyLayout from "./layout/BodyLayout";
 // Importar componentes desde la carpta de components
 import ButtonNav from "./components/ButtonNav";
 
+// Importar estilos
+import "./App.css";
+
 function App() {
 	return (
 		<HashRouter>
