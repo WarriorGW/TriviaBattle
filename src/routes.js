@@ -8,6 +8,7 @@ import WaitRoom from "./pages/WaitRoom";
 import WorldScore from "./pages/WorldScore";
 import TableQuestions from "./pages/TableQuestions";
 import ChangeUsername from "./pages/ChangeUsername";
+import Error404 from "./pages/Error404";
 
 export const routes = [
 	{
@@ -54,5 +55,10 @@ export const routes = [
 		path: "/TableQuestions",
 		bgColor: "#b037db",
 		component: TableQuestions,
+	},
+	{
+		path: "*",
+		bgColor: "#fff",
+		component: Error404,
 	},
 ];

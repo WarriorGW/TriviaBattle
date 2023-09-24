@@ -1,7 +1,7 @@
 // Importar dependencias de librerias externas
-import { Routes, Route, HashRouter, Link } from "react-router-dom";
+import { Routes, Route, HashRouter, Link, NavLink } from "react-router-dom";
 
-// Importar rutas desde la carpeta de routes
+// Importar rutas desde el archivo de routes
 import { routes } from "./routes.js";
 
 // Impportar layout para el body
@@ -15,7 +15,7 @@ function App() {
 		<HashRouter>
 			{/* Navegador que tiene todos los links existentes */}
 			<nav className="border-and-shadow">
-				<Link to="/">Home</Link>
+				<NavLink to="/">Home</NavLink>
 				<ButtonNav textInside="Unirse a sala" to="/JoinRoom" />
 			</nav>
 			{/* Aqui es donde se crean las rutas usando react-router-dom */}

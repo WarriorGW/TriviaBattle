@@ -1,0 +1,26 @@
+.container-error {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 50px;
+	text-align: center;
+}
+
+.title-error {
+	font-size: 100px;
+	margin-bottom: 20px;
+}
+
+.subtitle-error {
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+
+.text-error {
+	font-size: 24px;
+	margin-bottom: 40px;
+}
+
+.img-error {
+	width: 350px;
+	height: auto;
+}
