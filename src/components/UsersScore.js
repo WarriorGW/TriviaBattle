@@ -3,8 +3,8 @@ import "./css/UsersScoreStyle.css";
 
 function UsersScore(props) {
 	return (
-		<div className="user-score-container d-flex border-and-shadow justify-content-center align-content-center m-1">
-			<p>{props.name}</p>
+		<div className="user-score-container d-flex border-and-shadow mb-3 mb-md-4 mx-1">
+			<p className="m-0">{props.name}</p>
 		</div>
 	);
 }

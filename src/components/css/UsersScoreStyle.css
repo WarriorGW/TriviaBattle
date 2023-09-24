@@ -1,4 +1,25 @@
 .user-score-container {
 	border: 1px solid black;
 	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+@media (max-width: 576px) {
+	.user-score-container {
+		max-height: 30px;
+	}
+}
+
+@media (min-width: 576px) {
+	.user-score-container {
+		max-height: 30px;
+	}
+}
+
+@media (min-width: 768px) {
+	.user-score-container {
+		max-height: 40px;
+	}
 }

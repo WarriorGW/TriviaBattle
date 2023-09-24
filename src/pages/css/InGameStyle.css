@@ -4,6 +4,7 @@
 	flex-direction: column;
 	opacity: 0.85;
 	height: 100%;
+	overflow: hidden;
 }
 
 .question-title {
@@ -20,6 +21,7 @@
 	padding: 15px 50px;
 	height: 15%;
 	box-sizing: border-box; /* Incluye el p y m en el cálculo del tamaño total */
+	overflow: hidden;
 }
 
 @media (max-width: 576px) {

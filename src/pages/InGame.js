@@ -13,7 +13,7 @@ function InGame() {
 			</div>
 			<div className="container">
 				<div className="row justify-content-center align-content-center">
-					<div className="box-ingame mt-md-5 col-10 d-flex border-and-shadow p-5 justify-content-center align-content-center">
+					<div className="box-ingame mt-md-5 col-10 d-flex border-and-shadow px-5 py-md-5 justify-content-center align-content-center">
 						<div className="w-100">
 							<div className="d-flex justify-content-center align-content-center">
 								<h2 className="question-title">
