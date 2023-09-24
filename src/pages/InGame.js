@@ -44,19 +44,19 @@ function InGame() {
 						<UsersScore name="Fernando" />
 					</div>
 					<div className="col-4 m-0 p-0">
-						<UsersScore name="Fernando" />
+						<UsersScore name="Chino" />
 					</div>
 					<div className="col-4 m-0 p-0">
-						<UsersScore name="Fernando" />
+						<UsersScore name="SAI" />
 					</div>
 					<div className="col-4 m-0 p-0">
-						<UsersScore name="Fernando" />
+						<UsersScore name="Johann" />
 					</div>
 					<div className="col-4 m-0 p-0">
-						<UsersScore name="Fernando" />
+						<UsersScore name="Paula" />
 					</div>
 					<div className="col-4 m-0 p-0">
-						<UsersScore name="Fernando" />
+						<UsersScore name="Faby" />
 					</div>
 				</div>
 			</div>
