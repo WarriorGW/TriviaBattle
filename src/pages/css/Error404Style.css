@@ -24,3 +24,25 @@
 	width: 350px;
 	height: auto;
 }
+
+@media (max-width: 576px) {
+	.container-error {
+		padding: 20px;
+	}
+
+	.title-error {
+		font-size: 60px;
+	}
+
+	.subtitle-error {
+		font-size: 36px;
+	}
+
+	.text-error {
+		font-size: 18px;
+	}
+
+	.img-error {
+		width: 250px;
+	}
+}
