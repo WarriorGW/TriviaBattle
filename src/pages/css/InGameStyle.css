@@ -23,6 +23,7 @@
 	box-sizing: border-box; /* Incluye el p y m en el cálculo del tamaño total */
 	overflow: hidden;
 	opacity: 0.9;
+	border-radius: 14px 14px 0 0;
 }
 
 @media (max-width: 576px) {
