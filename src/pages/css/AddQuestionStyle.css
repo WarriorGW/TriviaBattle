@@ -1,4 +1,4 @@
-.card-Add {
+.card-add {
 	margin: 0 auto;
 	align-items: center;
 	max-width: 800px;
@@ -11,17 +11,17 @@
 		0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.Add-Text {
+.text-add {
 	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 	opacity: 0.5;
 }
 
-.input-container {
+.container-add-input {
 	padding-top: 10px;
 	margin: 20px 0;
 }
 
-.Add-Text,
+.text-add,
 .grid-item {
 	width: 100%;
 	padding: 10px;
@@ -30,7 +30,7 @@
 	margin: 10px 0;
 }
 
-.grid-container {
+.container-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 20px;
@@ -52,13 +52,17 @@
 	align-items: center;
 }
 
-.Add-container {
+.container-add {
 	padding-top: 12vh;
 }
 
-.button-Add {
+.button-add {
 	color: white;
 	background-color: #4274ea;
 	max-width: 600px;
 	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+	border: none;
+	margin: 10px 0;
+	padding: 15px;
+	width: 70%;
 }

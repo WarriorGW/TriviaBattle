@@ -5,19 +5,19 @@ import "./css/AddQuestionStyle.css";
 
 function AddQuestion() {
 	return (
-		<div className="Add-container">
+		<div className="container-add">
 			<Formik>
 				{({ handleChange, handleSubmit, isSubmitting }) => (
 					<Form>
-						<div className="card-Add">
-							<div className="input-container">
+						<div className="card-add">
+							<div className="container-add-input">
 								<input
-									className="Add-Text"
+									className="text-add"
 									type="text"
-									placeholder="Ingresar la preguntas deseada "
+									placeholder="Ingresar la pregunta sin signos de interrogación"
 								/>
 							</div>
-							<div className="grid-container">
+							<div className="container-grid">
 								<input
 									type="text"
 									className="grid-item"
@@ -72,7 +72,7 @@ function AddQuestion() {
 								/>
 							</div>
 							<div className="centered-button">
-								<button className="button-Add" type="submit">
+								<button className="button-add border-and-shadow" type="submit">
 									Guardar pregunta
 								</button>
 							</div>
