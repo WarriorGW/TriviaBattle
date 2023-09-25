@@ -20,39 +20,23 @@ function AddQuestion() {
 							<div className="container-grid">
 								<input
 									type="text"
-									className="grid-item"
+									className="grid-item img-bg-1"
 									placeholder="Correcta"
-									style={{
-										backgroundImage:
-											'url("https://img.icons8.com/plasticine/100/book.png")', // Ruta de la imagen
-									}}
 								/>
 								<input
 									type="text"
-									className="grid-item"
+									className="grid-item img-bg-2"
 									placeholder="Incorrecta"
-									style={{
-										backgroundImage:
-											'url("https://img.icons8.com/color/48/square-root.png")', // Ruta de la imagen
-									}}
 								/>
 								<input
 									type="text"
-									className="grid-item"
+									className="grid-item img-bg-3"
 									placeholder="Incorrecta"
-									style={{
-										backgroundImage:
-											'url("https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/7950F2/external-poker-chip-casino-kiranshastry-solid-kiranshastry-5.png")',
-									}}
 								/>
 								<input
 									type="text"
-									className="grid-item"
+									className="grid-item img-bg-4"
 									placeholder="Incorrecta"
-									style={{
-										backgroundImage:
-											'url("https://img.icons8.com/arcade/64/movie-projector.png")',
-									}}
 								/>
 							</div>
 							<div className="centered-button">

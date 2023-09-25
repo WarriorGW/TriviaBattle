@@ -49,6 +49,22 @@
 	background-position: left 10px bottom 10px;
 }
 
+.img-bg-1 {
+	background-image: url("../../assets/book.png");
+}
+
+.img-bg-2 {
+	background-image: url("../../assets/square-root.png");
+}
+
+.img-bg-3 {
+	background-image: url("../../assets/poker-chip.png");
+}
+
+.img-bg-4 {
+	background-image: url("../../assets/movie-camera.png");
+}
+
 .centered-button {
 	padding-top: 6vh;
 	display: flex;
