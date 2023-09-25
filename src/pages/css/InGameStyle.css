@@ -18,13 +18,12 @@
 	right: 5px;
 	left: 5px;
 	width: 95%;
-	background-color: #d9d9d9;
+	background-color: #d9d9d9e1;
 	text-align: center;
 	padding: 15px 50px;
 	height: 15%;
 	box-sizing: border-box; /* Incluye el p y m en el cálculo del tamaño total */
 	overflow: hidden;
-	opacity: 0.9;
 	border-radius: 14px 14px 0 0;
 	margin-right: auto;
 	margin-left: auto;
