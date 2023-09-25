@@ -25,10 +25,6 @@ function AddQuestion() {
 									style={{
 										backgroundImage:
 											'url("https://img.icons8.com/plasticine/100/book.png")', // Ruta de la imagen
-										backgroundSize: "38px 38px",
-										backgroundRepeat: "no-repeat",
-										paddingLeft: "10px",
-										backgroundPosition: "left 10px bottom 10px",
 									}}
 								/>
 								<input
@@ -38,10 +34,6 @@ function AddQuestion() {
 									style={{
 										backgroundImage:
 											'url("https://img.icons8.com/color/48/square-root.png")', // Ruta de la imagen
-										backgroundSize: "38px 38px",
-										backgroundRepeat: "no-repeat",
-										paddingLeft: "10px",
-										backgroundPosition: "left 10px bottom 10px",
 									}}
 								/>
 								<input
@@ -51,10 +43,6 @@ function AddQuestion() {
 									style={{
 										backgroundImage:
 											'url("https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/7950F2/external-poker-chip-casino-kiranshastry-solid-kiranshastry-5.png")',
-										backgroundSize: "38px 38px",
-										backgroundRepeat: "no-repeat",
-										paddingLeft: "10px",
-										backgroundPosition: "left 10px bottom 10px",
 									}}
 								/>
 								<input
@@ -64,10 +52,6 @@ function AddQuestion() {
 									style={{
 										backgroundImage:
 											'url("https://img.icons8.com/arcade/64/movie-projector.png")',
-										backgroundSize: "38px 38px",
-										backgroundRepeat: "no-repeat",
-										paddingLeft: "10px",
-										backgroundPosition: "left 10px bottom 10px",
 									}}
 								/>
 							</div>

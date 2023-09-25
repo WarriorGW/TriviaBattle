@@ -43,6 +43,10 @@
 	text-align: center;
 	border-radius: 14px;
 	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+	background-size: 38px 38px;
+	background-repeat: no-repeat;
+	padding-left: 10px;
+	background-position: left 10px bottom 10px;
 }
 
 .centered-button {
