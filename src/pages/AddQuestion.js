@@ -32,7 +32,9 @@ function AddQuestion() {
 						confirmButtonText: "Si, es correcto",
 						confirmButtonColor: "#3085d6",
 					}).then((result) => {
-						result.isConfirmed ? navigate("/") : null;
+						result.isConfirmed
+							? navigate("/")
+							: Swal.fire("Cancelado", "Corrige la pregunta", "error");
 					});
 				}}
 			>
