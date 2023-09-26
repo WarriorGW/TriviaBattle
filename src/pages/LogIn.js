@@ -1,26 +1,26 @@
 import React from "react";
 import { Formik, Form } from "formik";
-import "./css/LogInStyle.css";
+import "./css/FormsUsersStyle.css";
 
 function LogIn() {
 	return (
-		<div className="container-login">
+		<div className="container-form-user">
 			<Formik>
 				{({ handleChange, handleSubmit, isSubmitting }) => (
 					<Form>
-						<div className="card-login">
+						<div className="card-form-user">
 							<h1>Iniciar Sesion</h1>
 							<input
 								type="text"
-								className="input-login"
+								className="input-form-user"
 								placeholder="Ingresar usuario.."
 							/>
 							<input
 								type="password"
-								className="input-login"
+								className="input-form-user"
 								placeholder="Ingresar Contraseña.."
 							/>
-							<button type="submit" className="button-purple input-login">
+							<button type="submit" className="button-purple input-form-user">
 								Iniciar Sesion
 							</button>
 						</div>

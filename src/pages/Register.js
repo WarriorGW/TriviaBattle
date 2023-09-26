@@ -1,31 +1,31 @@
 import React from "react";
 import { Formik, Form } from "formik";
-import "./css/RegisterStyle.css";
+import "./css/FormsUsersStyle.css";
 
 function Register() {
 	return (
-		<div className="container-register">
+		<div className="container-form-user">
 			<Formik>
 				{({ handleChange, handleSubmit, isSubmitting }) => (
 					<Form>
-						<div className="card-register">
+						<div className="card-form-user">
 							<h1>Registrarse</h1>
 							<input
 								type="text"
-								className="input-register"
+								className="input-form-user"
 								placeholder="Ingresar usuario.."
 							/>
 							<input
 								type="password"
-								className="input-register"
+								className="input-form-user"
 								placeholder="Ingresar Contraseña.."
 							/>
 							<input
 								type="password"
-								className="input-register"
+								className="input-form-user"
 								placeholder="Confirmar Contraseña.."
 							/>
-							<button type="submit" className="button-purple input-register">
+							<button type="submit" className="button-purple input-form-user">
 								Registrarse
 							</button>
 						</div>

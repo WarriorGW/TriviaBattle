@@ -42,5 +42,5 @@ nav a:hover,
 .button-purple {
 	background-color: #722197bb;
 	color: #fff;
-	margin-bottom: 35px;
+	margin-bottom: 35px !important;
 }
