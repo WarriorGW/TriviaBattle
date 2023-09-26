@@ -16,7 +16,7 @@ function ChangeUsername() {
 								placeholder="Ingresar nuevo nombre.."
 							/>
 							<input
-								type="password"
+								type="text"
 								className="input-form-user"
 								placeholder="Confirmar nuevo nombre.."
 							/>

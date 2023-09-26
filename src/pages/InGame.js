@@ -41,22 +41,22 @@ function InGame() {
 			<div className="footer-scores">
 				<div className="row">
 					<div className="col-4 m-0 p-0">
-						<UsersScore name="Fernando" />
+						<UsersScore name="Fernando" score="100" />
 					</div>
 					<div className="col-4 m-0 p-0">
-						<UsersScore name="Chino" />
+						<UsersScore name="Chino" score="100" />
 					</div>
 					<div className="col-4 m-0 p-0">
-						<UsersScore name="SAI" />
+						<UsersScore name="SAI" score="100" />
 					</div>
 					<div className="col-4 m-0 p-0">
-						<UsersScore name="Johann" />
+						<UsersScore name="Johann" score="100" />
 					</div>
 					<div className="col-4 m-0 p-0">
-						<UsersScore name="Paula" />
+						<UsersScore name="Paula" score="100" />
 					</div>
 					<div className="col-4 m-0 p-0">
-						<UsersScore name="Faby" />
+						<UsersScore name="Faby" score="100" />
 					</div>
 				</div>
 			</div>
