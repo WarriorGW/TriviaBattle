@@ -24,10 +24,11 @@
 .text-add,
 .grid-item {
 	width: 100%;
-	padding: 10px;
+	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 14px;
 	margin: 10px 0;
+	font-size: larger;
 }
 
 .container-grid {
@@ -70,6 +71,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: large;
 }
 
 .container-add {
