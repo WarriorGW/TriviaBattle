@@ -1,10 +1,10 @@
 import React from "react";
-import "./css/JoinRoomStyle.css";
+import "./css/FormsUsersStyle.css";
 import { Formik, Form } from "formik";
 
 function JoinRoom() {
 	return (
-		<div className="container">
+		<div className="container-form-user">
 			<Formik
 				initialValues={{ codigoSala: "" }}
 				onSubmit={async (values, actions) => {
@@ -14,16 +14,23 @@ function JoinRoom() {
 			>
 				{({ handleChange, handleSubmit, isSubmitting }) => (
 					<Form onSubmit={handleSubmit}>
-						<h1>UNIRSE A LA SALA</h1>
-						<input
-							type="text"
-							name="codigoSala"
-							onChange={handleChange}
-							placeholder="Ingresa el codigo..."
-						/>
-						<button type="submit" disabled={isSubmitting}>
-							Ingresar a la partida
-						</button>
+						<div className="card-form-user">
+							<h1>UNIRSE A LA SALA</h1>
+							<input
+								type="text"
+								name="codigoSala"
+								className="input-form-user"
+								onChange={handleChange}
+								placeholder="Ingresa el codigo..."
+							/>
+							<button
+								type="submit"
+								className="button-purple input-form-user"
+								disabled={isSubmitting}
+							>
+								Ingresar a la partida
+							</button>
+						</div>
 					</Form>
 				)}
 			</Formik>
