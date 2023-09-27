@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/ChooseProfileImgStyle.css";
 
-function ChooseProfileImg(props) {
+function ChooseProfileImg() {
 	const imagesContext = require.context(
 		"../assets/profiles",
 		false,
@@ -13,14 +13,15 @@ function ChooseProfileImg(props) {
 		return imageName;
 	});
 	return (
-		<div className="card-profiles mt-3 mt-lg-5">
+		<div className="card-profiles mt-3 mb-5 mt-lg-5">
 			{imageNames.map((imageName, index) => (
-				<button className="button-profiles-selector m-3">
+				<button className="button-profiles-selector m-2">
 					<img
 						key={index}
 						alt={`Profile: ${imageName}`}
 						className="img-profiles-selector"
 						src={require(`../assets/profiles/${imageName}`)}
+						draggable="false"
 					/>
 				</button>
 			))}
