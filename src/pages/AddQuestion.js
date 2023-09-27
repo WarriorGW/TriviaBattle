@@ -16,7 +16,7 @@ function AddQuestion() {
 		incorrectAnswer3: "",
 	});
 	return (
-		<div className="container-add">
+		<div className="container my-5">
 			<Formik
 				initialValues={questions}
 				enableReinitialize={true}
