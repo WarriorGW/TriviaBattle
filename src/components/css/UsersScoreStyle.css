@@ -21,6 +21,12 @@
 	.user-score-container {
 		max-height: 30px;
 	}
+	.user-score-container p {
+		font-size: 10px;
+	}
+	.img-users {
+		width: 20px !important;
+	}
 }
 
 @media (min-width: 576px) {
