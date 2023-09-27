@@ -34,9 +34,12 @@ nav a:hover,
 	font-style: italic;
 }
 
+button {
+	transition: transform 200ms;
+}
+
 button:hover {
-	scale: 1.1;
-	transition: 200ms;
+	transform: scale(1.1);
 }
 
 .border-and-shadow {
