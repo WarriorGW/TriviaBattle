@@ -13,7 +13,7 @@ import ButtonNav from "./components/ButtonNav";
 // Importar estilos
 import "./App.css";
 
-// Importar links
+// Importar links a todas las paginas
 import Links from "./Links.js";
 
 function App() {

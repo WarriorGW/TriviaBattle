@@ -1,4 +1,4 @@
-// Importar paginas desde la carpeta de pages
+// Importar todas las paginas desde la carpeta de pages
 import AddQuestion from "./pages/AddQuestion";
 import InGame from "./pages/InGame";
 import JoinRoom from "./pages/JoinRoom";
