@@ -12,13 +12,15 @@ function Links() {
 				<br />
 				<Link to="/LogIn">LogIn</Link>
 				<br />
-				<Link to="/WorldScore">Puntaje Global</Link>
+				<Link to="/ChangeUsername">Cambiar username</Link>
 				<br />
 				<Link to="/AddQuestion">Agregar pregunta</Link>
 				<br />
+				<Link to="/ChooseProfileImg">Seleccionar foto de perfil</Link>
+				<br />
 				<Link to="/WaitRoom">Crear sala</Link>
 				<br />
-				<Link to="/ChangeUsername">Cambiar username</Link>
+				<Link to="/WorldScore">Puntaje Global</Link>
 				<br />
 				<Link to="/TableQuestions">TableQuestions</Link>
 			</div>

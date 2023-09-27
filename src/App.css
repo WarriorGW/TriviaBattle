@@ -44,3 +44,9 @@ nav a:hover,
 	color: #fff;
 	margin-bottom: 35px !important;
 }
+
+.img-users {
+	width: 25px;
+	height: auto;
+	margin-right: 7px;
+}

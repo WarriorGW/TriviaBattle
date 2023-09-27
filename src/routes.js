@@ -9,6 +9,7 @@ import WorldScore from "./pages/WorldScore";
 import TableQuestions from "./pages/TableQuestions";
 import ChangeUsername from "./pages/ChangeUsername";
 import Error404 from "./pages/Error404";
+import ChooseProfileImg from "./pages/ChooseProfileImg";
 
 export const routes = [
 	{
@@ -55,6 +56,11 @@ export const routes = [
 		path: "/TableQuestions",
 		bgColor: "#b037db",
 		component: TableQuestions,
+	},
+	{
+		path: "/ChooseProfileImg",
+		bgColor: "#b037db",
+		component: ChooseProfileImg,
 	},
 	{
 		path: "*",

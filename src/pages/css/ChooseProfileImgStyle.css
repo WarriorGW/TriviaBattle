@@ -1,0 +1,26 @@
+.card-profiles {
+	padding: 25px 0;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+		0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	vertical-align: center;
+	margin: 0 auto;
+	border-radius: 14px;
+	text-align: center;
+	width: 95%;
+	height: auto;
+	background-color: rgba(255, 255, 255, 0.806);
+}
+
+.img-profiles-selector {
+	width: 60px;
+	height: auto;
+}
+
+.button-profiles-selector {
+	background-color: transparent;
+	border: none;
+}
+
+.button-profiles-selector:hover {
+	scale: 1.2;
+}
