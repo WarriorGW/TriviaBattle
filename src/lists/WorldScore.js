@@ -35,4 +35,53 @@ export const leaderboard = [
 		name: "Faby",
 		points: 400,
 	},
+	// Nuevos elementos generados aleatoriamente
+	{
+		place: 7,
+		profile: "colibri",
+		name: "Colibrí",
+		points: Math.floor(Math.random() * 400) + 200,
+	},
+	{
+		place: 8,
+		profile: "crane-bird",
+		name: "Grulla",
+		points: Math.floor(Math.random() * 200) + 100,
+	},
+	{
+		place: 9,
+		profile: "dragon",
+		name: "Dragón",
+		points: Math.floor(Math.random() * 100) + 50,
+	},
+	{
+		place: 10,
+		profile: "avispa",
+		name: "Avispa",
+		points: Math.floor(Math.random() * 50) + 25,
+	},
+	{
+		place: 11,
+		profile: "fenix",
+		name: "Fénix",
+		points: Math.floor(Math.random() * 25) + 10,
+	},
+	{
+		place: 12,
+		profile: "gato",
+		name: "Gato",
+		points: Math.floor(Math.random() * 10) + 5,
+	},
+	{
+		place: 13,
+		profile: "leon",
+		name: "León",
+		points: Math.floor(Math.random() * 5) + 2,
+	},
+	{
+		place: 14,
+		profile: "kiwi",
+		name: "Kiwi",
+		points: Math.floor(Math.random() * 2) + 1,
+	},
 ];

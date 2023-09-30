@@ -32,7 +32,7 @@ function WorldScore() {
 					src={require("../assets/trophy.png")}
 				/>
 			</div>
-			<div className="card-worldscore-1">
+			<div className="card-worldscore-1 mb-3 mb-sm-5">
 				<div className="card-worldscore-2">
 					<div className="card-worldscore-3">
 						<table className="table table-hover table-striped m-0">
