@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Lalezar&family=Moo+Lah+Lah&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&family=Moo+Lah+Lah&family=Titan+One&display=swap");
+
+::-webkit-scrollbar {
+	width: 12px;
+}
 
 ::-webkit-scrollbar-thumb {
 	background-color: #bd79b6;
 	border-radius: 6px;
 }
 
-::-webkit-scrollbar {
-	width: 12px;
+::-webkit-scrollbar-thumb:hover {
+	background-color: #b169bb; /* Color del thumb al pasar el cursor sobre él */
 }

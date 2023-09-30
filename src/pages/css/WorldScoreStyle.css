@@ -1,0 +1,87 @@
+.title-worldscore {
+	color: white;
+	text-align: center;
+	font-family: "Titan One";
+	font-size: 50px;
+}
+
+.card-worldscore-1 {
+	margin: 0 auto;
+	width: 80%;
+	height: aito;
+	border-radius: 14px;
+	background: rgba(255, 255, 255, 0.377);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+		0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	padding: 20px 0;
+}
+
+.card-worldscore-2 {
+	padding: 0;
+	width: 70%;
+	height: auto;
+	margin: 0 auto;
+	border-radius: 14px;
+	background: #ffffff00;
+	overflow: hidden;
+}
+
+.card-worldscore-3 {
+	padding: 20px 0;
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+	border-radius: 14px;
+	background: #bd79b6;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+		0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.img-medals {
+	width: 40px;
+	height: auto;
+}
+
+.img-profile-worldscore {
+	width: 35px;
+	height: auto;
+}
+
+.img-trophy {
+	width: 80px;
+	height: 80px;
+}
+
+td,
+th {
+	vertical-align: middle;
+	justify-content: space-between;
+}
+
+table {
+	text-align: center;
+	border-collapse: collapse;
+	border-radius: 14px;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 700px;
+	width: 100%;
+	height: 100%;
+	max-height: 60vh;
+}
+
+table .table-warning {
+	--bs-table-bg: #f2beff;
+	--bs-table-hover-bg: #ea96ff;
+}
+
+/* @media (max-width: 576px) {
+	.card-worldscore-1 {
+		margin: 0 auto;
+	}
+	.card-worldscore-2 {
+	}
+	.card-worldscore-3 {
+	}
+} */
