@@ -58,3 +58,10 @@ button:hover {
 	height: auto;
 	margin-right: 7px;
 }
+
+.error-validation {
+	margin: 0;
+	padding: 0;
+	color: red;
+	font-size: 14px;
+}
