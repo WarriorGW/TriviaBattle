@@ -17,16 +17,6 @@
 }
 
 .card-worldscore-2 {
-	padding: 0;
-	width: 70%;
-	height: auto;
-	margin: 0 auto;
-	border-radius: 14px;
-	background: #ffffff00;
-	overflow: hidden;
-}
-
-.card-worldscore-3 {
 	padding: 20px 0;
 	width: 80%;
 	height: auto;
@@ -35,6 +25,16 @@
 	background: #bd79b6;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
 		0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card-worldscore-3 {
+	padding: 0;
+	width: 70%;
+	height: auto;
+	margin: 0 auto;
+	border-radius: 14px;
+	background: #ffffff00;
+	overflow: hidden;
 }
 
 .img-medals {
@@ -76,12 +76,19 @@ table .table-warning {
 	--bs-table-hover-bg: #ea96ff;
 }
 
-/* @media (max-width: 576px) {
+@media (max-width: 576px) {
+	.title-worldscore {
+		font-size: 30px;
+	}
 	.card-worldscore-1 {
-		margin: 0 auto;
+		padding: 15px 0;
 	}
 	.card-worldscore-2 {
+		padding: 0;
+		width: 90%;
+		box-shadow: none;
 	}
 	.card-worldscore-3 {
+		width: 100%;
 	}
-} */
+}

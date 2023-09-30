@@ -4,7 +4,7 @@ import "./css/WorldScoreStyle.css";
 function WorldScore() {
 	return (
 		<div className="container">
-			<div className="d-flex my-5 justify-content-center">
+			<div className="d-flex my-3 my-sm-5 justify-content-center">
 				<img
 					className="img-trophy"
 					alt="Trofeo Leaderbord"
@@ -18,8 +18,8 @@ function WorldScore() {
 				/>
 			</div>
 			<div className="card-worldscore-1">
-				<div className="card-worldscore-3">
-					<div className="card-worldscore-2">
+				<div className="card-worldscore-2">
+					<div className="card-worldscore-3">
 						<table className="table table-hover table-striped m-0">
 							<thead>
 								<tr className="table-warning">
