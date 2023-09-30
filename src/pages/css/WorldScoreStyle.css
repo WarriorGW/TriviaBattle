@@ -61,7 +61,6 @@ th {
 table {
 	text-align: center;
 	border-collapse: collapse;
-	border-radius: 14px;
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
@@ -71,9 +70,10 @@ table {
 	max-height: 60vh;
 }
 
-table .table-warning {
+.card-worldscore-3 table {
 	--bs-table-bg: #f2beff;
 	--bs-table-hover-bg: #ea96ff;
+	--bs-table-border-color: #f2beff;
 }
 
 @media (max-width: 576px) {

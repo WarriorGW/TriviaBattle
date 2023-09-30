@@ -1,7 +1,22 @@
 import React from "react";
 import "./css/WorldScoreStyle.css";
 
+// Importar lista de puntajes
+import { leaderboard } from "../lists/WorldScore";
+
 function WorldScore() {
+	const assignMedal = (place) => {
+		switch (place) {
+			case 1:
+				return require(`../assets/first-place.png`);
+			case 2:
+				return require(`../assets/second-place.png`);
+			case 3:
+				return require(`../assets/third-place.png`);
+			default:
+				return "";
+		}
+	};
 	return (
 		<div className="container">
 			<div className="d-flex my-3 my-sm-5 justify-content-center">
@@ -22,7 +37,7 @@ function WorldScore() {
 					<div className="card-worldscore-3">
 						<table className="table table-hover table-striped m-0">
 							<thead>
-								<tr className="table-warning">
+								<tr>
 									<th scope="col">Lugar</th>
 									<th scope="col" className="w-25">
 										Nombre
@@ -31,111 +46,36 @@ function WorldScore() {
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<th scope="row">
-										<img
-											className="img-medals"
-											src={require("../assets/first-place.png")}
-											alt="Medalla Primer lugar"
-										/>
-									</th>
-									<td>
-										<div>
-											<div className="d-flex justify-content-start">
+								{leaderboard.map((user, index) => (
+									<tr key={index}>
+										<th scope="row">
+											{user.place <= 3 ? (
 												<img
-													className="img-profile-worldscore"
-													src={require("../assets/profiles/abeja.png")}
-													alt="external-wolf-animal-faces-icongeek26-flat-icongeek26"
+													className="img-medals"
+													src={assignMedal(user.place)}
+													alt="M"
 												/>
-												Fernando
+											) : (
+												user.place
+											)}
+										</th>
+										<td>
+											<div>
+												<div className="d-flex justify-content-start">
+													<img
+														className="img-profile-worldscore"
+														src={require(`../assets/profiles/${user.profile}.png`)}
+														alt="external-wolf-animal-faces-icongeek26-flat-icongeek26"
+													/>
+													<div className="align-self-center m-0">
+														{user.name}
+													</div>
+												</div>
 											</div>
-										</div>
-									</td>
-									<td>1000 pts.</td>
-								</tr>
-								<tr className="table-warning">
-									<th scope="row">
-										<img
-											className="img-medals"
-											src={require("../assets/second-place.png")}
-											alt="Medalla Segundo lugar"
-										/>
-									</th>
-									<td>
-										<div className="d-flex justify-content-start">
-											<img
-												className="img-profile-worldscore"
-												src={require("../assets/profiles/woodpecker.png")}
-												alt="external-rabbit-animal-faces-icongeek26-flat-icongeek26"
-											/>
-											Chino
-										</div>
-									</td>
-									<td>1000 pts.</td>
-								</tr>
-								<tr>
-									<th scope="row">
-										{" "}
-										<img
-											className="img-medals"
-											src={require("../assets/third-place.png")}
-											alt="Medalla Tercer lugar"
-										/>
-									</th>
-									<td>
-										<div className="d-flex justify-content-start">
-											<img
-												className="img-profile-worldscore"
-												src={require("../assets/profiles/angry-dog.png")}
-												alt="external-dog-animal-faces-icongeek26-flat-icongeek26"
-											/>
-											SAI
-										</div>
-									</td>
-									<td>800 pts.</td>
-								</tr>
-								<tr className="table-warning">
-									<th scope="row">4</th>
-									<td>
-										<div className="d-flex justify-content-start">
-											<img
-												className="img-profile-worldscore"
-												src={require("../assets/profiles/ballena.png")}
-												alt="external-panda-animal-faces-icongeek26-flat-icongeek26"
-											/>
-											Johann
-										</div>
-									</td>
-									<td>630 pts.</td>
-								</tr>
-								<tr>
-									<th scope="row">5</th>
-									<td>
-										<div className="d-flex justify-content-start">
-											<img
-												className="img-profile-worldscore"
-												src={require("../assets/profiles/cabeza-de-avestruz-en-la-arena.png")}
-												alt="external-gorilla-animal-faces-icongeek26-flat-icongeek26"
-											/>
-											Paula
-										</div>
-									</td>
-									<td>500 pts.</td>
-								</tr>
-								<tr className="table-warning">
-									<th scope="row">6</th>
-									<td>
-										<div className="d-flex justify-content-start">
-											<img
-												className="img-profile-worldscore"
-												src={require("../assets/profiles/capybara.png")}
-												alt="external-cheetah-animal-faces-icongeek26-flat-icongeek26"
-											/>
-											Faby
-										</div>
-									</td>
-									<td>400 pts.</td>
-								</tr>
+										</td>
+										<td>{user.points} pts.</td>
+									</tr>
+								))}
 							</tbody>
 						</table>
 					</div>
