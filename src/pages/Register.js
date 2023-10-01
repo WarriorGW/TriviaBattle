@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import "./css/FormsUsersStyle.css";
+import ShowHidePass from "../components/ShowHidePass";
 
 function Register() {
 	const [user, setUser] = useState({
@@ -21,9 +22,9 @@ function Register() {
 					// Validar nombre de usuario
 					if (!values.username) {
 						errors.username = "Campo requerido";
-					} else if (values.username.length < 4) {
+					} else if (values.username.length < 3) {
 						errors.username =
-							"El nombre de usuario debe tener al menos 4 caracteres";
+							"El nombre de usuario debe tener al menos 3 caracteres";
 					} else if (values.username.length > 8) {
 						errors.username =
 							"El nombre de usuario debe tener menos de 8 caracteres";
@@ -34,6 +35,8 @@ function Register() {
 						errors.confirmPassword = "Campo requerido";
 					} else if (values.password.length < 4) {
 						errors.password = "La contraseña debe tener al menos 4 caracteres";
+					} else if (values.password.length > 15) {
+						errors.password = "La contraseña debe tener menos de 15 caracteres";
 					} else if (values.password !== values.confirmPassword) {
 						errors.confirmPassword = "Las contraseñas no coinciden";
 					}
@@ -67,31 +70,35 @@ function Register() {
 							<input
 								type="password"
 								name="password"
+								id="pass1"
 								value={values.password}
 								onChange={handleChange}
 								onBlur={handleBlur}
 								className="input-form-user"
 								placeholder="Ingresar Contraseña.."
 							/>
+							<ShowHidePass passwordInputId="pass1" eyeId="reg-1" />
 							{touched.password && errors.password && (
 								<p className="error-validation">{errors.password}</p>
 							)}
 							<input
 								type="password"
 								name="confirmPassword"
+								id="pass2"
 								value={values.confirmPassword}
 								onChange={handleChange}
 								onBlur={handleBlur}
 								className="input-form-user"
 								placeholder="Confirmar Contraseña.."
 							/>
+							<ShowHidePass passwordInputId="pass2" eyeId="reg-2" />
 							{touched.confirmPassword && errors.confirmPassword && (
 								<p className="error-validation">{errors.confirmPassword}</p>
 							)}
 							<button
 								type="submit"
 								disabled={isSubmitting}
-								className="button-purple input-form-user"
+								className="button-purple send-button-user"
 							>
 								Registrarse
 							</button>
