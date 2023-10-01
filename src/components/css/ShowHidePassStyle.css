@@ -10,7 +10,7 @@
 
 .container-showhide .eye {
 	position: absolute;
-	right: 20%;
+	right: 18%;
 	top: -46px;
 	animation: keyframes-fill 0.5s;
 	color: var(--color);
@@ -18,9 +18,9 @@
 
 .container-showhide .eye-slash {
 	position: absolute;
-	right: 20%;
+	right: 18%;
 	top: -46px;
-	animation: keyframes-fill 0.5s;
+	animation: keyframes-fill 0.3s;
 	display: none;
 	color: var(--color);
 }

@@ -16,6 +16,7 @@ function Register() {
 				enableReinitialize={true}
 				onSubmit={async (values) => {
 					console.log(values);
+					setUser(values);
 				}}
 				validate={(values) => {
 					let errors = {};
