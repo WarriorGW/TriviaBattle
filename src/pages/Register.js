@@ -28,6 +28,8 @@ function Register() {
 					} else if (values.username.length > 8) {
 						errors.username =
 							"El nombre de usuario debe tener menos de 8 caracteres";
+					} else if (/\s/.test(values.username)) {
+						errors.username = "El nombre de usuario no puede contener espacios";
 					}
 					// Validar contraseñas
 					if (!values.password && !values.confirmPassword) {
