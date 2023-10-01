@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import "./css/FormsUsersStyle.css";
+import ShowHidePass from "../components/ShowHidePass";
 
 function LogIn() {
 	return (
@@ -25,9 +26,11 @@ function LogIn() {
 							/>
 							<input
 								type="password"
+								id="pass3"
 								className="input-form-user"
 								placeholder="Ingresar Contraseña.."
 							/>
+							<ShowHidePass passwordInputId="pass3" eyeId="reg-3" />
 							<button type="submit" className="button-purple send-button-user">
 								Iniciar Sesion
 							</button>
