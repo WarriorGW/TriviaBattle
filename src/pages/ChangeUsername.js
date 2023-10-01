@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import "./css/FormsUsersStyle.css";
+import ShowHidePass from "../components/ShowHidePass";
 
 function ChangeUsername() {
 	return (
@@ -30,9 +31,11 @@ function ChangeUsername() {
 							/>
 							<input
 								type="password"
+								id="pass4"
 								className="input-form-user"
 								placeholder="Contraseña.."
 							/>
+							<ShowHidePass passwordInputId="pass4" eyeId="reg-4" />
 							<button type="submit" className="button-purple send-button-user">
 								Cambiar
 							</button>
