@@ -12,7 +12,15 @@ function JoinRoom() {
 					console.log(values.codigoSala);
 				}}
 			>
-				{({ handleChange, handleSubmit, isSubmitting }) => (
+				{({
+					handleChange,
+					handleSubmit,
+					handleBlur,
+					values,
+					errors,
+					touched,
+					isSubmitting,
+				}) => (
 					<Form onSubmit={handleSubmit}>
 						<div className="card-form-user">
 							<h1>UNIRSE A LA SALA</h1>
@@ -25,7 +33,7 @@ function JoinRoom() {
 							/>
 							<button
 								type="submit"
-								className="button-purple input-form-user"
+								className="button-purple send-button-user"
 								disabled={isSubmitting}
 							>
 								Ingresar a la partida

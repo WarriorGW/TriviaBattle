@@ -38,7 +38,15 @@ function AddQuestion() {
 					});
 				}}
 			>
-				{({ handleChange, handleSubmit, handleBlur, values, isSubmitting }) => (
+				{({
+					handleChange,
+					handleSubmit,
+					handleBlur,
+					values,
+					errors,
+					touched,
+					isSubmitting,
+				}) => (
 					<Form onSubmit={handleSubmit}>
 						<div className="card-add">
 							<div className="container-add-input">

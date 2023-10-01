@@ -6,7 +6,15 @@ function LogIn() {
 	return (
 		<div className="container-form-user">
 			<Formik>
-				{({ handleChange, handleSubmit, isSubmitting }) => (
+				{({
+					handleChange,
+					handleSubmit,
+					handleBlur,
+					values,
+					errors,
+					touched,
+					isSubmitting,
+				}) => (
 					<Form>
 						<div className="card-form-user">
 							<h1>Iniciar Sesion</h1>
@@ -20,7 +28,7 @@ function LogIn() {
 								className="input-form-user"
 								placeholder="Ingresar Contraseña.."
 							/>
-							<button type="submit" className="button-purple input-form-user">
+							<button type="submit" className="button-purple send-button-user">
 								Iniciar Sesion
 							</button>
 						</div>

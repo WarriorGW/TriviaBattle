@@ -6,7 +6,15 @@ function ChangeUsername() {
 	return (
 		<div className="container-form-user">
 			<Formik>
-				{({ handleChange, handleSubmit, isSubmitting }) => (
+				{({
+					handleChange,
+					handleSubmit,
+					handleBlur,
+					values,
+					errors,
+					touched,
+					isSubmitting,
+				}) => (
 					<Form>
 						<div className="card-form-user">
 							<h1>Cambiar nombre</h1>
@@ -25,7 +33,7 @@ function ChangeUsername() {
 								className="input-form-user"
 								placeholder="Contraseña.."
 							/>
-							<button type="submit" className="button-purple input-form-user">
+							<button type="submit" className="button-purple send-button-user">
 								Cambiar
 							</button>
 						</div>
