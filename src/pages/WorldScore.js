@@ -73,7 +73,7 @@ function WorldScore() {
 												</div>
 											</div>
 										</td>
-										<td>{user.points} pts.</td>
+										<td>{user.points}</td>
 									</tr>
 								))}
 							</tbody>
