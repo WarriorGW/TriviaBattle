@@ -20,7 +20,15 @@
 .input-form-user {
 	border-radius: 14px;
 	border: none;
-	margin: 10px 0; /* Agrega espacio arriba y abajo de los input */
+	margin: 10px 0;
+	padding: 15px 13% 15px 15px;
+	width: 70%;
+}
+
+.send-button-user {
+	border-radius: 14px;
+	border: none;
+	margin: 10px 0;
 	padding: 15px;
 	width: 70%;
 }
