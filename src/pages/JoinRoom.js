@@ -1,8 +1,10 @@
 import React from "react";
 import "./css/FormsUsersStyle.css";
 import { Formik, Form } from "formik";
+import { useNavigate } from "react-router-dom";
 
 function JoinRoom() {
+	const navigate = useNavigate();
 	return (
 		<div className="container-form-user">
 			<Formik
@@ -10,6 +12,7 @@ function JoinRoom() {
 				enableReinitialize={true}
 				onSubmit={async (values, actions) => {
 					console.log(values);
+					navigate("/WaitRoom");
 				}}
 				validate={(values) => {
 					let errors = {};
