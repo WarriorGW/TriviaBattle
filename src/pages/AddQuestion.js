@@ -95,7 +95,7 @@ function AddQuestion() {
 							</div>
 							<div className="centered-button">
 								<button
-									className="button-add border-and-shadow"
+									className="button-add"
 									type="submit"
 									disabled={isSubmitting}
 								>
