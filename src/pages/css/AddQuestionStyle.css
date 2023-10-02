@@ -24,7 +24,7 @@
 .grid-item {
 	width: 100%;
 	padding: 20px;
-	border: 1px solid #ccc;
+	border: none;
 	border-radius: 14px;
 	margin: 10px 0;
 	font-size: larger;
