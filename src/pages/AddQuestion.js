@@ -39,6 +39,7 @@ function AddQuestion() {
 				}}
 				validate={(values) => {
 					let errors = {};
+
 					const validateField = (fieldName, value, maxLength) => {
 						if (!value) {
 							errors[fieldName] = "Ingresa una respuesta";
@@ -56,6 +57,7 @@ function AddQuestion() {
 					validateField("incorrectAnswer1", values.incorrectAnswer1, 100);
 					validateField("incorrectAnswer2", values.incorrectAnswer2, 100);
 					validateField("incorrectAnswer3", values.incorrectAnswer3, 100);
+
 					return errors;
 				}}
 			>
