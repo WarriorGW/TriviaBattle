@@ -9,8 +9,7 @@ function JoinRoom() {
 				initialValues={{ codigoSala: "" }}
 				enableReinitialize={true}
 				onSubmit={async (values, actions) => {
-					console.log("Mamaguevo");
-					console.log(values.codigoSala);
+					console.log(values);
 				}}
 				validate={(values) => {
 					let errors = {};
