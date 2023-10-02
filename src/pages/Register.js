@@ -40,6 +40,8 @@ function Register() {
 						errors.password = "La contraseña debe tener al menos 4 caracteres";
 					} else if (values.password.length > 15) {
 						errors.password = "La contraseña debe tener menos de 15 caracteres";
+					} else if (/\s/.test(values.password)) {
+						errors.username = "La contraseña no puede contener espacios";
 					} else if (values.password !== values.confirmPassword) {
 						errors.confirmPassword = "Las contraseñas no coinciden";
 					}
