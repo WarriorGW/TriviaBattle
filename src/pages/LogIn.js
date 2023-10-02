@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import "./css/FormsUsersStyle.css";
 import ShowHidePass from "../components/ShowHidePass";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function LogIn() {
+	const navigate = useNavigate();
 	const [user, setUser] = useState({
 		username: "",
 		password: "",
@@ -15,6 +18,16 @@ function LogIn() {
 				enableReinitialize={true}
 				onSubmit={async (values, actions) => {
 					console.log(values);
+					Swal.fire({
+						icon: "success",
+						title: "Iniciaste sesion correctamente",
+						showConfirmButton: false,
+						background: "#F959FE",
+						color: "#471958",
+						timer: 1500,
+					}).then(() => {
+						navigate("/");
+					});
 				}}
 				validate={(values) => {
 					let errors = {};
