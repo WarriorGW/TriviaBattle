@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 // Importar componente para mostrar/ocultar contraseña
 import ShowHidePass from "../components/ShowHidePass";
@@ -6,17 +7,20 @@ import ShowHidePass from "../components/ShowHidePass";
 import { vldtUser } from "../utils/validationUtils";
 // Importar store de usuario
 import { useUserStore } from "../context/UserStore";
+// Importar SweetAlert2
+import Swal from "sweetalert2";
 // Importar estilos
 import "./css/FormsUsersStyle.css";
 
 function Register() {
+	const navigate = useNavigate();
 	const [user, setUser] = useState({
 		username: "",
 		password: "",
 		confirmPassword: "",
 	});
 
-	const { createUser } = useUserStore();
+	const { createUser, getOneUserByName } = useUserStore();
 
 	return (
 		<div className="container-form-user">
@@ -24,9 +28,28 @@ function Register() {
 				initialValues={user}
 				enableReinitialize={true}
 				onSubmit={async (values) => {
-					console.log(values);
 					setUser(values);
+					// Validar si el usuario ya existe
+					const response = await getOneUserByName(values.username);
+					const isNewUser = response.data.userExists;
+					if (isNewUser) {
+						Swal.fire({
+							icon: "error",
+							title: "Oops...",
+							text: "Ya existe ese nombre de usuario, intenta otro",
+						});
+						return;
+					}
 					await createUser(values);
+					Swal.fire({
+						icon: "success",
+						text: "Usuario registrado exitosamente",
+						showConfirmButton: false,
+						timer: 1500,
+					}).then(() => {
+						navigate("/login");
+					});
+					console.log(values);
 				}}
 				validate={(values) => {
 					let errors = {};

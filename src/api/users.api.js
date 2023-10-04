@@ -9,6 +9,10 @@ export const getOneUserReq = async (id) => {
 	return await axios.get(`${BASE_URL}/users/${id}`);
 };
 
+export const getOneUserByNameReq = async (username) => {
+	return await axios.post(`${BASE_URL}/user`, { username });
+};
+
 export const createUserReq = async (user) => {
 	return await axios.post(`${BASE_URL}/users`, user);
 };

@@ -3,6 +3,7 @@ import { create } from "zustand";
 import {
 	getAllUsersReq,
 	getOneUserReq,
+	getOneUserByNameReq,
 	createUserReq,
 	updateUserReq,
 	deleteUserReq,
@@ -22,6 +23,15 @@ export const useUserStore = create((set) => ({
 		try {
 			const response = await getOneUserReq(id);
 			set({ user: response.data });
+		} catch (error) {
+			console.error("Error al obtener usuario:", error);
+		}
+	},
+	getOneUserByName: async (username) => {
+		try {
+			const response = await getOneUserByNameReq(username);
+			set({ user: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al obtener usuario:", error);
 		}
