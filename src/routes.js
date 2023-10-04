@@ -11,6 +11,7 @@ import Error404 from "./pages/Error404";
 import ChooseProfileImg from "./pages/ChooseProfileImg";
 import UserTable from "./tables/UserTable";
 import Tables from "./pages/Tables";
+import QuestionTable from "./tables/QuestionTable";
 
 export const routes = [
 	{
@@ -72,5 +73,10 @@ export const routes = [
 		path: "/Tables/users",
 		bgColor: "#b037db",
 		component: UserTable,
+	},
+	{
+		path: "/Tables/questions",
+		bgColor: "#b037db",
+		component: QuestionTable,
 	},
 ];

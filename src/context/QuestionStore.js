@@ -6,9 +6,9 @@ import {
 	createQuestionReq,
 	updateQuestionReq,
 	deleteQuestionReq,
-} from "../api/users.api";
+} from "../api/questions.api";
 
-const useQuestionStore = create((set) => ({
+export const useQuestionStore = create((set) => ({
 	questions: [],
 	getAllQuestions: async () => {
 		try {
