@@ -6,7 +6,7 @@ function UserTable() {
 	const { users, getAllUsers } = useUserStore();
 
 	useEffect(() => {
-		getAllUsers(); // Llama a la función para obtener todos los usuarios cuando el componente se monta
+		getAllUsers();
 	}, [getAllUsers]);
 
 	return (
