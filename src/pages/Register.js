@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
+// Importar componente para mostrar/ocultar contraseña
 import ShowHidePass from "../components/ShowHidePass";
 // Importar validaciones de usuario
 import { vldtUser } from "../utils/validationUtils";
+// Importar store de usuario
+import { useUserStore } from "../context/UserStore";
 // Importar estilos
 import "./css/FormsUsersStyle.css";
 
@@ -12,6 +15,9 @@ function Register() {
 		password: "",
 		confirmPassword: "",
 	});
+
+	const { createUser } = useUserStore();
+
 	return (
 		<div className="container-form-user">
 			<Formik
@@ -20,6 +26,7 @@ function Register() {
 				onSubmit={async (values) => {
 					console.log(values);
 					setUser(values);
+					await createUser(values);
 				}}
 				validate={(values) => {
 					let errors = {};

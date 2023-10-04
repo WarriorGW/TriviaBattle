@@ -7,7 +7,7 @@ function QuestionTable() {
 		getAllQuestions();
 	}, [getAllQuestions]);
 	return (
-		<table class="table-dark">
+		<table className="table-dark">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
