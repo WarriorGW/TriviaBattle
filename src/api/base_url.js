@@ -1,5 +1,5 @@
 const opc = 1;
-const BASE_URL = "";
+let BASE_URL = "";
 
 switch (opc) {
 	case 1:
