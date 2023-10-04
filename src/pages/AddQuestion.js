@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-
+// Importar validaciones de pregunta
+import { vldtQuestion } from "../utils/validationUtils";
+// Importar estilos
 import "./css/AddQuestionStyle.css";
 
 function AddQuestion() {
@@ -10,10 +12,10 @@ function AddQuestion() {
 
 	const [questions, setQuestions] = useState({
 		question: "",
-		correctAnswer: "",
-		incorrectAnswer1: "",
-		incorrectAnswer2: "",
-		incorrectAnswer3: "",
+		correctAns: "",
+		incorrectAns1: "",
+		incorrectAns2: "",
+		incorrectAns3: "",
 	});
 	return (
 		<div className="container my-5">
@@ -26,7 +28,7 @@ function AddQuestion() {
 					Swal.fire({
 						icon: "question",
 						title: "¿Seguro?",
-						text: `¿La respuesta correcta es: '${values.correctAnswer}'?`,
+						text: `¿La respuesta correcta es: '${values.correctAns}'?`,
 						showCancelButton: true,
 						cancelButtonColor: "#d33",
 						confirmButtonText: "Si, es correcto",
@@ -40,23 +42,11 @@ function AddQuestion() {
 				validate={(values) => {
 					let errors = {};
 
-					const validateField = (fieldName, value, maxLength) => {
-						if (!value) {
-							errors[fieldName] = "Ingresa una respuesta";
-						} else if (/[^a-zA-Z0-9\sñÑ]/.test(value)) {
-							errors[fieldName] = "No se permiten signos en la respuesta";
-						} else if (value.length > maxLength) {
-							errors[
-								fieldName
-							] = `La respuesta debe tener menos de ${maxLength} caracteres`;
-						}
-					};
-
-					validateField("question", values.question, 500);
-					validateField("correctAnswer", values.correctAnswer, 100);
-					validateField("incorrectAnswer1", values.incorrectAnswer1, 100);
-					validateField("incorrectAnswer2", values.incorrectAnswer2, 100);
-					validateField("incorrectAnswer3", values.incorrectAnswer3, 100);
+					vldtQuestion("question", values.question, 500, errors);
+					vldtQuestion("correctAns", values.correctAns, 100, errors);
+					vldtQuestion("incorrectAns1", values.incorrectAns1, 100, errors);
+					vldtQuestion("incorrectAns2", values.incorrectAns2, 100, errors);
+					vldtQuestion("incorrectAns3", values.incorrectAns3, 100, errors);
 
 					return errors;
 				}}
@@ -91,62 +81,56 @@ function AddQuestion() {
 									<input
 										className="grid-item img-bg-1"
 										type="text"
-										name="correctAnswer"
+										name="correctAns"
 										placeholder="Correcta"
-										value={values.correctAnswer}
+										value={values.correctAns}
 										onChange={handleChange}
 										onBlur={handleBlur}
 									/>
-									{errors.correctAnswer && touched.correctAnswer && (
-										<p className="error-validation">{errors.correctAnswer}</p>
+									{errors.correctAns && touched.correctAns && (
+										<p className="error-validation">{errors.correctAns}</p>
 									)}
 								</div>
 								<div>
 									<input
 										className="grid-item img-bg-2"
 										type="text"
-										name="incorrectAnswer1"
+										name="incorrectAns1"
 										placeholder="Incorrecta"
-										value={values.incorrectAnswer1}
+										value={values.incorrectAns1}
 										onChange={handleChange}
 										onBlur={handleBlur}
 									/>
-									{errors.incorrectAnswer1 && touched.incorrectAnswer1 && (
-										<p className="error-validation">
-											{errors.incorrectAnswer1}
-										</p>
+									{errors.incorrectAns1 && touched.incorrectAns1 && (
+										<p className="error-validation">{errors.incorrectAns1}</p>
 									)}
 								</div>
 								<div>
 									<input
 										className="grid-item img-bg-3"
 										type="text"
-										name="incorrectAnswer2"
+										name="incorrectAns2"
 										placeholder="Incorrecta"
-										value={values.incorrectAnswer2}
+										value={values.incorrectAns2}
 										onChange={handleChange}
 										onBlur={handleBlur}
 									/>
-									{errors.incorrectAnswer2 && touched.incorrectAnswer2 && (
-										<p className="error-validation">
-											{errors.incorrectAnswer2}
-										</p>
+									{errors.incorrectAns2 && touched.incorrectAns2 && (
+										<p className="error-validation">{errors.incorrectAns2}</p>
 									)}
 								</div>
 								<div>
 									<input
 										className="grid-item img-bg-4"
 										type="text"
-										name="incorrectAnswer3"
+										name="incorrectAns3"
 										placeholder="Incorrecta"
-										value={values.incorrectAnswer3}
+										value={values.incorrectAns3}
 										onChange={handleChange}
 										onBlur={handleBlur}
 									/>
-									{errors.incorrectAnswer3 && touched.incorrectAnswer3 && (
-										<p className="error-validation">
-											{errors.incorrectAnswer3}
-										</p>
+									{errors.incorrectAns3 && touched.incorrectAns3 && (
+										<p className="error-validation">{errors.incorrectAns3}</p>
 									)}
 								</div>
 							</div>

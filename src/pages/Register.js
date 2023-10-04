@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
-import "./css/FormsUsersStyle.css";
 import ShowHidePass from "../components/ShowHidePass";
+// Importar validaciones de usuario
+import { vldtUser } from "../utils/validationUtils";
+// Importar estilos
+import "./css/FormsUsersStyle.css";
 
 function Register() {
 	const [user, setUser] = useState({
@@ -20,29 +23,13 @@ function Register() {
 				}}
 				validate={(values) => {
 					let errors = {};
-					// Validar nombre de usuario
-					if (!values.username) {
-						errors.username = "Campo requerido";
-					} else if (values.username.length < 3) {
-						errors.username =
-							"El nombre de usuario debe tener al menos 3 caracteres";
-					} else if (values.username.length > 8) {
-						errors.username =
-							"El nombre de usuario debe tener menos de 8 caracteres";
-					} else if (/\s/.test(values.username)) {
-						errors.username = "El nombre de usuario no puede contener espacios";
-					}
-					// Validar contraseñas
-					if (!values.password && !values.confirmPassword) {
-						errors.password = "Campo requerido";
-						errors.confirmPassword = "Campo requerido";
-					} else if (values.password.length < 4) {
-						errors.password = "La contraseña debe tener al menos 4 caracteres";
-					} else if (values.password.length > 15) {
-						errors.password = "La contraseña debe tener menos de 15 caracteres";
-					} else if (/\s/.test(values.password)) {
-						errors.username = "La contraseña no puede contener espacios";
-					} else if (values.password !== values.confirmPassword) {
+
+					vldtUser("username", values.username, 3, 8, errors);
+					vldtUser("password", values.password, 4, 15, errors);
+					vldtUser("confirmPassword", values.confirmPassword, 4, 15, errors);
+
+					// Validar contraseñas iguales
+					if (values.password !== values.confirmPassword) {
 						errors.confirmPassword = "Las contraseñas no coinciden";
 					}
 					return errors;

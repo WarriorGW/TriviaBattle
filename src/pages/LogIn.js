@@ -18,6 +18,7 @@ function LogIn() {
 				enableReinitialize={true}
 				onSubmit={async (values, actions) => {
 					console.log(values);
+					setUser(values);
 					Swal.fire({
 						icon: "success",
 						title: "Iniciaste sesion correctamente",
