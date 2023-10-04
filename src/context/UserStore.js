@@ -4,6 +4,7 @@ import {
 	getAllUsersReq,
 	getOneUserReq,
 	getOneUserByNameReq,
+	getOneUserWithoutIDReq,
 	createUserReq,
 	updateUserReq,
 	deleteUserReq,
@@ -30,6 +31,15 @@ export const useUserStore = create((set) => ({
 	getOneUserByName: async (username) => {
 		try {
 			const response = await getOneUserByNameReq(username);
+			set({ user: response.data });
+			return response;
+		} catch (error) {
+			console.error("Error al obtener usuario:", error);
+		}
+	},
+	getOneUserWithoutID: async (userData) => {
+		try {
+			const response = await getOneUserWithoutIDReq(userData);
 			set({ user: response.data });
 			return response;
 		} catch (error) {

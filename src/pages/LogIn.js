@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form } from "formik";
 import "./css/FormsUsersStyle.css";
 import ShowHidePass from "../components/ShowHidePass";
@@ -6,27 +6,43 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 // Importar validaciones de usuario
 import { vldtUser } from "../utils/validationUtils";
+import { useUserStore } from "../context/UserStore";
 
 function LogIn() {
 	const navigate = useNavigate();
-	const [user, setUser] = useState({
+	const user = {
 		username: "",
 		password: "",
-	});
+	};
+
+	const { getOneUserWithoutID } = useUserStore();
+
 	return (
 		<div className="container-form-user">
 			<Formik
 				initialValues={user}
 				enableReinitialize={true}
 				onSubmit={async (values, actions) => {
-					console.log(values);
-					setUser(values);
+					const response = await getOneUserWithoutID(values);
+					const isNewUser = response.data.userExists;
+					if (!isNewUser) {
+						Swal.fire({
+							icon: "error",
+							title: "Oops...",
+							text: "Usuario o contraseña incorrectos",
+							background: "#F959FE",
+							color: "#471958",
+							confirmButtonColor: "#9654b3",
+						});
+						return;
+					}
 					Swal.fire({
 						icon: "success",
 						title: "Iniciaste sesion correctamente",
 						showConfirmButton: false,
 						background: "#F959FE",
 						color: "#471958",
+						confirmButtonColor: "#9654b3",
 						timer: 1500,
 					}).then(() => {
 						navigate("/");

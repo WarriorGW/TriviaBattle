@@ -13,6 +13,10 @@ export const getOneUserByNameReq = async (username) => {
 	return await axios.post(`${BASE_URL}/user`, { username });
 };
 
+export const getOneUserWithoutIDReq = async (userData) => {
+	return await axios.post(`${BASE_URL}/userwid`, userData);
+};
+
 export const createUserReq = async (user) => {
 	return await axios.post(`${BASE_URL}/users`, user);
 };

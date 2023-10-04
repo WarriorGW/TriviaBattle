@@ -46,6 +46,7 @@ function JoinRoom() {
 								onBlur={handleBlur}
 								value={values.codigoSala}
 								placeholder="Ingresa el codigo..."
+								maxLength={6}
 							/>
 							{touched.codigoSala && errors.codigoSala && (
 								<p className="error-validation">{errors.codigoSala}</p>
