@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form } from "formik";
 // Importar componente para mostrar/ocultar contraseña
@@ -14,11 +14,11 @@ import "./css/FormsUsersStyle.css";
 
 function Register() {
 	const navigate = useNavigate();
-	const [user, setUser] = useState({
+	const user = {
 		username: "",
 		password: "",
 		confirmPassword: "",
-	});
+	};
 
 	const { createUser, getOneUserByName } = useUserStore();
 
@@ -28,7 +28,6 @@ function Register() {
 				initialValues={user}
 				enableReinitialize={true}
 				onSubmit={async (values) => {
-					setUser(values);
 					// Validar si el usuario ya existe
 					const response = await getOneUserByName(values.username);
 					const isNewUser = response.data.userExists;
