@@ -6,10 +6,11 @@ import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
 import WaitRoom from "./pages/WaitRoom";
 import WorldScore from "./pages/WorldScore";
-import TableQuestions from "./pages/TableQuestions";
 import ChangeUsername from "./pages/ChangeUsername";
 import Error404 from "./pages/Error404";
 import ChooseProfileImg from "./pages/ChooseProfileImg";
+import UserTable from "./tables/UserTable";
+import Tables from "./pages/Tables";
 
 export const routes = [
 	{
@@ -53,9 +54,9 @@ export const routes = [
 		component: ChangeUsername,
 	},
 	{
-		path: "/TableQuestions",
+		path: "/Tables",
 		bgColor: "#b037db",
-		component: TableQuestions,
+		component: Tables,
 	},
 	{
 		path: "/ChooseProfileImg",
@@ -66,5 +67,10 @@ export const routes = [
 		path: "*",
 		bgColor: "#fff",
 		component: Error404,
+	},
+	{
+		path: "/Tables/users",
+		bgColor: "#b037db",
+		component: UserTable,
 	},
 ];
