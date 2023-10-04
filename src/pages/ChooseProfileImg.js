@@ -15,9 +15,8 @@ function ChooseProfileImg() {
 	return (
 		<div className="card-profiles mt-3 mb-5 mt-lg-5">
 			{imageNames.map((imageName, index) => (
-				<button className="button-profiles-selector m-2">
+				<button key={index} className="button-profiles-selector m-2">
 					<img
-						key={index}
 						alt={`Profile: ${imageName}`}
 						className="img-profiles-selector"
 						src={require(`../assets/profiles/${imageName}`)}

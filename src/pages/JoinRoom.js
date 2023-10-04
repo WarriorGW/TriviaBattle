@@ -18,6 +18,8 @@ function JoinRoom() {
 					let errors = {};
 					if (!values.codigoSala) {
 						errors.codigoSala = "Campo requerido";
+					} else if (!/^[A-Za-z0-9]+$/.test(values.codigoSala)) {
+						errors.codigoSala = "Solo se permiten letras y numeros";
 					} else if (values.codigoSala.length !== 6) {
 						errors.codigoSala = "El codigo debe tener 6 caracteres";
 					}
