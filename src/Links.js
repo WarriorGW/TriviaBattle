@@ -22,7 +22,7 @@ function Links() {
 				<br />
 				<Link to="/WorldScore">Puntaje Global</Link>
 				<br />
-				<Link to="/TableQuestions">TableQuestions</Link>
+				<Link to="/Tables">Tables</Link>
 			</div>
 		</>
 	);
