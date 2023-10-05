@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Formik, Form } from "formik";
 // Importar componente para mostrar/ocultar contraseña
 import ShowHidePass from "../components/ShowHidePass";
@@ -123,6 +123,8 @@ function Register() {
 							>
 								Registrarse
 							</button>
+							<br />
+							<Link to="/LogIn">O inicia sesion...</Link>
 						</div>
 					</Form>
 				)}

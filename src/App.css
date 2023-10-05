@@ -18,7 +18,8 @@ nav {
 }
 
 nav a,
-.container a {
+.container a,
+.card-form-user a {
 	color: #00ced1;
 	text-decoration: none;
 	font-weight: bold;
@@ -29,7 +30,8 @@ nav a {
 }
 
 nav a:hover,
-.container a:hover {
+.container a:hover,
+.card-form-user a:hover {
 	color: #ff69b4;
 	font-style: italic;
 }
@@ -50,7 +52,7 @@ button:hover {
 .button-purple {
 	background-color: #722197bb;
 	color: #fff;
-	margin-bottom: 35px !important;
+	/* margin-bottom: 35px !important; */
 }
 
 .button-purple:disabled {

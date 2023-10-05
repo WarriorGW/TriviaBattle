@@ -3,7 +3,7 @@ import { Formik, Form } from "formik";
 import "./css/FormsUsersStyle.css";
 import ShowHidePass from "../components/ShowHidePass";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 // Importar validaciones de usuario
 import { vldtUser } from "../utils/validationUtils";
 import { useUserStore } from "../context/UserStore";
@@ -102,6 +102,8 @@ function LogIn() {
 							>
 								Iniciar Sesion
 							</button>
+							<br />
+							<Link to="/Register">O registrate...</Link>
 						</div>
 					</Form>
 				)}
