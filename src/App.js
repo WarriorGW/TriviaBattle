@@ -1,8 +1,9 @@
 // Importar dependencias de librerias externas
 import { Routes, Route, HashRouter, NavLink } from "react-router-dom";
 
-// Importar rutas desde el archivo de routes
-import { routes } from "./routes.js";
+// Importar rutas
+import { publicRoutes } from "./routes/public.routes.js";
+import { privateRoutes } from "./routes/private.routes.js";
 
 // Impportar layout para el body
 import BodyLayout from "./layout/BodyLayout";
@@ -15,6 +16,11 @@ import "./App.css";
 
 // Importar links a todas las paginas
 import Links from "./Links.js";
+
+const ROLES = {
+	User: 2001,
+	Admin: 5150,
+};
 
 function App() {
 	return (
@@ -36,7 +42,21 @@ function App() {
 					}
 					exact
 				/>
-				{routes.map((route, index) => (
+				{/* Public routes */}
+				{privateRoutes.map((route, index) => (
+					<Route
+						key={index}
+						path={route.path}
+						element={
+							<BodyLayout bgColor={route.bgColor}>
+								<route.component />
+							</BodyLayout>
+						}
+						exact={route.exact}
+					/>
+				))}
+				{/* Private routes */}
+				{publicRoutes.map((route, index) => (
 					<Route
 						key={index}
 						path={route.path}
