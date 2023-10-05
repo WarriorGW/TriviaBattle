@@ -9,7 +9,7 @@ function Error404() {
 			<img
 				alt="Error404"
 				className="img-error"
-				src={require("../assets/404.jpg")}
+				src={require("../assets/wbg404.png")}
 			/>
 			<p className="text-error">The page you are looking for does not exist.</p>
 		</div>

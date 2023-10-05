@@ -7,6 +7,7 @@ import WorldScore from "../pages/WorldScore";
 import ChangeUsername from "../pages/ChangeUsername";
 import Error404 from "../pages/Error404";
 import ChooseProfileImg from "../pages/ChooseProfileImg";
+import UnAuthorized from "../pages/UnAuthorized";
 
 export const publicRoutes = [
 	{
@@ -45,13 +46,18 @@ export const publicRoutes = [
 		component: ChangeUsername,
 	},
 	{
-		path: "*",
-		bgColor: "#fff",
-		component: Error404,
-	},
-	{
 		path: "/ChooseProfileImg",
 		bgColor: "#b037db",
 		component: ChooseProfileImg,
+	},
+	{
+		path: "/Error401",
+		bgColor: "#b037db",
+		component: UnAuthorized,
+	},
+	{
+		path: "*",
+		bgColor: "#b037db",
+		component: Error404,
 	},
 ];
