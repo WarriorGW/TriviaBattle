@@ -51,7 +51,7 @@ export const publicRoutes = [
 		component: ChooseProfileImg,
 	},
 	{
-		path: "/Error401",
+		path: "/unauthorized",
 		bgColor: "#b037db",
 		component: UnAuthorized,
 	},
