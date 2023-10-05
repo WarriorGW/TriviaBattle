@@ -1,6 +1,10 @@
+const CHARS = /[^a-zA-Z0-9\sáéíóúÁÉÍÓÚñÑ]/u;
+
 export const vldtUser = (fieldName, value, minLength, maxLength, errors) => {
 	if (!value) {
 		errors[fieldName] = "Campo requerido";
+	} else if (CHARS.test(value)) {
+		errors[fieldName] = "No se permiten signos";
 	} else if (value.length < minLength) {
 		errors[fieldName] = `El campo debe tener al menos ${minLength} caracteres`;
 	} else if (value.length > maxLength) {
@@ -13,7 +17,7 @@ export const vldtUser = (fieldName, value, minLength, maxLength, errors) => {
 export const vldtQuestion = (fieldName, value, maxLength, errors) => {
 	if (!value) {
 		errors[fieldName] = "Ingresa una respuesta";
-	} else if (/[^a-zA-Z0-9\sñÑ]/.test(value)) {
+	} else if (CHARS.test(value)) {
 		errors[fieldName] = "No se permiten signos en la respuesta";
 	} else if (value.length > maxLength) {
 		errors[

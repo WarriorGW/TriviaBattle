@@ -30,7 +30,6 @@ function App() {
 				<NavLink to="/">Home</NavLink>
 				<ButtonNav textInside="Unirse a sala" to="/JoinRoom" />
 			</nav>
-
 			{/* Aqui es donde se crean las rutas usando react-router-dom */}
 			<Routes>
 				<Route
@@ -43,7 +42,7 @@ function App() {
 					exact
 				/>
 				{/* Public routes */}
-				{privateRoutes.map((route, index) => (
+				{publicRoutes.map((route, index) => (
 					<Route
 						key={index}
 						path={route.path}
@@ -56,7 +55,7 @@ function App() {
 					/>
 				))}
 				{/* Private routes */}
-				{publicRoutes.map((route, index) => (
+				{privateRoutes.map((route, index) => (
 					<Route
 						key={index}
 						path={route.path}
