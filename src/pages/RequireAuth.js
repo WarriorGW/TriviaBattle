@@ -3,10 +3,10 @@ import useAuthStore from "../context/AuthStore";
 
 const RequireAuth = ({ allowedRoles }) => {
 	const auth = useAuthStore((state) => state.auth);
-	const login = useAuthStore((state) => state.login);
+
 	const location = useLocation();
 
-	const roles = ["Admin", "User"];
+	// const roles = ["Admin", "User"];
 
 	console.log(auth);
 

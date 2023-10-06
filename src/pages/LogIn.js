@@ -7,9 +7,12 @@ import { useNavigate, Link } from "react-router-dom";
 // Importar validaciones de usuario
 import { vldtUser } from "../utils/validationUtils";
 import { useUserStore } from "../context/UserStore";
+// Importar el store
+// import useAuthStore from "../context/AuthStore";
 
 function LogIn() {
 	const navigate = useNavigate();
+	//TODO const { authLogin } = useAuthStore();
 	const user = {
 		username: "",
 		password: "",
@@ -45,6 +48,8 @@ function LogIn() {
 						confirmButtonColor: "#9654b3",
 						timer: 1500,
 					}).then(() => {
+						//TODO Este pedazo no sirve
+						// authLogin(values.username);
 						navigate("/");
 					});
 				}}
