@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./css/ProgressBarStyle.css";
 
 function ProgressBar() {
+	const progressBarRef = useRef(null);
 	useEffect(() => {
 		// Obtener la barra de progreso después de que el componente se monte
 		const progressBar = document.getElementById("progress-bar");
@@ -10,10 +11,10 @@ function ProgressBar() {
 		const duracionSegundos = 15;
 
 		// Intervalo de actualización de la barra de progreso en milisegundos
-		const intervalo = 1000; // 1 segundo
+		const intervalo = 10; // 10 milisegundos
 
-		// Calcular la cantidad de incremento de la barra por segundo
-		const incrementoPorSegundo = 100 / duracionSegundos;
+		// Calcular la cantidad de incremento de la barra por fotograma
+		const incrementoPorFotograma = 100 / duracionSegundos / 60; // Supongamos 60 FPS
 
 		let porcentaje = 0;
 
@@ -22,8 +23,9 @@ function ProgressBar() {
 			if (porcentaje >= 100) {
 				clearInterval(interval);
 				console.log("Temporizador completado.");
+				porcentaje = 0;
 			} else {
-				porcentaje += incrementoPorSegundo;
+				porcentaje += incrementoPorFotograma;
 				progressBar.style.width = porcentaje + "%";
 			}
 		}
