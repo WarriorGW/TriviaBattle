@@ -1,3 +1,6 @@
+// Importar cosas de react
+import { useEffect } from "react";
+
 // Importar dependencias de librerias externas
 import { Routes, Route, HashRouter, NavLink } from "react-router-dom";
 
@@ -20,7 +23,23 @@ import Links from "./Links.js";
 // Importar componente para proteger rutas privadas
 import RequireAuth from "./pages/RequireAuth.js";
 
+// Importar store de Zustand
+import useAuthStore from "./context/AuthStore";
+
 function App() {
+	const localToken = localStorage.getItem("authToken");
+	const localUsername = localStorage.getItem("authUsername");
+	const localRole = localStorage.getItem("authRole");
+	const authLogin = useAuthStore((state) => state.authLogin);
+	useEffect(() => {
+		if (localToken) {
+			// Establecer la autenticación si se encuentra un token en localStorage
+			authLogin(localUsername, localToken, localRole);
+
+			console.log(localUsername, localRole);
+		}
+	}, [localToken, authLogin, localRole, localUsername]);
+
 	return (
 		<HashRouter>
 			{/* Navegador que tiene todos los links existentes */}
