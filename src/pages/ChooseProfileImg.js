@@ -12,6 +12,10 @@ function ChooseProfileImg() {
 		const imageName = imagePath.split("/").pop(); // Obtén solo el nombre del archivo
 		return imageName;
 	});
+	// Eliminar la imagen por defecto del arreglo de imagenes para que no se muestre
+	if (imageNames.includes("user-default.png")) {
+		imageNames.splice(imageNames.indexOf("user-default.png"), 1);
+	}
 	return (
 		<div className="card-profiles mt-3 mb-5 mt-lg-5">
 			{imageNames.map((imageName, index) => (
