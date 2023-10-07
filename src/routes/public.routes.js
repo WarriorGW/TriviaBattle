@@ -8,6 +8,7 @@ import ChangeUsername from "../pages/ChangeUsername";
 import Error404 from "../pages/Error404";
 import ChooseProfileImg from "../pages/ChooseProfileImg";
 import UnAuthorized from "../pages/UnAuthorized";
+import Profile from "../pages/Profile";
 
 export const publicRoutes = [
 	{
@@ -49,6 +50,11 @@ export const publicRoutes = [
 		path: "/ChooseProfileImg",
 		bgColor: "#b037db",
 		component: ChooseProfileImg,
+	},
+	{
+		path: "/profile",
+		bgColor: "#b037db",
+		component: Profile,
 	},
 	{
 		path: "/unauthorized",

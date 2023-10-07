@@ -12,11 +12,9 @@ function Links() {
 				<br />
 				<Link to="/LogIn">LogIn</Link>
 				<br />
-				<Link to="/ChangeUsername">Cambiar username</Link>
+				<Link to="/profile">Perfil</Link>
 				<br />
 				<Link to="/AddQuestion">Agregar pregunta</Link>
-				<br />
-				<Link to="/ChooseProfileImg">Seleccionar foto de perfil</Link>
 				<br />
 				<Link to="/WaitRoom">Crear sala</Link>
 				<br />
