@@ -52,7 +52,8 @@ function LogIn() {
 						authLogin(
 							response.data.username,
 							response.data.token,
-							response.data.role
+							response.data.role,
+							response.data.img
 						);
 						navigate("/");
 					});

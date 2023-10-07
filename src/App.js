@@ -30,15 +30,17 @@ function App() {
 	const localToken = localStorage.getItem("authToken");
 	const localUsername = localStorage.getItem("authUsername");
 	const localRole = localStorage.getItem("authRole");
+	const localImg = localStorage.getItem("authImg");
 	const authLogin = useAuthStore((state) => state.authLogin);
 	useEffect(() => {
 		if (localToken) {
 			// Establecer la autenticación si se encuentra un token en localStorage
-			authLogin(localUsername, localToken, localRole);
+
+			authLogin(localUsername, localToken, localRole, localImg);
 
 			console.log(localUsername, localRole);
 		}
-	}, [localToken, authLogin, localRole, localUsername]);
+	}, [localToken, authLogin, localRole, localUsername, localImg]);
 
 	return (
 		<HashRouter>
