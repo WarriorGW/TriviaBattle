@@ -53,7 +53,8 @@ function LogIn() {
 							response.data.username,
 							response.data.token,
 							response.data.role,
-							response.data.img
+							response.data.img,
+							response.data.id
 						);
 						navigate("/");
 					});
