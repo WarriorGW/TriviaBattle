@@ -18,7 +18,7 @@ import "./App.css";
 import Links from "./Links.js";
 
 // Importar componente para proteger rutas privadas
-//TODO import RequireAuth from "./pages/RequireAuth.js";
+import RequireAuth from "./pages/RequireAuth.js";
 
 function App() {
 	return (
@@ -60,9 +60,9 @@ function App() {
 						element={
 							// Utiliza RequireAuth para proteger las rutas privadas
 							<BodyLayout bgColor={route.bgColor}>
-								{/* <RequireAuth allowedRoles={["admin"]}> */}
-								<route.component />
-								{/* </RequireAuth> */}
+								<RequireAuth allowedRoles={["admin"]}>
+									<route.component />
+								</RequireAuth>
 							</BodyLayout>
 						}
 						exact={route.exact}
