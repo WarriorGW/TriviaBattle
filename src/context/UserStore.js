@@ -67,6 +67,7 @@ export const useUserStore = create((set) => ({
 		try {
 			const response = await updateUserImgReq(id, newImg);
 			set({ user: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al actualizar usuario:", error);
 		}
