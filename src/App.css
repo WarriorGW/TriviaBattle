@@ -17,9 +17,7 @@ nav {
 	height: 62px;
 }
 
-nav a,
-.container a,
-.card-form-user a {
+body a {
 	color: #00ced1;
 	text-decoration: none;
 	font-weight: bold;
@@ -29,9 +27,7 @@ nav a {
 	scale: 1.2;
 }
 
-nav a:hover,
-.container a:hover,
-.card-form-user a:hover {
+body a:hover {
 	color: #ff69b4;
 	font-style: italic;
 }
