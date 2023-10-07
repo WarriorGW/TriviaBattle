@@ -15,8 +15,7 @@ const RequireAuth = ({ allowedRoles, children }) => {
 
 	if (allowedRoles && allowedRoles.length > 0) {
 		// Verificar los roles permitidos si se especifican
-		let hasPermission = authRole === 1 ? true : false;
-
+		let hasPermission = parseInt(authRole, 10) === 1 ? true : false;
 		// let hasPermission = false;
 
 		if (!hasPermission) {
