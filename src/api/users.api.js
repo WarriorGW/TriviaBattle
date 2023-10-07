@@ -25,6 +25,10 @@ export const updateUserReq = async (id, newValue) => {
 	return await axios.put(`${BASE_URL}/users/${id}`, newValue);
 };
 
+export const updateUserImgReq = async (id, newImg) => {
+	return await axios.put(`${BASE_URL}/userimg/${id}`, newImg);
+};
+
 export const deleteUserReq = async (id) => {
 	return await axios.delete(`${BASE_URL}/users/${id}`);
 };

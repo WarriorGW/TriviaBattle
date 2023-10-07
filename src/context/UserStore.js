@@ -8,6 +8,7 @@ import {
 	createUserReq,
 	updateUserReq,
 	deleteUserReq,
+	updateUserImgReq,
 } from "../api/users.api.js";
 
 export const useUserStore = create((set) => ({
@@ -57,6 +58,14 @@ export const useUserStore = create((set) => ({
 	updateUser: async (id, newValue) => {
 		try {
 			const response = await updateUserReq(id, newValue);
+			set({ user: response.data });
+		} catch (error) {
+			console.error("Error al actualizar usuario:", error);
+		}
+	},
+	updateUserImg: async (id, newImg) => {
+		try {
+			const response = await updateUserImgReq(id, newImg);
 			set({ user: response.data });
 		} catch (error) {
 			console.error("Error al actualizar usuario:", error);
