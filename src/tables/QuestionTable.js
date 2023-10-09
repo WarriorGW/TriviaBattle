@@ -13,9 +13,9 @@ function QuestionTable() {
 					<th scope="col">#</th>
 					<th scope="col">Pregunta</th>
 					<th scope="col">Correcta</th>
-					<th scope="col">InCorrecta1</th>
-					<th scope="col">InCorrecta2</th>
-					<th scope="col">InCorrecta3</th>
+					<th scope="col">Incorrecta1</th>
+					<th scope="col">Incorrecta2</th>
+					<th scope="col">Incorrecta3</th>
 				</tr>
 			</thead>
 			<tbody>
