@@ -2,7 +2,6 @@ import InGame from "../pages/InGame";
 import JoinRoom from "../pages/JoinRoom";
 import LogIn from "../pages/LogIn";
 import Register from "../pages/Register";
-import WaitRoom from "../pages/WaitRoom";
 import WorldScore from "../pages/WorldScore";
 import ChangeUsername from "../pages/ChangeUsername";
 import Error404 from "../pages/Error404";
@@ -30,11 +29,6 @@ export const publicRoutes = [
 		path: "/Register",
 		bgColor: "#d86aff",
 		component: Register,
-	},
-	{
-		path: "/WaitRoom",
-		bgColor: "#b037db",
-		component: WaitRoom,
 	},
 	{
 		path: "/WorldScore",

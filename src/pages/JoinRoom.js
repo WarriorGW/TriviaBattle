@@ -12,7 +12,7 @@ function JoinRoom() {
 				enableReinitialize={true}
 				onSubmit={async (values, actions) => {
 					console.log(values);
-					navigate("/WaitRoom");
+					navigate("/Juego");
 				}}
 				validate={(values) => {
 					let errors = {};
