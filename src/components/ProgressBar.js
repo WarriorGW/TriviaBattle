@@ -6,7 +6,7 @@ function ProgressBar() {
 		const progressBar = document.getElementById("progress-bar");
 		const duracionSegundos = 10; // Duración total en segundos
 		const intervalo = 16.666; // Intervalo de actualización en milisegundos
-		const incrementoPorFotograma = 100 / duracionSegundos / 60; // Calcular el incremento por fotograma
+		const incFPS = 100 / duracionSegundos / 60; // Calcular el incremento por fotograma
 
 		let porcentaje = 0;
 
@@ -16,7 +16,7 @@ function ProgressBar() {
 				clearInterval(interval);
 				console.log("Temporizador completado.");
 			} else {
-				porcentaje += incrementoPorFotograma;
+				porcentaje += incFPS;
 				progressBar.style.width = porcentaje + "%";
 			}
 		}
