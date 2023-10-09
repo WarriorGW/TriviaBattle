@@ -42,11 +42,11 @@ function AddQuestion() {
 				validate={(values) => {
 					let errors = {};
 
-					vldtQuestion("question", values.question, 500, errors);
-					vldtQuestion("correctAns", values.correctAns, 100, errors);
-					vldtQuestion("incorrectAns1", values.incorrectAns1, 100, errors);
-					vldtQuestion("incorrectAns2", values.incorrectAns2, 100, errors);
-					vldtQuestion("incorrectAns3", values.incorrectAns3, 100, errors);
+					vldtQuestion("question", values.question, 255, errors);
+					vldtQuestion("correctAns", values.correctAns, 255, errors);
+					vldtQuestion("incorrectAns1", values.incorrectAns1, 255, errors);
+					vldtQuestion("incorrectAns2", values.incorrectAns2, 255, errors);
+					vldtQuestion("incorrectAns3", values.incorrectAns3, 255, errors);
 
 					return errors;
 				}}
