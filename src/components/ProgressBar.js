@@ -3,17 +3,10 @@ import "./css/ProgressBarStyle.css";
 
 function ProgressBar() {
 	useEffect(() => {
-		// Obtener la barra de progreso después de que el componente se monte
 		const progressBar = document.getElementById("progress-bar");
-
-		// Duración total del temporizador en segundos
-		const duracionSegundos = 10;
-
-		// Intervalo de actualización de la barra de progreso en milisegundos
-		const intervalo = 16.666; // 10 milisegundos
-
-		// Calcular la cantidad de incremento de la barra por fotograma
-		const incrementoPorFotograma = 100 / duracionSegundos / 60; // Supongamos 60 FPS
+		const duracionSegundos = 10; // Duración total en segundos
+		const intervalo = 16.666; // Intervalo de actualización en milisegundos
+		const incrementoPorFotograma = 100 / duracionSegundos / 60; // Calcular el incremento por fotograma
 
 		let porcentaje = 0;
 
