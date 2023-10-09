@@ -16,8 +16,6 @@ function Links() {
 				<br />
 				<Link to="/AddQuestion">Agregar pregunta</Link>
 				<br />
-				<Link to="/WaitRoom">Crear sala</Link>
-				<br />
 				<Link to="/WorldScore">Puntaje Global</Link>
 				<br />
 				<Link to="/Tables">Tables</Link>
