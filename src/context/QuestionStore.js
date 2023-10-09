@@ -14,6 +14,7 @@ export const useQuestionStore = create((set) => ({
 		try {
 			const response = await getAllQuestionsReq();
 			set({ questions: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al obtener preguntas:", error);
 		}
@@ -22,6 +23,7 @@ export const useQuestionStore = create((set) => ({
 		try {
 			const response = await getOneQuestionReq(id);
 			set({ question: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al obtener pregunta:", error);
 		}
@@ -30,6 +32,7 @@ export const useQuestionStore = create((set) => ({
 		try {
 			const response = await createQuestionReq(question);
 			set({ question: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al crear pregunta:", error);
 		}
@@ -38,6 +41,7 @@ export const useQuestionStore = create((set) => ({
 		try {
 			const response = await updateQuestionReq(id, newValue);
 			set({ question: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al actualizar pregunta:", error);
 		}
@@ -46,6 +50,7 @@ export const useQuestionStore = create((set) => ({
 		try {
 			const response = await deleteQuestionReq(id);
 			set({ question: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al eliminar pregunta:", error);
 		}
