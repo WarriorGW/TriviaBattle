@@ -38,9 +38,11 @@ function ProgressBar() {
 	}, []); // El segundo argumento [] significa que esto solo se ejecutará una vez al montar el componente
 
 	return (
-		<span className="progress-container d-flex">
-			<span className="progress-inside" id="progress-bar"></span>
-		</span>
+		<div className="d-flex mx-2 my-3">
+			<span className="progress-container d-flex">
+				<span className="progress-inside" id="progress-bar"></span>
+			</span>
+		</div>
 	);
 }
 
