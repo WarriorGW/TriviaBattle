@@ -6,3 +6,7 @@
 	min-height: 60px;
 	width: 100% !important;
 }
+
+.selected {
+	background-color: #1fe000;
+}
