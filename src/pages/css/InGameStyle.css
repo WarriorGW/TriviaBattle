@@ -10,6 +10,7 @@
 .question-title {
 	font-size: 25px;
 	margin: 10px;
+	user-select: none;
 }
 
 .footer-scores {
