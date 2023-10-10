@@ -77,28 +77,32 @@ function InGame() {
 	}, [currentQuestion, selectedQuestions, isLoading]);
 
 	useEffect(() => {
-		const duracionSegundos = 10; // Duración total en segundos
-		const intervalo = 16.666; // Intervalo de actualización en milisegundos
-		const incFPS = 100 / duracionSegundos / 60; // Calcular el incremento por fotograma
-		function actualizarBarra() {
-			setProgress((prevProgress) => {
-				const newProgress = prevProgress + incFPS;
-				if (newProgress >= 100) {
-					clearInterval(interval);
-					onComplete();
-					console.log("Temporizador completado.");
-					return 0; // Restablece el progreso a 0 cuando se completa
-				} else {
-					return newProgress;
-				}
-			});
-		}
+		if (!isLoading) {
+			const duracionSegundos = 10; // Duración total en segundos
+			const intervalo = 16.666; // Intervalo de actualización en milisegundos
+			const incFPS = 100 / duracionSegundos / 60; // Calcular el incremento por fotograma
 
-		const interval = setInterval(actualizarBarra, intervalo);
-		return () => {
-			clearInterval(interval);
-		};
-	}, [currentQuestion]);
+			function actualizarBarra() {
+				setProgress((prevProgress) => {
+					const newProgress = prevProgress + incFPS;
+					if (newProgress >= 100) {
+						clearInterval(interval);
+						onComplete();
+						console.log("Temporizador completado.");
+						return 0; // Restablece el progreso a 0 cuando se completa
+					} else {
+						return newProgress;
+					}
+				});
+			}
+
+			const interval = setInterval(actualizarBarra, intervalo);
+
+			return () => {
+				clearInterval(interval);
+			};
+		}
+	}, [isLoading, currentQuestion]);
 
 	useEffect(() => {
 		if (!isLoading) {
