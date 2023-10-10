@@ -1,13 +1,18 @@
+// Funciones de React
 import React, { useEffect, useState } from "react";
+// Componentes
 import ProgressBar from "../components/ProgressBar";
 import WaitRoom from "../components/WaitRoom";
 import Answer from "../components/Answer";
-import "./css/InGameStyle.css";
 import UsersScore from "../components/UsersScore";
+// Contextos
 import { useQuestionStore } from "../context/QuestionStore";
+// Utilidades
 import shuffleArray from "../utils/shuffleArray";
 import getRandomNumber from "../utils/getRandomNumber";
 import FooterScores from "../lists/FooterScores";
+// Estilos
+import "./css/InGameStyle.css";
 
 function InGame() {
 	const [isLoading, setIsLoading] = useState(true); // Estado para indicar si se está cargando la página
