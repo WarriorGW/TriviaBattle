@@ -7,6 +7,7 @@ import UsersScore from "../components/UsersScore";
 import { useQuestionStore } from "../context/QuestionStore";
 import shuffleArray from "../utils/shuffleArray";
 import getRandomNumber from "../utils/getRandomNumber";
+import FooterScores from "../lists/FooterScores";
 
 function InGame() {
 	const [isLoading, setIsLoading] = useState(true); // Estado para indicar si se está cargando la página
@@ -84,12 +85,9 @@ function InGame() {
 					</div>
 					<div className="footer-scores">
 						<div className="row">
-							<UsersScore name="Fernando" score="100" image="capybara" />
-							<UsersScore name="Chino" score="100" image="buho" />
-							<UsersScore name="SAI" score="100" image="caiman" />
-							<UsersScore name="Johann" score="100" image="bird" />
-							<UsersScore name="Paula" score="100" image="ciguena" />
-							<UsersScore name="Faby" score="100" image="delfin" />
+							{FooterScores.map((user, index) => (
+								<UsersScore key={index} {...user} />
+							))}
 						</div>
 					</div>
 				</>
