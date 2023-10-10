@@ -43,6 +43,14 @@ function InGame() {
 				selectedQuestions.push(questionData.data[0]);
 			}
 			setSelectedQuestions(selectedQuestions);
+
+			setIsLoading(false);
+		};
+		fetchAllQuestions();
+	}, [getOneQuestion]);
+
+	useEffect(() => {
+		if (!isLoading) {
 			// Constante para almacenar las respuestas originales
 			const originalAnswers = [
 				selectedQuestions[currentQuestion].right_answer,
@@ -50,11 +58,10 @@ function InGame() {
 				selectedQuestions[currentQuestion].wrong_answer_2,
 				selectedQuestions[currentQuestion].wrong_answer_3,
 			];
+
 			setShuffledAnswers(shuffleArray([...originalAnswers]));
-			setIsLoading(false);
-		};
-		fetchAllQuestions();
-	}, [getOneQuestion]);
+		}
+	}, [currentQuestion, selectedQuestions]);
 
 	return (
 		<>
