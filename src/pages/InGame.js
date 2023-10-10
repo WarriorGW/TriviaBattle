@@ -91,7 +91,7 @@ function InGame() {
 					if (newProgress >= 100) {
 						clearInterval(interval);
 						onComplete();
-						console.log("Temporizador completado.");
+						// console.log("Temporizador completado.");
 						return 0; // Restablece el progreso a 0 cuando se completa
 					} else {
 						return newProgress;
@@ -107,24 +107,24 @@ function InGame() {
 		}
 	}, [isLoading, currentQuestion]);
 
+	// Funcion para debuggear
 	useEffect(() => {
 		if (!isLoading) {
 			// console.log(selectedQuestions[currentQuestion]);
-			console.log("Pillin que hace aqui?");
 		}
 	}, [selectedQuestions, currentQuestion]);
 
 	// Función para manejar la selección de una respuesta
-	const handleAnswerSelect = (answerIndex) => {
+	const handleAnswerSelect = (answer) => {
 		const updatedSelectedAnswers = [...selectedAnswers];
-		updatedSelectedAnswers[currentQuestion] = answerIndex;
+		updatedSelectedAnswers[currentQuestion] = answer;
 		setSelectedAnswers(updatedSelectedAnswers);
 
 		// Obtén la pregunta actual
 		const currentQuestionData = selectedQuestions[currentQuestion];
 
 		// Compara la respuesta seleccionada con la respuesta correcta
-		if (answerIndex === currentQuestionData.right_answer) {
+		if (answer === currentQuestionData.right_answer) {
 			console.log("Respuesta correcta");
 		} else {
 			console.log("Respuesta incorrecta");
