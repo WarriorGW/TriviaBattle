@@ -15,6 +15,7 @@ nav {
 	align-items: center;
 	justify-content: space-between;
 	height: 62px;
+	user-select: none;
 }
 
 body a {
@@ -34,10 +35,15 @@ body a:hover {
 
 button {
 	transition: transform 200ms;
+	user-select: none;
 }
 
 button:hover {
 	transform: scale(1.1);
+}
+
+input {
+	user-select: none;
 }
 
 .border-and-shadow {
