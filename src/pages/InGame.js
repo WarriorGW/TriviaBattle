@@ -24,6 +24,9 @@ function InGame() {
 	const getOneQuestion = useQuestionStore((state) => state.getOneQuestion); // Función para obtener una pregunta por ID
 	const [progress, setProgress] = useState(0); // Estado para almacenar el progreso de la barra de progreso
 	const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
+	const [selectedAnswers, setSelectedAnswers] = useState(
+		new Array(10).fill(null)
+	);
 
 	const onComplete = () => {
 		setProgress(0);
@@ -106,9 +109,27 @@ function InGame() {
 
 	useEffect(() => {
 		if (!isLoading) {
-			console.log(selectedQuestions[currentQuestion]);
+			// console.log(selectedQuestions[currentQuestion]);
+			console.log("Pillin que hace aqui?");
 		}
 	}, [selectedQuestions, currentQuestion]);
+
+	// Función para manejar la selección de una respuesta
+	const handleAnswerSelect = (answerIndex) => {
+		const updatedSelectedAnswers = [...selectedAnswers];
+		updatedSelectedAnswers[currentQuestion] = answerIndex;
+		setSelectedAnswers(updatedSelectedAnswers);
+
+		// Obtén la pregunta actual
+		const currentQuestionData = selectedQuestions[currentQuestion];
+
+		// Compara la respuesta seleccionada con la respuesta correcta
+		if (answerIndex === currentQuestionData.right_answer) {
+			console.log("Respuesta correcta");
+		} else {
+			console.log("Respuesta incorrecta");
+		}
+	};
 
 	return (
 		<>
@@ -134,7 +155,11 @@ function InGame() {
 											</div>
 											<div className="row w-100 mx-auto">
 												{shuffledAnswers.map((answer, index) => (
-													<Answer key={index} text={answer} />
+													<Answer
+														key={index}
+														text={answer}
+														onClick={() => handleAnswerSelect(answer)}
+													/>
 												))}
 											</div>
 										</div>
