@@ -22,10 +22,15 @@ function InGame() {
 	const getAllQuestions = useQuestionStore((state) => state.getAllQuestions); // Función para obtener todas las preguntas
 	const getOneQuestion = useQuestionStore((state) => state.getOneQuestion); // Función para obtener una pregunta por ID
 	const [progress, setProgress] = useState(0); // Estado para almacenar el progreso de la barra de progreso
+	const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
 
 	const onComplete = () => {
 		setProgress(0);
-		setCurrentQuestion(currentQuestion + 1);
+		if (currentQuestion + 1 === selectedQuestions.length) {
+			setAllQuestionsAnswered(true); // Todas las preguntas se han respondido
+		} else {
+			setCurrentQuestion(currentQuestion + 1);
+		}
 	};
 
 	useEffect(() => {
@@ -71,7 +76,6 @@ function InGame() {
 	}, [currentQuestion, selectedQuestions, isLoading]);
 
 	useEffect(() => {
-		//const progressBar = document.getElementById("progress-bar");
 		const duracionSegundos = 10; // Duración total en segundos
 		const intervalo = 16.666; // Intervalo de actualización en milisegundos
 		const incFPS = 100 / duracionSegundos / 60; // Calcular el incremento por fotograma
@@ -84,13 +88,11 @@ function InGame() {
 					console.log("Temporizador completado.");
 					return 0; // Restablece el progreso a 0 cuando se completa
 				} else {
-					//progressBar.style.width = newProgress + "%";
 					return newProgress;
 				}
 			});
 		}
-		const updateAnswers = async () => {};
-		updateAnswers();
+
 		const interval = setInterval(actualizarBarra, intervalo);
 		return () => {
 			clearInterval(interval);
@@ -109,34 +111,40 @@ function InGame() {
 				<WaitRoom />
 			) : (
 				<>
-					<ProgressBar progress={progress} />
-					<div className="container">
-						<div className="row justify-content-center align-content-center">
-							<div className="box-ingame mt-md-5 col-10 d-flex border-and-shadow px-5 py-3 py-md-5 justify-content-center align-content-center">
-								<div className="w-100">
-									<div className="d-flex justify-content-center text-center mb-2">
-										<h2 className="question-title">
-											<>¿</>
-											{selectedQuestions[currentQuestion].question}
-											<>?</>
-										</h2>
-									</div>
-									<div className="row w-100 mx-auto">
-										{shuffledAnswers.map((answer, index) => (
-											<Answer key={index} text={answer} />
-										))}
+					{allQuestionsAnswered ? ( // Comprueba si todas las preguntas se han respondido
+						<div className="message">Se ha acabado.</div>
+					) : (
+						<>
+							<ProgressBar progress={progress} />
+							<div className="container">
+								<div className="row justify-content-center align-content-center">
+									<div className="box-ingame mt-md-5 col-10 d-flex border-and-shadow px-5 py-3 py-md-5 justify-content-center align-content-center">
+										<div className="w-100">
+											<div className="d-flex justify-content-center text-center mb-2">
+												<h2 className="question-title">
+													<>¿</>
+													{selectedQuestions[currentQuestion].question}
+													<>?</>
+												</h2>
+											</div>
+											<div className="row w-100 mx-auto">
+												{shuffledAnswers.map((answer, index) => (
+													<Answer key={index} text={answer} />
+												))}
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div className="footer-scores">
-						<div className="row">
-							{FooterScores.map((user, index) => (
-								<UsersScore key={index} {...user} />
-							))}
-						</div>
-					</div>
+							<div className="footer-scores">
+								<div className="row">
+									{FooterScores.map((user, index) => (
+										<UsersScore key={index} {...user} />
+									))}
+								</div>
+							</div>
+						</>
+					)}
 				</>
 			)}
 		</>
