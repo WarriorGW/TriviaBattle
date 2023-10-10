@@ -5,6 +5,7 @@ import ProgressBar from "../components/ProgressBar";
 import WaitRoom from "../components/WaitRoom";
 import Answer from "../components/Answer";
 import UsersScore from "../components/UsersScore";
+import FinishRoom from "../components/FinishRoom";
 // Contextos
 import { useQuestionStore } from "../context/QuestionStore";
 // Utilidades
@@ -112,7 +113,7 @@ function InGame() {
 			) : (
 				<>
 					{allQuestionsAnswered ? ( // Comprueba si todas las preguntas se han respondido
-						<div className="message">Se ha acabado.</div>
+						<FinishRoom />
 					) : (
 						<>
 							<ProgressBar progress={progress} />
