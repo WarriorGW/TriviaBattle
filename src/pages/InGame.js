@@ -21,6 +21,13 @@ function InGame() {
 	const [shuffledAnswers, setShuffledAnswers] = useState([]); // Estado para almacenar las respuestas mezcladas
 	const getAllQuestions = useQuestionStore((state) => state.getAllQuestions); // Función para obtener todas las preguntas
 	const getOneQuestion = useQuestionStore((state) => state.getOneQuestion); // Función para obtener una pregunta por ID
+	const [progress, setProgress] = useState(0); // Estado para almacenar el progreso de la barra de progreso
+
+	const onComplete = () => {
+		setProgress(0);
+		setCurrentQuestion(currentQuestion + 1);
+	};
+
 	useEffect(() => {
 		const fetchAllQuestions = async () => {
 			setIsLoading(true);
@@ -61,7 +68,40 @@ function InGame() {
 
 			setShuffledAnswers(shuffleArray([...originalAnswers]));
 		}
-	}, [currentQuestion, selectedQuestions]);
+	}, [currentQuestion, selectedQuestions, isLoading]);
+
+	useEffect(() => {
+		//const progressBar = document.getElementById("progress-bar");
+		const duracionSegundos = 10; // Duración total en segundos
+		const intervalo = 16.666; // Intervalo de actualización en milisegundos
+		const incFPS = 100 / duracionSegundos / 60; // Calcular el incremento por fotograma
+		function actualizarBarra() {
+			setProgress((prevProgress) => {
+				const newProgress = prevProgress + incFPS;
+				if (newProgress >= 100) {
+					clearInterval(interval);
+					onComplete();
+					console.log("Temporizador completado.");
+					return 0; // Restablece el progreso a 0 cuando se completa
+				} else {
+					//progressBar.style.width = newProgress + "%";
+					return newProgress;
+				}
+			});
+		}
+		const updateAnswers = async () => {};
+		updateAnswers();
+		const interval = setInterval(actualizarBarra, intervalo);
+		return () => {
+			clearInterval(interval);
+		};
+	}, [currentQuestion]);
+
+	useEffect(() => {
+		if (!isLoading) {
+			console.log(selectedQuestions[currentQuestion]);
+		}
+	}, [selectedQuestions, currentQuestion]);
 
 	return (
 		<>
@@ -69,18 +109,13 @@ function InGame() {
 				<WaitRoom />
 			) : (
 				<>
-					<ProgressBar
-						onComplete={() => {
-							setCurrentQuestion(currentQuestion + 1);
-						}}
-					/>
+					<ProgressBar progress={progress} />
 					<div className="container">
 						<div className="row justify-content-center align-content-center">
 							<div className="box-ingame mt-md-5 col-10 d-flex border-and-shadow px-5 py-3 py-md-5 justify-content-center align-content-center">
 								<div className="w-100">
 									<div className="d-flex justify-content-center text-center mb-2">
 										<h2 className="question-title">
-											{console.log(selectedQuestions[currentQuestion])}
 											<>¿</>
 											{selectedQuestions[currentQuestion].question}
 											<>?</>
