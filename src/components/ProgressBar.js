@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./css/ProgressBarStyle.css";
 
-function ProgressBar() {
+function ProgressBar(props) {
 	useEffect(() => {
 		const progressBar = document.getElementById("progress-bar");
 		const duracionSegundos = 10; // Duración total en segundos
@@ -14,6 +14,7 @@ function ProgressBar() {
 		function actualizarBarra() {
 			if (porcentaje >= 100) {
 				clearInterval(interval);
+				props.onComplete();
 				console.log("Temporizador completado.");
 			} else {
 				porcentaje += incFPS;

@@ -48,7 +48,7 @@ function InGame() {
 			setIsLoading(false);
 		};
 		fetchAllQuestions();
-	}, [getOneQuestion, currentQuestion]);
+	}, [getOneQuestion]);
 
 	return (
 		<>
@@ -56,7 +56,11 @@ function InGame() {
 				<WaitRoom />
 			) : (
 				<>
-					<ProgressBar />
+					<ProgressBar
+						onComplete={() => {
+							setCurrentQuestion(currentQuestion + 1);
+						}}
+					/>
 					<div className="container">
 						<div className="row justify-content-center align-content-center">
 							<div className="box-ingame mt-md-5 col-10 d-flex border-and-shadow px-5 py-3 py-md-5 justify-content-center align-content-center">
