@@ -26,6 +26,7 @@ body a {
 
 nav a {
 	scale: 1.2;
+	color: white;
 }
 
 body a:hover {
