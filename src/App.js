@@ -47,7 +47,10 @@ function App() {
 		<HashRouter>
 			{/* Navegador que tiene todos los links existentes */}
 			<nav className="border-and-shadow">
-				<NavLink to="/">Home</NavLink>
+				<NavLink to="/">
+					<img src={require("./assets/favicon.ico")} />
+					Home
+				</NavLink>
 				<ButtonNav textInside="Unirse a sala" to="/JoinRoom" />
 			</nav>
 			{/* Aqui es donde se crean las rutas usando react-router-dom */}
