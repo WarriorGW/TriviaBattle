@@ -7,7 +7,9 @@ function Answer(props) {
 		<div className="col-md-6 mb-2 mt-1 mb-sm-3 mt-sm-2 mt-md-3">
 			<button
 				onClick={props.onClick}
-				className="answer-container border-and-shadow col-6"
+				className={`answer-container border-and-shadow col-6 ${
+					props.isSelected ? "selected" : ""
+				}`}
 			>
 				{props.text}
 			</button>

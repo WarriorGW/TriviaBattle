@@ -24,6 +24,7 @@ function InGame() {
 	const [shuffledAnswers, setShuffledAnswers] = useState([]); // Estado para almacenar las respuestas mezcladas
 	const [progress, setProgress] = useState(0); // Estado para almacenar el progreso de la barra de progreso
 	const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
+	const [currentSelectedAnswer, setCurrentSelectedAnswer] = useState(null); // Estado para almacenar la respuesta seleccionada
 	const [selectedAnswers, setSelectedAnswers] = useState(
 		new Array(10).fill(null)
 	);
@@ -120,6 +121,8 @@ function InGame() {
 		updatedSelectedAnswers[currentQuestion] = answer;
 		setSelectedAnswers(updatedSelectedAnswers);
 
+		setCurrentSelectedAnswer(answer);
+
 		// Obtén la pregunta actual
 		const currentQuestionData = selectedQuestions[currentQuestion];
 
@@ -159,6 +162,7 @@ function InGame() {
 														key={index}
 														text={answer}
 														onClick={() => handleAnswerSelect(answer)}
+														isSelected={answer === currentSelectedAnswer}
 													/>
 												))}
 											</div>
