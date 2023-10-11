@@ -16,12 +16,12 @@ import FooterScores from "../lists/FooterScores";
 import "./css/InGameStyle.css";
 
 function InGame() {
+	const getAllQuestions = useQuestionStore((state) => state.getAllQuestions); // Función para obtener todas las preguntas
+	const getOneQuestion = useQuestionStore((state) => state.getOneQuestion); // Función para obtener una pregunta por ID
 	const [isLoading, setIsLoading] = useState(true); // Estado para indicar si se está cargando la página
 	const [selectedQuestions, setSelectedQuestions] = useState([]); // Estado para almacenar las preguntas seleccionadas
 	const [currentQuestion, setCurrentQuestion] = useState(0); // Índice de la pregunta actual
 	const [shuffledAnswers, setShuffledAnswers] = useState([]); // Estado para almacenar las respuestas mezcladas
-	const getAllQuestions = useQuestionStore((state) => state.getAllQuestions); // Función para obtener todas las preguntas
-	const getOneQuestion = useQuestionStore((state) => state.getOneQuestion); // Función para obtener una pregunta por ID
 	const [progress, setProgress] = useState(0); // Estado para almacenar el progreso de la barra de progreso
 	const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
 	const [selectedAnswers, setSelectedAnswers] = useState(
