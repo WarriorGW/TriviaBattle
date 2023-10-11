@@ -48,7 +48,7 @@ function App() {
 			{/* Navegador que tiene todos los links existentes */}
 			<nav className="border-and-shadow">
 				<NavLink to="/">
-					<img src={require("./assets/favicon.ico")} />
+					<img src={require("./assets/home/favicon.ico")} />
 					Home
 				</NavLink>
 				<ButtonNav textInside="Unirse a sala" to="/JoinRoom" />

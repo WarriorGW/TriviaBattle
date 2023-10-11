@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Controller from "./assets/controller.svg";
-import Profile from "./assets/user.svg";
-import LeaderBoard from "./assets/trophy.svg";
-import Admin from "./assets/admin.svg";
-import AddQuestion from "./assets/add-question.svg";
+import Controller from "./assets/home/controller.svg";
+import Profile from "./assets/home/user.svg";
+import LeaderBoard from "./assets/home/trophy.svg";
+import Admin from "./assets/home/admin.svg";
+import AddQuestion from "./assets/home/add-question.svg";
 
 function Links() {
 	return (
