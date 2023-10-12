@@ -6,6 +6,7 @@ import { Routes, Route, HashRouter, NavLink } from "react-router-dom";
 
 // Importar rutas
 import { publicRoutes } from "./routes/public.routes.js";
+import { reqLogInRoutes } from "./routes/reqLogIn.routes.js";
 import { privateRoutes } from "./routes/private.routes.js";
 
 // Impportar layout para el body
@@ -21,7 +22,8 @@ import "./App.css";
 import Links from "./Links.js";
 
 // Importar componente para proteger rutas privadas
-import RequireAuth from "./pages/RequireAuth.js";
+import RequireAdmin from "./userValidation/RequireAdmin.js";
+import RequireLogin from "./userValidation/RequireLogIn.js";
 
 // Importar store de Zustand
 import useAuthStore from "./context/AuthStore";
@@ -77,17 +79,33 @@ function App() {
 						exact={route.exact}
 					/>
 				))}
+				{/* reqLogIn routes */}
+				{reqLogInRoutes.map((route, index) => (
+					<Route
+						key={index}
+						path={route.path}
+						element={
+							// Utiliza RequireLogin para proteger las rutas reqLogIn
+							<BodyLayout bgColor={route.bgColor}>
+								<RequireLogin>
+									<route.component />
+								</RequireLogin>
+							</BodyLayout>
+						}
+						exact={route.exact}
+					/>
+				))}
 				{/* Private routes */}
 				{privateRoutes.map((route, index) => (
 					<Route
 						key={index}
 						path={route.path}
 						element={
-							// Utiliza RequireAuth para proteger las rutas privadas
+							// Utiliza RequireAdmin para proteger las rutas privadas
 							<BodyLayout bgColor={route.bgColor}>
-								<RequireAuth allowedRoles={["admin"]}>
+								<RequireAdmin allowedRoles={["admin"]}>
 									<route.component />
-								</RequireAuth>
+								</RequireAdmin>
 							</BodyLayout>
 						}
 						exact={route.exact}
