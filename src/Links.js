@@ -7,10 +7,16 @@ import LeaderBoard from "./assets/home/trophy.svg";
 import Admin from "./assets/home/admin.svg";
 import AddQuestion from "./assets/home/add-question.svg";
 
+import useAuthStore from "./context/AuthStore";
+
 function Links() {
+	const authUsername = useAuthStore((state) => state.authUsername);
+	const authRole = useAuthStore((state) => state.authRole);
+
+	let hasPermission = parseInt(authRole, 10) === 1 ? true : false;
 	return (
 		<>
-			<div className="container d-flex flex-wrap text-center">
+			<div className="container d-flex flex-wrap text-center justify-content-center">
 				<div className="w-100">
 					<h1>Menu de inicio</h1>
 				</div>
@@ -18,30 +24,55 @@ function Links() {
 					<img width="128" height="128" src={Controller} alt="Start Game" />
 					Juego
 				</Link>
-				<Link to="/Register" className="d-flex flex-column m-4">
-					<img width="128" height="128" src={Profile} alt="Registrarse" />
-					Register
-				</Link>
-				<Link to="/LogIn" className="d-flex flex-column m-4">
-					<img width="128" height="128" src={Profile} alt="Iniciar sesion" />
-					LogIn
-				</Link>
-				<Link to="/profile" className="d-flex flex-column m-4">
-					<img width="128" height="128" src={Profile} alt="Perfil" />
-					Perfil
-				</Link>
-				<Link to="/AddQuestion" className="d-flex flex-column m-4">
-					<img width="128" height="128" src={AddQuestion} alt="Agregar nueva" />
-					Agregar pregunta
-				</Link>
+				{authUsername ? (
+					<></>
+				) : (
+					<Link to="/Register" className="d-flex flex-column m-4">
+						<img width="128" height="128" src={Profile} alt="Registrarse" />
+						Register
+					</Link>
+				)}
+				{authUsername ? (
+					<></>
+				) : (
+					<Link to="/LogIn" className="d-flex flex-column m-4">
+						<img width="128" height="128" src={Profile} alt="Iniciar sesion" />
+						LogIn
+					</Link>
+				)}
+				{!authUsername ? (
+					<></>
+				) : (
+					<Link to="/profile" className="d-flex flex-column m-4">
+						<img width="128" height="128" src={Profile} alt="Perfil" />
+						Perfil
+					</Link>
+				)}
+				{hasPermission ? (
+					<Link to="/AddQuestion" className="d-flex flex-column m-4">
+						<img
+							width="128"
+							height="128"
+							src={AddQuestion}
+							alt="Agregar nueva"
+						/>
+						Agregar pregunta
+					</Link>
+				) : (
+					<></>
+				)}
 				<Link to="/WorldScore" className="d-flex flex-column m-4">
 					<img width="128" height="128" src={LeaderBoard} alt="Puntajes" />
 					Puntaje Global
 				</Link>
-				<Link to="/Tables" className="d-flex flex-column m-4">
-					<img width="128" height="128" src={Admin} alt="Tablas" />
-					Tables
-				</Link>
+				{hasPermission ? (
+					<Link to="/Tables" className="d-flex flex-column m-4">
+						<img width="128" height="128" src={Admin} alt="Tablas" />
+						Tables
+					</Link>
+				) : (
+					<></>
+				)}
 			</div>
 		</>
 	);
