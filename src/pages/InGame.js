@@ -8,6 +8,7 @@ import UsersScore from "../components/UsersScore";
 import FinishRoom from "../components/FinishRoom";
 // Contextos
 import { useQuestionStore } from "../context/QuestionStore";
+import useAuthStore from "../context/AuthStore";
 // Utilidades
 import shuffleArray from "../utils/shuffleArray";
 import getRandomNumber from "../utils/getRandomNumber";
@@ -25,9 +26,13 @@ function InGame() {
 	const [progress, setProgress] = useState(0); // Estado para almacenar el progreso de la barra de progreso
 	const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
 	const [currentSelectedAnswer, setCurrentSelectedAnswer] = useState(null); // Estado para almacenar la respuesta seleccionada
+	const [rightAnswer, setRightAnswer] = useState(new Array(10).fill(null)); // Estado para almacenar las respuesta correcta
+	const [puntaje, setPuntaje] = useState(0); // Estado para almacenar el puntaje
 	const [selectedAnswers, setSelectedAnswers] = useState(
 		new Array(10).fill(null)
 	);
+
+	const authUsername = useAuthStore((state) => state.authUsername);
 
 	const onComplete = () => {
 		setProgress(0);
@@ -60,6 +65,11 @@ function InGame() {
 				selectedQuestions.push(questionData.data[0]);
 			}
 			setSelectedQuestions(selectedQuestions);
+
+			const correctAnswers = selectedQuestions.map(
+				(question) => question.right_answer
+			);
+			setRightAnswer(correctAnswers);
 
 			setIsLoading(false);
 		};
@@ -113,7 +123,7 @@ function InGame() {
 		if (!isLoading) {
 			// console.log(selectedQuestions[currentQuestion]);
 		}
-	}, [selectedQuestions, currentQuestion]);
+	}, [selectedQuestions, currentQuestion, isLoading]);
 
 	// Función para manejar la selección de una respuesta
 	const handleAnswerSelect = (answer) => {
@@ -128,11 +138,27 @@ function InGame() {
 
 		// Compara la respuesta seleccionada con la respuesta correcta
 		if (answer === currentQuestionData.right_answer) {
-			console.log("Respuesta correcta");
+			// console.log("Respuesta correcta");
 		} else {
-			console.log("Respuesta incorrecta");
+			// console.log("Respuesta incorrecta");
 		}
 	};
+
+	const handleValidateAnswers = () => {
+		let newPuntaje = 0;
+		for (let i = 0; i < 10; i++) {
+			if (selectedAnswers[i] === rightAnswer[i]) {
+				newPuntaje += 100;
+			}
+		}
+		setPuntaje(newPuntaje);
+	};
+
+	useEffect(() => {
+		if (allQuestionsAnswered) {
+			handleValidateAnswers();
+		}
+	}, [allQuestionsAnswered]);
 
 	return (
 		<>
@@ -141,7 +167,9 @@ function InGame() {
 			) : (
 				<>
 					{allQuestionsAnswered ? ( // Comprueba si todas las preguntas se han respondido
-						<FinishRoom />
+						<>
+							<FinishRoom score={puntaje} username={authUsername} />
+						</>
 					) : (
 						<>
 							<ProgressBar progress={progress} />
