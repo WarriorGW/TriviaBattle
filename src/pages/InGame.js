@@ -17,6 +17,8 @@ import FooterScores from "../lists/FooterScores";
 import "./css/InGameStyle.css";
 
 function InGame() {
+	const QuestionQuantity = 15; // Cantidad de preguntas
+
 	const getAllQuestions = useQuestionStore((state) => state.getAllQuestions); // Función para obtener todas las preguntas
 	const getOneQuestion = useQuestionStore((state) => state.getOneQuestion); // Función para obtener una pregunta por ID
 	const [isLoading, setIsLoading] = useState(true); // Estado para indicar si se está cargando la página
@@ -26,10 +28,12 @@ function InGame() {
 	const [progress, setProgress] = useState(0); // Estado para almacenar el progreso de la barra de progreso
 	const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
 	const [currentSelectedAnswer, setCurrentSelectedAnswer] = useState(null); // Estado para almacenar la respuesta seleccionada
-	const [rightAnswer, setRightAnswer] = useState(new Array(10).fill(null)); // Estado para almacenar las respuesta correcta
+	const [rightAnswer, setRightAnswer] = useState(
+		new Array(QuestionQuantity).fill(null)
+	); // Estado para almacenar las respuesta correcta
 	const [puntaje, setPuntaje] = useState(0); // Estado para almacenar el puntaje
 	const [selectedAnswers, setSelectedAnswers] = useState(
-		new Array(10).fill(null)
+		new Array(QuestionQuantity).fill(null)
 	);
 
 	const authUsername = useAuthStore((state) => state.authUsername);
@@ -48,9 +52,9 @@ function InGame() {
 			setIsLoading(true);
 			const response = await getAllQuestions();
 			const idsArray = response.data.map((question) => question.id_question);
-			// Función para seleccionar 10 IDs únicos de forma aleatoria
+			// Función para seleccionar IDs únicos de forma aleatoria
 			const selectedIds = [];
-			while (selectedIds.length < 10) {
+			while (selectedIds.length < QuestionQuantity) {
 				const randomIndex = getRandomNumber(0, idsArray.length - 1);
 				const randomId = idsArray[randomIndex];
 				if (!selectedIds.includes(randomId)) {
@@ -146,7 +150,7 @@ function InGame() {
 
 	const handleValidateAnswers = () => {
 		let newPuntaje = 0;
-		for (let i = 0; i < 10; i++) {
+		for (let i = 0; i < QuestionQuantity; i++) {
 			if (selectedAnswers[i] === rightAnswer[i]) {
 				newPuntaje += 100;
 			}
