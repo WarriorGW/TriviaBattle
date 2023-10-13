@@ -1,11 +1,4 @@
-.title-worldscore {
-	color: white;
-	text-align: center;
-	font-family: "Titan One";
-	font-size: 50px;
-}
-
-.card-worldscore-1 {
+.table-admin-1 {
 	margin: 0 auto;
 	width: 80%;
 	height: aito;
@@ -16,7 +9,7 @@
 	padding: 20px 0;
 }
 
-.card-worldscore-2 {
+.table-admin-2 {
 	padding: 20px 0;
 	width: 80%;
 	height: auto;
@@ -27,9 +20,9 @@
 		0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.card-worldscore-3 {
+.table-admin-3 {
 	padding: 0;
-	width: 70%;
+	width: 80%;
 	height: auto;
 	margin: 0 auto;
 	border-radius: 14px;
@@ -37,22 +30,7 @@
 	overflow: hidden;
 }
 
-.img-medals {
-	width: 40px;
-	height: auto;
-}
-
-.img-profile-worldscore {
-	width: 35px;
-	height: auto;
-}
-
-.img-trophy {
-	width: 80px;
-	height: 80px;
-}
-
-.card-worldscore-3 table {
+.table-admin-3 table {
 	--bs-table-bg: #f2beff;
 	--bs-table-hover-bg: #ea96ff;
 	--bs-table-border-color: #f2beff;
