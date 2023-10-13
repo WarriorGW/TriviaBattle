@@ -56,7 +56,7 @@ function Links() {
 							src={AddQuestion}
 							alt="Agregar nueva"
 						/>
-						Agregar pregunta
+						Nueva pregunta
 					</Link>
 				) : (
 					<></>
