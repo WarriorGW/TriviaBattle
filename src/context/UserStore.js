@@ -17,6 +17,7 @@ export const useUserStore = create((set) => ({
 		try {
 			const response = await getAllUsersReq();
 			set({ users: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al obtener usuarios:", error);
 		}
@@ -25,6 +26,7 @@ export const useUserStore = create((set) => ({
 		try {
 			const response = await getOneUserReq(id);
 			set({ user: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al obtener usuario:", error);
 		}
@@ -51,6 +53,7 @@ export const useUserStore = create((set) => ({
 		try {
 			const response = await createUserReq(user);
 			set({ user: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al crear usuario:", error);
 		}
@@ -59,6 +62,7 @@ export const useUserStore = create((set) => ({
 		try {
 			const response = await updateUserReq(id, newValue);
 			set({ user: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al actualizar usuario:", error);
 		}
@@ -76,6 +80,7 @@ export const useUserStore = create((set) => ({
 		try {
 			const response = await deleteUserReq(id);
 			set({ user: response.data });
+			return response;
 		} catch (error) {
 			console.error("Error al eliminar usuario:", error);
 		}
