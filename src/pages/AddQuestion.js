@@ -6,16 +6,20 @@ import Swal from "sweetalert2";
 import { vldtQuestion } from "../utils/validationUtils";
 // Importar estilos
 import "./css/AddQuestionStyle.css";
+// Store de Zustand
+import { useQuestionStore } from "../context/QuestionStore";
 
 function AddQuestion() {
 	const navigate = useNavigate();
 
+	const createQuestion = useQuestionStore((state) => state.createQuestion);
+
 	const [questions, setQuestions] = useState({
 		question: "",
-		correctAns: "",
-		incorrectAns1: "",
-		incorrectAns2: "",
-		incorrectAns3: "",
+		right_answer: "",
+		wrong_answer_1: "",
+		wrong_answer_2: "",
+		wrong_answer_3: "",
 	});
 	return (
 		<div className="container my-5">
@@ -24,29 +28,32 @@ function AddQuestion() {
 				enableReinitialize={true}
 				onSubmit={async (values, actions) => {
 					setQuestions(values);
-					console.log(values);
-					Swal.fire({
+					const result = await Swal.fire({
 						icon: "question",
 						title: "¿Seguro?",
-						text: `¿La respuesta correcta es: '${values.correctAns}'?`,
+						text: `¿La respuesta correcta es: '${values.right_answer}'?`,
 						showCancelButton: true,
 						cancelButtonColor: "#d33",
 						confirmButtonText: "Si, es correcto",
 						confirmButtonColor: "#3085d6",
-					}).then((result) => {
-						result.isConfirmed
-							? navigate("/")
-							: Swal.fire("Cancelado", "Corrige la pregunta", "error");
 					});
+
+					if (result.isConfirmed) {
+						navigate("/");
+						const response = await createQuestion(values);
+						console.log(response);
+					} else {
+						Swal.fire("Cancelado", "Corrige la pregunta", "error");
+					}
 				}}
 				validate={(values) => {
 					let errors = {};
 
 					vldtQuestion("question", values.question, 255, errors);
-					vldtQuestion("correctAns", values.correctAns, 255, errors);
-					vldtQuestion("incorrectAns1", values.incorrectAns1, 255, errors);
-					vldtQuestion("incorrectAns2", values.incorrectAns2, 255, errors);
-					vldtQuestion("incorrectAns3", values.incorrectAns3, 255, errors);
+					vldtQuestion("right_answer", values.right_answer, 255, errors);
+					vldtQuestion("wrong_answer_1", values.wrong_answer_1, 255, errors);
+					vldtQuestion("wrong_answer_2", values.wrong_answer_2, 255, errors);
+					vldtQuestion("wrong_answer_3", values.wrong_answer_3, 255, errors);
 
 					return errors;
 				}}
@@ -81,56 +88,56 @@ function AddQuestion() {
 									<input
 										className="grid-item img-bg-1"
 										type="text"
-										name="correctAns"
+										name="right_answer"
 										placeholder="Correcta"
-										value={values.correctAns}
+										value={values.right_answer}
 										onChange={handleChange}
 										onBlur={handleBlur}
 									/>
-									{errors.correctAns && touched.correctAns && (
-										<p className="error-validation">{errors.correctAns}</p>
+									{errors.right_answer && touched.right_answer && (
+										<p className="error-validation">{errors.right_answer}</p>
 									)}
 								</div>
 								<div>
 									<input
 										className="grid-item img-bg-2"
 										type="text"
-										name="incorrectAns1"
+										name="wrong_answer_1"
 										placeholder="Incorrecta"
-										value={values.incorrectAns1}
+										value={values.wrong_answer_1}
 										onChange={handleChange}
 										onBlur={handleBlur}
 									/>
-									{errors.incorrectAns1 && touched.incorrectAns1 && (
-										<p className="error-validation">{errors.incorrectAns1}</p>
+									{errors.wrong_answer_1 && touched.wrong_answer_1 && (
+										<p className="error-validation">{errors.wrong_answer_1}</p>
 									)}
 								</div>
 								<div>
 									<input
 										className="grid-item img-bg-3"
 										type="text"
-										name="incorrectAns2"
+										name="wrong_answer_2"
 										placeholder="Incorrecta"
-										value={values.incorrectAns2}
+										value={values.wrong_answer_2}
 										onChange={handleChange}
 										onBlur={handleBlur}
 									/>
-									{errors.incorrectAns2 && touched.incorrectAns2 && (
-										<p className="error-validation">{errors.incorrectAns2}</p>
+									{errors.wrong_answer_2 && touched.wrong_answer_2 && (
+										<p className="error-validation">{errors.wrong_answer_2}</p>
 									)}
 								</div>
 								<div>
 									<input
 										className="grid-item img-bg-4"
 										type="text"
-										name="incorrectAns3"
+										name="wrong_answer_3"
 										placeholder="Incorrecta"
-										value={values.incorrectAns3}
+										value={values.wrong_answer_3}
 										onChange={handleChange}
 										onBlur={handleBlur}
 									/>
-									{errors.incorrectAns3 && touched.incorrectAns3 && (
-										<p className="error-validation">{errors.incorrectAns3}</p>
+									{errors.wrong_answer_3 && touched.wrong_answer_3 && (
+										<p className="error-validation">{errors.wrong_answer_3}</p>
 									)}
 								</div>
 							</div>
