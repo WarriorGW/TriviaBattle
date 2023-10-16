@@ -16,8 +16,7 @@ function WorldScore() {
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
-		getAllScores();
-		setIsLoading(false);
+		getAllScores().then(() => setIsLoading(false));
 	}, [getAllScores]);
 
 	return (

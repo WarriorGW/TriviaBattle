@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuestionStore } from "../context/QuestionStore";
 
+import LoadingTable from "../components/LoadingTable";
+
 function QuestionTable() {
+	const [isLoading, setIsLoading] = useState(true);
+
 	const { questions, getAllQuestions } = useQuestionStore();
 	useEffect(() => {
-		getAllQuestions();
+		getAllQuestions().then(() => setIsLoading(false));
 	}, [getAllQuestions]);
 	return (
 		<div className="table-admin-1">
@@ -24,18 +28,22 @@ function QuestionTable() {
 							</tr>
 						</thead>
 						<tbody>
-							{questions.map((question, index) => (
-								<tr key={index}>
-									<th scope="row">
-										{question.id_question}({index + 1})
-									</th>
-									<td>{question.question}</td>
-									<td>{question.right_answer}</td>
-									<td>{question.wrong_answer_1}</td>
-									<td>{question.wrong_answer_2}</td>
-									<td>{question.wrong_answer_3}</td>
-								</tr>
-							))}
+							{isLoading === true ? (
+								<LoadingTable colSpan="6" rowSpan="3" />
+							) : (
+								questions.map((question, index) => (
+									<tr key={index}>
+										<th scope="row">
+											{question.id_question}({index + 1})
+										</th>
+										<td>{question.question}</td>
+										<td>{question.right_answer}</td>
+										<td>{question.wrong_answer_1}</td>
+										<td>{question.wrong_answer_2}</td>
+										<td>{question.wrong_answer_3}</td>
+									</tr>
+								))
+							)}
 						</tbody>
 					</table>
 				</div>

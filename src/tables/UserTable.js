@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useUserStore } from "../context/UserStore";
 
@@ -6,15 +6,15 @@ import "./TablesStyles.css";
 
 // Importar componente para mostrar el rol del usuario
 import Role from "../components/Role";
+import LoadingTable from "../components/LoadingTable";
 
 function UserTable() {
+	const [isLoading, setIsLoading] = useState(true);
+
 	const { users, getAllUsers } = useUserStore();
 
 	useEffect(() => {
-		const fetch = async () => {
-			await getAllUsers();
-		};
-		fetch();
+		getAllUsers().then(() => setIsLoading(false));
 	}, [getAllUsers]);
 
 	return (
@@ -31,14 +31,20 @@ function UserTable() {
 							</tr>
 						</thead>
 						<tbody>
-							{users.map((user, index) => (
-								<tr key={index}>
-									<th scope="row">{user.id_user}</th>
-									<td>{user.username}</td>
-									<td>{user.password}</td>
-									<td>{user.role === 1 ? <Role role="admin" /> : <Role />}</td>
-								</tr>
-							))}
+							{isLoading === true ? (
+								<LoadingTable colSpan="4" rowSpan="3" />
+							) : (
+								users.map((user, index) => (
+									<tr key={index}>
+										<th scope="row">{user.id_user}</th>
+										<td>{user.username}</td>
+										<td>{user.password}</td>
+										<td>
+											{user.role === 1 ? <Role role="admin" /> : <Role />}
+										</td>
+									</tr>
+								))
+							)}
 						</tbody>
 					</table>
 				</div>
