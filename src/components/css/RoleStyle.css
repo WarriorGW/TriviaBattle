@@ -1,0 +1,11 @@
+.admin-role {
+	background: #ff0000;
+	font-weight: bold;
+	border-radius: 0.5rem;
+}
+
+.user-role {
+	background: #003cff;
+	font-weight: bold;
+	border-radius: 0.5rem;
+}

@@ -4,6 +4,9 @@ import { useUserStore } from "../context/UserStore";
 
 import "./TablesStyles.css";
 
+// Importar componente para mostrar el rol del usuario
+import Role from "../components/Role";
+
 function UserTable() {
 	const { users, getAllUsers } = useUserStore();
 
@@ -33,7 +36,7 @@ function UserTable() {
 									<th scope="row">{user.id_user}</th>
 									<td>{user.username}</td>
 									<td>{user.password}</td>
-									<td>{user.role === 1 ? "admin" : "usuario"}</td>
+									<td>{user.role === 1 ? <Role role="admin" /> : <Role />}</td>
 								</tr>
 							))}
 						</tbody>
