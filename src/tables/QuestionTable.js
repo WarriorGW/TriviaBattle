@@ -26,7 +26,9 @@ function QuestionTable() {
 						<tbody>
 							{questions.map((question, index) => (
 								<tr key={index}>
-									<th scope="row">{question.id_question}</th>
+									<th scope="row">
+										{question.id_question}({index + 1})
+									</th>
 									<td>{question.question}</td>
 									<td>{question.right_answer}</td>
 									<td>{question.wrong_answer_1}</td>
