@@ -44,6 +44,7 @@ function InGame() {
 	);
 
 	const authUsername = useAuthStore((state) => state.authUsername);
+	const authImg = useAuthStore((state) => state.authImg);
 
 	const onComplete = () => {
 		setProgress(0);
@@ -183,6 +184,7 @@ function InGame() {
 								score={puntaje}
 								totalScore={finalTotalScore}
 								username={authUsername}
+								img={authImg}
 							/>
 						</>
 					) : (

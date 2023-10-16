@@ -42,7 +42,14 @@ const Room = (props) => {
 							<tbody>
 								<tr>
 									<td>1</td>
-									<td>{props.username}</td>
+									<td>
+										<img
+											className="img-profile-worldscore"
+											src={require(`../assets/profiles/${props.img}.png`)}
+											alt="external-wolf-animal-faces-icongeek26-flat-icongeek26"
+										/>
+										{props.username}
+									</td>
 									<td>
 										{props.score}/{props.totalScore}
 									</td>
