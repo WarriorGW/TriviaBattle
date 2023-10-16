@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+// Importar funcion para asignar medallas
+import assignMedal from "../utils/assignMedal";
+
+// Importar el contexto
+import { useScoreStore } from "../context/ScoresStore";
+
+// Importar componente para poner cuando esta cargando la tabla
+import LoadingTable from "../components/LoadingTable";
+
 import "./css/WorldScoreStyle.css";
 
-// Importar lista de puntajes
-import { leaderboard } from "../lists/WorldScore";
-
 function WorldScore() {
-	const assignMedal = (place) => {
-		switch (place) {
-			case 1:
-				return require(`../assets/first-place.png`);
-			case 2:
-				return require(`../assets/second-place.png`);
-			case 3:
-				return require(`../assets/third-place.png`);
-			default:
-				return "";
-		}
-	};
+	const { getAllScores, scores } = useScoreStore();
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		getAllScores();
+		setIsLoading(false);
+	}, [getAllScores]);
+
 	return (
 		<div className="container">
 			<div className="d-flex my-3 my-sm-5 justify-content-center">
@@ -46,36 +49,40 @@ function WorldScore() {
 								</tr>
 							</thead>
 							<tbody>
-								{leaderboard.map((user, index) => (
-									<tr key={index}>
-										<th scope="row">
-											{user.place <= 3 ? (
-												<img
-													className="img-medals"
-													src={assignMedal(user.place)}
-													alt="M"
-												/>
-											) : (
-												user.place
-											)}
-										</th>
-										<td>
-											<div>
-												<div className="d-flex justify-content-start">
+								{isLoading === true ? (
+									<LoadingTable colSpan="3" rowSpan="3" />
+								) : (
+									scores.map((user, index) => (
+										<tr key={index}>
+											<th scope="row">
+												{index + 1 <= 3 ? (
 													<img
-														className="img-profile-worldscore"
-														src={require(`../assets/profiles/${user.profile}.png`)}
-														alt="external-wolf-animal-faces-icongeek26-flat-icongeek26"
+														className="img-medals"
+														src={assignMedal(index + 1)}
+														alt="M"
 													/>
-													<div className="align-self-center m-0">
-														{user.name}
+												) : (
+													index + 1
+												)}
+											</th>
+											<td>
+												<div>
+													<div className="d-flex justify-content-start">
+														<img
+															className="img-profile-worldscore"
+															src={require(`../assets/profiles/${user.img}.png`)}
+															alt="external-wolf-animal-faces-icongeek26-flat-icongeek26"
+														/>
+														<div className="align-self-center m-0">
+															{user.username}
+														</div>
 													</div>
 												</div>
-											</div>
-										</td>
-										<td>{user.points}</td>
-									</tr>
-								))}
+											</td>
+											<td>{user.score}</td>
+										</tr>
+									))
+								)}
 							</tbody>
 						</table>
 					</div>
