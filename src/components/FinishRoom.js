@@ -43,7 +43,9 @@ const Room = (props) => {
 								<tr>
 									<td>1</td>
 									<td>{props.username}</td>
-									<td>{props.score}</td>
+									<td>
+										{props.score}/{props.totalScore}
+									</td>
 								</tr>
 								{/* {results.map((user, index) => (
 									<tr key={index}>

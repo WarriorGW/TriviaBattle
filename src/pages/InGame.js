@@ -13,11 +13,18 @@ import useAuthStore from "../context/AuthStore";
 import shuffleArray from "../utils/shuffleArray";
 import getRandomNumber from "../utils/getRandomNumber";
 import FooterScores from "../lists/FooterScores";
+// Importar cofiguraciones
+import {
+	questionsQuantity,
+	questionsTime,
+	totalScore,
+} from "../config/questions.config";
 // Estilos
 import "./css/InGameStyle.css";
 
 function InGame() {
-	const QuestionQuantity = 15; // Cantidad de preguntas
+	const QuestionQuantity = questionsQuantity; // Cantidad de preguntas
+	const finalTotalScore = totalScore; // Puntaje total posible en la partida
 
 	const getAllQuestions = useQuestionStore((state) => state.getAllQuestions); // Función para obtener todas las preguntas
 	const getOneQuestion = useQuestionStore((state) => state.getOneQuestion); // Función para obtener una pregunta por ID
@@ -96,7 +103,7 @@ function InGame() {
 
 	useEffect(() => {
 		if (!isLoading) {
-			const duracionSegundos = 10; // Duración total en segundos
+			const duracionSegundos = questionsTime; // Duración total en segundos
 			const intervalo = 16.666; // Intervalo de actualización en milisegundos
 			const incFPS = 100 / duracionSegundos / 60; // Calcular el incremento por fotograma
 
@@ -172,7 +179,11 @@ function InGame() {
 				<>
 					{allQuestionsAnswered ? ( // Comprueba si todas las preguntas se han respondido
 						<>
-							<FinishRoom score={puntaje} username={authUsername} />
+							<FinishRoom
+								score={puntaje}
+								totalScore={finalTotalScore}
+								username={authUsername}
+							/>
 						</>
 					) : (
 						<>
