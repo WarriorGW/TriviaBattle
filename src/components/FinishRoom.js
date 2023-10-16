@@ -54,36 +54,6 @@ const Room = (props) => {
 										{props.score}/{props.totalScore}
 									</td>
 								</tr>
-								{/* {results.map((user, index) => (
-									<tr key={index}>
-										<th scope="row">
-											{user.place <= 3 ? (
-												<img
-													className="img-medals"
-													src={assignMedal(user.place)}
-													alt="M"
-												/>
-											) : (
-												user.place
-											)}
-										</th>
-										<td>
-											<div>
-												<div className="d-flex justify-content-start">
-													<img
-														className="img-profile-worldscore"
-														src={require(`../assets/profiles/${user.profile}.png`)}
-														alt="external-wolf-animal-faces-icongeek26-flat-icongeek26"
-													/>
-													<div className="align-self-center m-0">
-														{user.name}
-													</div>
-												</div>
-											</div>
-										</td>
-										<td>{user.score}</td>
-									</tr>
-								))} */}
 							</tbody>
 						</table>
 					</div>
