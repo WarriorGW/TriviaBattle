@@ -28,6 +28,9 @@ import RequireLogin from "./userValidation/RequireLogIn.js";
 // Importar store de Zustand
 import useAuthStore from "./context/AuthStore";
 
+// Importar logo de la trivia
+import logo from "./assets/home/tricia-remade-icon.svg";
+
 function App() {
 	const localToken = localStorage.getItem("authToken");
 	const localUsername = localStorage.getItem("authUsername");
@@ -50,7 +53,7 @@ function App() {
 			{/* Navegador que tiene todos los links existentes */}
 			<nav className="border-and-shadow">
 				<NavLink to="/">
-					<img src={require("./assets/home/favicon.ico")} />
+					<img width="38" height="38" src={logo} />
 					Home
 				</NavLink>
 				<ButtonNav textInside="Unirse a sala" to="/JoinRoom" />
