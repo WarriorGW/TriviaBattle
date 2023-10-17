@@ -21,6 +21,7 @@ import {
 } from "../config/questions.config";
 // Estilos
 import "./css/InGameStyle.css";
+import { useScoreStore } from "../context/ScoresStore";
 
 function InGame() {
 	const QuestionQuantity = questionsQuantity; // Cantidad de preguntas
@@ -28,6 +29,9 @@ function InGame() {
 
 	const getAllQuestions = useQuestionStore((state) => state.getAllQuestions); // Función para obtener todas las preguntas
 	const getOneQuestion = useQuestionStore((state) => state.getOneQuestion); // Función para obtener una pregunta por ID
+	const updateScore = useScoreStore((state) => state.updateScore); // Función para actualizar el puntaje de un usuario
+	const createScore = useScoreStore((state) => state.createScore); // Función para crear el puntaje de un usuario
+	const getOneScore = useScoreStore((state) => state.getOneScore); // Función para obtener el puntaje de un usuario
 	const [isLoading, setIsLoading] = useState(true); // Estado para indicar si se está cargando la página
 	const [selectedQuestions, setSelectedQuestions] = useState([]); // Estado para almacenar las preguntas seleccionadas
 	const [currentQuestion, setCurrentQuestion] = useState(0); // Índice de la pregunta actual
@@ -43,6 +47,7 @@ function InGame() {
 		new Array(QuestionQuantity).fill(null)
 	);
 
+	const authId = useAuthStore((state) => state.authId);
 	const authUsername = useAuthStore((state) => state.authUsername);
 	const authImg = useAuthStore((state) => state.authImg);
 
@@ -163,6 +168,19 @@ function InGame() {
 				newPuntaje += 100;
 			}
 		}
+		const resSearchScore = getOneScore(authId);
+		const validateScoreExists = async () => {
+			const res = await resSearchScore;
+			if (res.data.length > 0) {
+				const resUpdateScore = updateScore(authId, newPuntaje);
+				console.log(await resUpdateScore);
+			} else {
+				const resCreateScore = createScore(authId, newPuntaje);
+				console.log(await resCreateScore);
+			}
+		};
+
+		validateScoreExists();
 		setPuntaje(newPuntaje);
 	};
 
