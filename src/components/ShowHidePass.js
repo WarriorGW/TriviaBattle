@@ -1,6 +1,9 @@
 import React from "react";
 import "./css/ShowHidePassStyle.css";
 
+import eye from "../assets/eye-solid.svg";
+import eyeSlash from "../assets/eye-slash-solid.svg";
+
 function ShowHidePass(props) {
 	function showHide(passwordInputId) {
 		let passwordInput = document.getElementById(passwordInputId);
@@ -18,7 +21,23 @@ function ShowHidePass(props) {
 	}
 	return (
 		<div className="container-showhide">
-			<i
+			<img
+				alt="Show password"
+				className="eye"
+				id={`eye-${props.eyeId}`}
+				src={eye}
+				onClick={() => showHide(props.passwordInputId)}
+				style={{ cursor: "pointer" }}
+			/>
+			<img
+				alt="Hide password"
+				className="eye-slash"
+				id={`eye-slash-${props.eyeId}`}
+				src={eyeSlash}
+				style={{ display: "none", cursor: "pointer" }}
+				onClick={() => showHide(props.passwordInputId)}
+			/>
+			{/* <i
 				className="fa-solid fa-eye eye"
 				id={`eye-${props.eyeId}`}
 				onClick={() => showHide(props.passwordInputId)}
@@ -29,7 +48,7 @@ function ShowHidePass(props) {
 				id={`eye-slash-${props.eyeId}`}
 				style={{ display: "none", cursor: "pointer" }}
 				onClick={() => showHide(props.passwordInputId)}
-			/>
+			/> */}
 		</div>
 	);
 }
