@@ -37,18 +37,6 @@ function ShowHidePass(props) {
 				style={{ display: "none", cursor: "pointer" }}
 				onClick={() => showHide(props.passwordInputId)}
 			/>
-			{/* <i
-				className="fa-solid fa-eye eye"
-				id={`eye-${props.eyeId}`}
-				onClick={() => showHide(props.passwordInputId)}
-				style={{ cursor: "pointer" }}
-			/>
-			<i
-				className="fa-solid fa-eye-slash eye-slash"
-				id={`eye-slash-${props.eyeId}`}
-				style={{ display: "none", cursor: "pointer" }}
-				onClick={() => showHide(props.passwordInputId)}
-			/> */}
 		</div>
 	);
 }
