@@ -21,6 +21,7 @@
 	position: absolute;
 	right: 18%;
 	top: -46px;
+	height: var(--size);
 	animation: keyframes-fill 0.3s;
 	display: none;
 	color: var(--color);
