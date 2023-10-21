@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import LinkCard from "./components/LinkCard";
+
 import Controller from "./assets/home/game-controller.svg";
 import Profile from "./assets/home/test-profile.svg";
 import LeaderBoard from "./assets/home/trhophy.svg";
