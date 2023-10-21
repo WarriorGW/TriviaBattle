@@ -53,7 +53,7 @@ function App() {
 			{/* Navegador que tiene todos los links existentes */}
 			<nav className="border-and-shadow">
 				<NavLink to="/">
-					<img width="38" height="38" src={logo} />
+					<img width="38" height="38" src={logo} alt="Logo" />
 					Home
 				</NavLink>
 				<ButtonNav textInside="Unirse a sala" to="/JoinRoom" />
