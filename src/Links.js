@@ -22,56 +22,67 @@ function Links() {
 				<div className="w-100">
 					<h1>Menu de inicio</h1>
 				</div>
-				<Link to="/Juego" className="d-flex flex-column m-4">
+				{/* <Link to="/Juego" className="d-flex flex-column m-4">
 					<img width="128" height="128" src={Controller} alt="Start Game" />
 					Juego
-				</Link>
+				</Link> */}
+				<LinkCard to="/Juego" image={Controller} text="Juego" />
 				{authUsername ? (
 					<></>
 				) : (
-					<Link to="/Register" className="d-flex flex-column m-4">
-						<img width="128" height="128" src={Profile} alt="Registrarse" />
-						Register
-					</Link>
+					// <Link to="/Register" className="d-flex flex-column m-4">
+					// 	<img width="128" height="128" src={Profile} alt="Registrarse" />
+					// 	Register
+					// </Link>
+					<LinkCard to="/Register" image={Profile} text="Registrarse" />
 				)}
 				{authUsername ? (
 					<></>
 				) : (
-					<Link to="/LogIn" className="d-flex flex-column m-4">
-						<img width="128" height="128" src={Profile} alt="Iniciar sesion" />
-						LogIn
-					</Link>
+					// <Link to="/LogIn" className="d-flex flex-column m-4">
+					// 	<img width="128" height="128" src={Profile} alt="Iniciar sesion" />
+					// 	LogIn
+					// </Link>
+					<LinkCard to="/LogIn" image={Profile} text="LogIn" />
 				)}
 				{!authUsername ? (
 					<></>
 				) : (
-					<Link to="/profile" className="d-flex flex-column m-4">
-						<img width="128" height="128" src={Profile} alt="Perfil" />
-						Perfil
-					</Link>
+					// <Link to="/profile" className="d-flex flex-column m-4">
+					// 	<img width="128" height="128" src={Profile} alt="Perfil" />
+					// 	Perfil
+					// </Link>
+					<LinkCard to="/profile" image={Profile} text="Perfil" />
 				)}
 				{hasPermission ? (
-					<Link to="/AddQuestion" className="d-flex flex-column m-4">
-						<img
-							width="128"
-							height="128"
-							src={AddQuestion}
-							alt="Agregar nueva"
-						/>
-						Nueva pregunta
-					</Link>
+					// <Link to="/AddQuestion" className="d-flex flex-column m-4">
+					// 	<img
+					// 		width="128"
+					// 		height="128"
+					// 		src={AddQuestion}
+					// 		alt="Agregar nueva"
+					// 	/>
+					// 	Nueva pregunta
+					// </Link>
+					<LinkCard
+						to="/AddQuestion"
+						image={AddQuestion}
+						text="Nueva pregunta"
+					/>
 				) : (
 					<></>
 				)}
-				<Link to="/WorldScore" className="d-flex flex-column m-4">
+				{/* <Link to="/WorldScore" className="d-flex flex-column m-4">
 					<img width="128" height="128" src={LeaderBoard} alt="Puntajes" />
 					Puntaje Global
-				</Link>
+				</Link> */}
+				<LinkCard to="/WorldScore" image={LeaderBoard} text="Puntajes" />
 				{hasPermission ? (
-					<Link to="/Tables" className="d-flex flex-column m-4">
-						<img width="128" height="128" src={Admin} alt="Tablas" />
-						Tables
-					</Link>
+					// <Link to="/Tables" className="d-flex flex-column m-4">
+					// 	<img width="128" height="128" src={Admin} alt="Tablas" />
+					// 	Tables
+					// </Link>
+					<LinkCard to="/Tables" image={Admin} text="Tablas" />
 				) : (
 					<></>
 				)}
