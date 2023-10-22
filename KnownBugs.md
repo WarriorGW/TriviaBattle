@@ -17,3 +17,7 @@ Al recargar las tablas desde ahi mismo, te reenvia a la pagina de login.
 #### Soluciones:
 
 - Es posible que sea por que las variables que se almacenan localmente, se asignan despues de que se hace la revision de credenciales de las rutas privadas.
+
+## Juego:
+
+Los botones de las opciones de las preguntas se quedan con escala cuando se juega en mobil
