@@ -1,11 +1,11 @@
 .admin-role {
-	background: #ff0000;
+	background: var(--mo-admin);
 	font-weight: bold;
 	border-radius: 0.5rem;
 }
 
 .user-role {
-	background: #003cff;
+	background: var(--mo-user);
 	font-weight: bold;
 	border-radius: 0.5rem;
 }
