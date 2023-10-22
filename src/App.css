@@ -30,7 +30,7 @@ nav a {
 }
 
 body a:hover {
-	color: #ff69b4;
+	color: var(--hover-text);
 	font-style: italic;
 }
 
@@ -68,7 +68,7 @@ table {
 }
 
 .home-title {
-	color: white;
+	color: var(--font-lighter);
 	text-align: center;
 	font-family: "Titan One";
 	font-size: 50px;
@@ -77,7 +77,6 @@ table {
 .button-purple {
 	background-color: #722197bb;
 	color: #fff;
-	/* margin-bottom: 35px !important; */
 }
 
 .button-purple:disabled {
