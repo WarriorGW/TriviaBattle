@@ -54,7 +54,7 @@ function App() {
 		<HashRouter>
 			{/* Navegador que tiene todos los links existentes */}
 			<nav className="border-and-shadow">
-				<NavLink to="/">
+				<NavLink to="/" className="d-flex align-items-center">
 					<img width="38" height="38" src={logo} alt="Logo" />
 					Home
 				</NavLink>
