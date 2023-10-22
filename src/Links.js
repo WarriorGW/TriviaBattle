@@ -19,7 +19,7 @@ function Links() {
 		<>
 			<div className="container d-flex flex-wrap text-center justify-content-center">
 				<div className="w-100">
-					<h1>Menu de inicio</h1>
+					<h1 className="home-title">Menu de inicio</h1>
 				</div>
 				<LinkCard to="/Juego" image={Controller} text="Juego" />
 				{authUsername ? (

@@ -67,6 +67,13 @@ table {
 	border-radius: 14px;
 }
 
+.home-title {
+	color: white;
+	text-align: center;
+	font-family: "Titan One";
+	font-size: 50px;
+}
+
 .button-purple {
 	background-color: #722197bb;
 	color: #fff;
