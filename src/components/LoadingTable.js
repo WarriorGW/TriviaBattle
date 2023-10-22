@@ -8,9 +8,7 @@ function LoadingTable(props) {
 				rowSpan={props.rowSpan}
 				className="text-center"
 			>
-				<div className="spinner-border text-primary" role="status">
-					<span className="sr-only">Loading...</span>
-				</div>
+				<div className="spinner-border text-primary" role="status"></div>
 			</td>
 		</tr>
 	);
