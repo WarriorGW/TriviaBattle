@@ -3,27 +3,29 @@ import UserTable from "../tables/UserTable";
 import Tables from "../pages/Tables";
 import QuestionTable from "../tables/QuestionTable";
 
+import { bgMainColor } from "./bgColor";
+
 export const privateRoutes = [
 	{
 		path: "/AddQuestion",
-		bgColor: "#5f4b98",
+		bgColor: bgMainColor,
 		component: AddQuestion,
 	},
 
 	{
 		path: "/Tables",
-		bgColor: "#b037db",
+		bgColor: bgMainColor,
 		component: Tables,
 	},
 
 	{
 		path: "/Tables/users",
-		bgColor: "#b037db",
+		bgColor: bgMainColor,
 		component: UserTable,
 	},
 	{
 		path: "/Tables/questions",
-		bgColor: "#b037db",
+		bgColor: bgMainColor,
 		component: QuestionTable,
 	},
 ];

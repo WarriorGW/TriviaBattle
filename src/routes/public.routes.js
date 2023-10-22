@@ -5,35 +5,37 @@ import Error404 from "../pages/Error404";
 import UnAuthorized from "../pages/UnAuthorized";
 import NeedLogIn from "../pages/NeedLogIn";
 
+import { bgMainColor } from "./bgColor";
+
 export const publicRoutes = [
 	{
 		path: "/LogIn",
-		bgColor: "#d86aff",
+		bgColor: bgMainColor,
 		component: LogIn,
 	},
 	{
 		path: "/needLogIn",
-		bgColor: "#8630a5",
+		bgColor: bgMainColor,
 		component: NeedLogIn,
 	},
 	{
 		path: "/Register",
-		bgColor: "#d86aff",
+		bgColor: bgMainColor,
 		component: Register,
 	},
 	{
 		path: "/WorldScore",
-		bgColor: "#b037db",
+		bgColor: bgMainColor,
 		component: WorldScore,
 	},
 	{
 		path: "/unauthorized",
-		bgColor: "#b037db",
+		bgColor: bgMainColor,
 		component: UnAuthorized,
 	},
 	{
 		path: "*",
-		bgColor: "#b037db",
+		bgColor: bgMainColor,
 		component: Error404,
 	},
 ];

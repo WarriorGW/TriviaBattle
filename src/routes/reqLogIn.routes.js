@@ -4,31 +4,33 @@ import ChangeUsername from "../pages/ChangeUsername";
 import ChooseProfileImg from "../pages/ChooseProfileImg";
 import Profile from "../pages/Profile";
 
+import { bgMainColor } from "./bgColor";
+
 export const reqLogInRoutes = [
 	{
 		path: "/JoinRoom",
-		bgColor: "#8630a5",
+		bgColor: bgMainColor,
 		component: JoinRoom,
 	},
 	{
 		path: "/Juego",
-		bgColor: "#834798",
+		bgColor: bgMainColor,
 		component: InGame,
 	},
 
 	{
 		path: "/ChangeUsername",
-		bgColor: "#b037db",
+		bgColor: bgMainColor,
 		component: ChangeUsername,
 	},
 	{
 		path: "/ChooseProfileImg",
-		bgColor: "#b037db",
+		bgColor: bgMainColor,
 		component: ChooseProfileImg,
 	},
 	{
 		path: "/profile",
-		bgColor: "#b037db",
+		bgColor: bgMainColor,
 		component: Profile,
 	},
 ];
