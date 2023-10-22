@@ -6,7 +6,7 @@ import App from "./App";
 import * as bootstrap from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Importar variables de colores
-import "./variables.css";
+import "./constants.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
