@@ -73,7 +73,7 @@
 }
 
 .button-add {
-	background-color: #722197bb;
+	background-color: var(--mo-main-600);
 	color: #fff;
 	max-width: 600px;
 	border-radius: 14px;
