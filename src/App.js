@@ -58,7 +58,7 @@ function App() {
 					<img width="38" height="38" src={logo} alt="Logo" />
 					Home
 				</NavLink>
-				<ButtonNav textInside="Unirse a sala" to="/JoinRoom" />
+				<ButtonNav textInside="Unirse" to="/JoinRoom" />
 			</nav>
 			{/* Aqui es donde se crean las rutas usando react-router-dom */}
 			<Routes>
