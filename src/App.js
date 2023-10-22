@@ -32,6 +32,8 @@ import useAuthStore from "./context/AuthStore";
 import logo from "./assets/home/tricia-remade-icon.svg";
 
 function App() {
+	const bgMainColor = "#4a08a5";
+
 	const localToken = localStorage.getItem("authToken");
 	const localUsername = localStorage.getItem("authUsername");
 	const localRole = localStorage.getItem("authRole");
@@ -63,7 +65,7 @@ function App() {
 				<Route
 					path="/"
 					element={
-						<BodyLayout bgColor="#8630a5">
+						<BodyLayout bgColor={bgMainColor}>
 							<Links />
 						</BodyLayout>
 					}

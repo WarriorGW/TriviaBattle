@@ -1,7 +1,7 @@
 :root {
-	--main-lightest: #f1f0ff;
-	--main-lighter: #e9e5ff;
-	--main-light: #d6d1ff;
+	--font-lightest: #f1f0ff;
+	--font-lighter: #e9e5ff;
+	--font-light: #d6d1ff;
 	--main-mid: #b5a8ff;
 	--main-dark: #977aff;
 	--main-darker: #7b42ff;
@@ -10,4 +10,8 @@
 	--accent-deeper: #5707cf;
 	--accent-deepest: #4a08a6;
 	--custom-ultra: #2f0174;
+
+	--nav-background: #6e36b4;
+
+	--button-darker: #350363;
 }
