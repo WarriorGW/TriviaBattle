@@ -40,11 +40,10 @@ function Profile() {
 				)}
 				<br />
 				{authUsername ? (
-					<h3>{authUsername}</h3>
+					<h3 className="my-3">{authUsername}</h3>
 				) : (
 					<h3>No has iniciado sesion</h3>
 				)}
-				<br />
 				<Link to="/ChangeUsername">Cambiar username</Link>
 				<br />
 				<Link to="/ChooseProfileImg">Seleccionar foto de perfil</Link>
