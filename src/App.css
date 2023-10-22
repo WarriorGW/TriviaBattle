@@ -19,7 +19,7 @@ nav {
 }
 
 body a {
-	color: #00ced1;
+	color: var(--blue-cyan);
 	text-decoration: none;
 	font-weight: bold;
 }

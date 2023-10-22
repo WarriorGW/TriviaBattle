@@ -3,4 +3,6 @@
 	height: 100%;
 	background: var(--button-darker);
 	padding: 0 20px;
+	color: var(--font-lightest);
+	font-weight: 500;
 }
