@@ -1,5 +1,25 @@
 :root {
-	--font-lightest: #f1f0ff;
+	--mo-main-50: #f1f0ff;
+	--mo-main-100: #e9e5ff;
+	--mo-main-200: #d6d1ff;
+	--mo-main-300: #b5a8ff;
+	--mo-main-400: #977aff;
+	--mo-main-500: #7b42ff;
+	--mo-main-600: #6e1aff;
+	--mo-main-700: #6408f7;
+	--mo-main-800: #5707cf;
+	--mo-main-900: #4a08a6;
+	--mo-main-950: #2f0174;
+	--mo-main-1000: #07182e;
+
+	--mo-nav-background: #6e36b4;
+
+	--mo-font-cyan: #00ced1;
+	--mo-font-pink: #ff69b4;
+
+	--mo-button-darker: #350363;
+
+	/* --font-lightest: #f1f0ff;
 	--font-lighter: #e9e5ff;
 	--font-light: #d6d1ff;
 	--main-mid: #b5a8ff;
@@ -11,12 +31,10 @@
 	--accent-deepest: #4a08a6;
 	--custom-ultra: #2f0174;
 
-	--contrast-deep: #07182e;
-
 	--nav-background: #6e36b4;
 
 	--blue-cyan: #00ced1;
 	--hover-text: #ff69b4;
 
-	--button-darker: #350363;
+	--button-darker: #350363; */
 }

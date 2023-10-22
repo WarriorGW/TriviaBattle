@@ -1,7 +1,7 @@
 .link-card {
 	width: 190px;
 	height: 254px;
-	background: #07182e;
+	background: var(--mo-main-1000);
 	position: relative;
 	display: flex;
 	place-content: center;
@@ -47,7 +47,7 @@
 .link-card::after {
 	content: "";
 	position: absolute;
-	background: #07182e;
+	background: var(--mo-main-1000);
 	inset: 5px;
 	border-radius: 15px;
 }

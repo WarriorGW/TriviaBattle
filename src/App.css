@@ -8,7 +8,7 @@ h5 {
 }
 
 nav {
-	background-color: var(--nav-background);
+	background-color: var(--mo-nav-background);
 	margin: 9px;
 	padding: 10px 20px;
 	display: flex;
@@ -19,7 +19,7 @@ nav {
 }
 
 body a {
-	color: var(--blue-cyan);
+	color: var(--mo-font-cyan);
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -30,7 +30,7 @@ nav a {
 }
 
 body a:hover {
-	color: var(--hover-text);
+	color: var(--mo-font-pink);
 	font-style: italic;
 }
 
@@ -68,14 +68,15 @@ table {
 }
 
 .home-title {
-	color: var(--font-lighter);
+	color: var(--mo-main-100);
 	text-align: center;
 	font-family: "Titan One";
 	font-size: 50px;
 }
 
 .button-purple {
-	background-color: #722197bb;
+	/* background-color: #722197bb; */
+	background-color: var(--mo-main-600);
 	color: #fff;
 }
 
