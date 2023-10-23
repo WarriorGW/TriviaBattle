@@ -20,6 +20,9 @@
 	--mo-font-cyan: #00ced1;
 	--mo-font-pink: #ff69b4;
 
+	--thumb-bg: #bd79b693; /* bd79b6 */
+	--thumb-bg-hover: #b169bbef; /* b169bb */
+
 	--mo-button-darker: #350363;
 
 	/* --font-lightest: #f1f0ff;
