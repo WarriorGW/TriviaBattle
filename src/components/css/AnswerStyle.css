@@ -8,5 +8,5 @@
 }
 
 .selected {
-	background-color: #1fe000;
+	background-color: var(--mo-answer-selected-bg);
 }
