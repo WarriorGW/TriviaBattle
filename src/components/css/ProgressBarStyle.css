@@ -1,5 +1,5 @@
 .progress-container {
-	background-color: var(--progressbar-outer);
+	background-color: var(--mo-progressbar-outer);
 	height: 20px;
 	width: 100%;
 	border-radius: 10px;
@@ -7,7 +7,7 @@
 }
 
 .progress-inside {
-	background: var(--progressbar-inner);
+	background: var(--mo-progressbar-inner);
 	height: 100%;
 	width: 0;
 	border-radius: 10px;

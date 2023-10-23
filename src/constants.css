@@ -20,11 +20,11 @@
 	--mo-font-cyan: #00ced1;
 	--mo-font-pink: #ff69b4;
 
-	--thumb-bg: #bd79b693; /* bd79b6 */
-	--thumb-bg-hover: #b169bbef; /* b169bb */
+	--mo-thumb-bg: #bd79b693; /* bd79b6 */
+	--mo-thumb-bg-hover: #b169bbef; /* b169bb */
 
-	--progressbar-outer: white;
-	--progressbar-inner: #1fe000;
+	--mo-progressbar-outer: white;
+	--mo-progressbar-inner: #1fe000;
 
 	--mo-button-darker: #350363;
 
