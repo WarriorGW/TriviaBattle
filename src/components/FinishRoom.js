@@ -1,14 +1,4 @@
 import React from "react";
-import "./css/FinishRoomStyle.css";
-
-// const results = [
-// 	{ place: 1, name: "Player 1", score: 100, profile: "ciguena" },
-// 	{ place: 2, name: "Player 2", score: 90, profile: "ciguena" },
-// 	{ place: 3, name: "Player 3", score: 80, profile: "ciguena" },
-// 	{ place: 4, name: "Player 4", score: 70, profile: "ciguena" },
-// 	{ place: 5, name: "Player 5", score: 60, profile: "ciguena" },
-// 	{ place: 6, name: "Player 6", score: 50, profile: "ciguena" },
-// ];
 
 const Room = (props) => {
 	return (
