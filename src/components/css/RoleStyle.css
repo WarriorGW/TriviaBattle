@@ -1,11 +1,11 @@
 .admin-role {
-	background: var(--mo-admin);
+	background: var(--mo-table-role-admin);
 	font-weight: bold;
 	border-radius: 0.5rem;
 }
 
 .user-role {
-	background: var(--mo-user);
+	background: var(--mo-table-role-user);
 	font-weight: bold;
 	border-radius: 0.5rem;
 }
