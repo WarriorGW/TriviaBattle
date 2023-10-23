@@ -1,5 +1,5 @@
 .box-ingame {
-	background-color: #fff;
+	background-color: var(--mo-box-ingame-bg);
 	flex-wrap: wrap;
 	flex-direction: column;
 	opacity: 0.85;
@@ -19,11 +19,11 @@
 	right: 5px;
 	left: 5px;
 	width: 95%;
-	background-color: #d9d9d962;
+	background-color: var(--mo-footer-scores-bg);
 	text-align: center;
 	padding: 15px 50px;
 	height: 15%;
-	box-sizing: border-box; /* Incluye el p y m en el cálculo del tamaño total */
+	box-sizing: border-box; /* Incluye el p y m en el tamaño total */
 	overflow: hidden;
 	border-radius: 14px 14px 0 0;
 	margin-right: auto;
