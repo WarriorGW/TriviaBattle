@@ -23,6 +23,9 @@
 	--thumb-bg: #bd79b693; /* bd79b6 */
 	--thumb-bg-hover: #b169bbef; /* b169bb */
 
+	--progressbar-outer: white;
+	--progressbar-inner: #1fe000;
+
 	--mo-button-darker: #350363;
 
 	/* --font-lightest: #f1f0ff;
