@@ -1,8 +1,8 @@
 .button-nav {
 	border-style: none;
 	height: 100%;
-	background: var(--mo-button-darker);
+	background: var(--mo-dark-purple-button);
 	padding: 0 20px;
-	color: var(--mo-main-50);
+	color: var(--mo-main-font-50);
 	font-weight: 500;
 }

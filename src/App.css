@@ -76,7 +76,7 @@ table {
 
 .button-purple {
 	/* background-color: #722197bb; */
-	background-color: var(--mo-dark-purple-button);
+	background-color: var(--mo-light-purple-button);
 	color: #fff;
 }
 

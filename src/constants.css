@@ -5,7 +5,7 @@
 	--mo-main-300: #b5a8ff;
 	--mo-main-400: #977aff;
 	--mo-main-500: #7b42ff;
-	--mo-dark-purple-button: #6e1aff;
+	--mo-light-purple-button: #6e1aff;
 	--mo-main-700: #6408f7;
 	--mo-main-800: #5707cf;
 	--mo-main-bg-900: #4a08a6;
@@ -32,7 +32,7 @@
 
 	--mo-footer-scores-bg: #d9d9d962;
 
-	--mo-button-darker: #350363;
+	--mo-dark-purple-button: #350363;
 
 	/* --font-lightest: #f1f0ff;
 	--font-lighter: #e9e5ff;
