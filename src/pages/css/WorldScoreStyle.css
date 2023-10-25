@@ -23,7 +23,7 @@
 	margin: 0 auto;
 	border-radius: 14px;
 	/* background: #bd79b6; */
-	background: var(--mo-main-500);
+	background: var(--mo-container-light);
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
 		0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -54,9 +54,14 @@
 }
 
 .card-worldscore-3 table {
-	--bs-table-bg: #f2beff;
+	/* --bs-table-bg: #f2beff;
 	--bs-table-hover-bg: #ea96ff;
-	--bs-table-border-color: #f2beff;
+	--bs-table-border-color: #f2beff; */
+	--bs-table-bg: var(--mo-main-400);
+	--bs-table-border-color: var(--mo-main-400);
+	--bs-table-color: var(--mo-main-font-100);
+	--bs-table-striped-color: var(--mo-main-font-100);
+	--bs-table-hover-color: var(--mo-main-font-100);
 }
 
 @media (max-width: 576px) {
