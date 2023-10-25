@@ -15,7 +15,7 @@
 	--dim: 2rem;
 	width: var(--dim);
 	height: var(--dim);
-	background-color: var(--mo-main-200);
+	background-color: var(--mo-main-font-200);
 	border-radius: 50%;
 	position: absolute;
 }
