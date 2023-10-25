@@ -73,7 +73,7 @@
 }
 
 .button-add {
-	background-color: var(--mo-main-600);
+	background-color: var(--mo-light-purple-button);
 	color: #fff;
 	max-width: 600px;
 	border-radius: 14px;
