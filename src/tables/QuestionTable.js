@@ -44,7 +44,7 @@ function QuestionTable() {
 										<td>{question.wrong_answer_2}</td>
 										<td>{question.wrong_answer_3}</td>
 										<td>{question.difficulty}</td>
-										<td>{question.id_category}</td>
+										<td>{question.category}</td>
 									</tr>
 								))
 							)}
