@@ -25,11 +25,13 @@ function QuestionTable() {
 								<th scope="col">Incorrecta</th>
 								<th scope="col">Incorrecta</th>
 								<th scope="col">Incorrecta</th>
+								<th scope="col">Dificultad</th>
+								<th scope="col">Categoria</th>
 							</tr>
 						</thead>
 						<tbody>
 							{isLoading === true ? (
-								<LoadingTable colSpan="6" rowSpan="3" />
+								<LoadingTable colSpan="8" rowSpan="3" />
 							) : (
 								questions.map((question, index) => (
 									<tr key={index}>
@@ -41,6 +43,8 @@ function QuestionTable() {
 										<td>{question.wrong_answer_1}</td>
 										<td>{question.wrong_answer_2}</td>
 										<td>{question.wrong_answer_3}</td>
+										<td>{question.difficulty}</td>
+										<td>{question.id_category}</td>
 									</tr>
 								))
 							)}
