@@ -17,7 +17,6 @@ function WorldScore() {
 
 	useEffect(() => {
 		getAllScores().then(() => setIsLoading(false));
-		console.log(scores);
 	}, [getAllScores]);
 
 	return (
