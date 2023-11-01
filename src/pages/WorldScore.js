@@ -17,6 +17,7 @@ function WorldScore() {
 
 	useEffect(() => {
 		getAllScores().then(() => setIsLoading(false));
+		console.log(scores);
 	}, [getAllScores]);
 
 	return (
@@ -45,6 +46,8 @@ function WorldScore() {
 										Nombre
 									</th>
 									<th scope="col">Puntos</th>
+									<th scope="col">Totales</th>
+									<th scope="col">Jugadas</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -79,6 +82,8 @@ function WorldScore() {
 												</div>
 											</td>
 											<td>{user.score}</td>
+											<td>{user.total_score}</td>
+											<td>{user.total_plays}</td>
 										</tr>
 									))
 								)}
