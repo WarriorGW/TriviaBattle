@@ -51,7 +51,7 @@ function WorldScore() {
 							</thead>
 							<tbody>
 								{isLoading === true ? (
-									<LoadingTable colSpan="3" rowSpan="3" />
+									<LoadingTable colSpan="5" rowSpan="3" />
 								) : (
 									scores.map((user, index) => (
 										<tr key={index}>
