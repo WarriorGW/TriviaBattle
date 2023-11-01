@@ -1,20 +1,17 @@
 import React from "react";
 
-import Profile from "../assets/home/user.svg";
+import Profile from "../assets/home/test-profile.svg";
 
-import { Link } from "react-router-dom";
+import LinkCard from "../components/LinkCard";
 
 function NeedLogIn() {
 	return (
 		<div className="container my-5 mx-auto">
 			<div className="d-flex flex-wrap text-center justify-content-center">
 				<div className="w-100">
-					<h1>Necesitas inicar sesion para continuar</h1>
+					<h1 className="home-title">Necesitas inicar sesion para jugar</h1>
 				</div>
-				<Link to="/LogIn" className="d-flex flex-column m-4">
-					<img width="128" height="128" src={Profile} alt="Iniciar sesion" />
-					LogIn
-				</Link>
+				<LinkCard to="/LogIn" image={Profile} text="LogIn" />
 			</div>
 		</div>
 	);
