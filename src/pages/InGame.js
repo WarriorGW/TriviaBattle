@@ -9,6 +9,7 @@ import FinishRoom from "../components/FinishRoom";
 // Contextos
 import { useQuestionStore } from "../context/QuestionStore";
 import useAuthStore from "../context/AuthStore";
+import { useScoreStore } from "../context/ScoresStore";
 // Utilidades
 import shuffleArray from "../utils/shuffleArray";
 import getRandomNumber from "../utils/getRandomNumber";
@@ -21,17 +22,13 @@ import {
 } from "../config/questions.config";
 // Estilos
 import "./css/InGameStyle.css";
-import { useScoreStore } from "../context/ScoresStore";
 
 function InGame() {
 	const QuestionQuantity = questionsQuantity; // Cantidad de preguntas
 	const finalTotalScore = totalScore; // Puntaje total posible en la partida
-
-	const getAllQuestions = useQuestionStore((state) => state.getAllQuestions); // Función para obtener todas las preguntas
-	const getOneQuestion = useQuestionStore((state) => state.getOneQuestion); // Función para obtener una pregunta por ID
-	const updateScore = useScoreStore((state) => state.updateScore); // Función para actualizar el puntaje de un usuario
-	const createScore = useScoreStore((state) => state.createScore); // Función para crear el puntaje de un usuario
-	const getOneScore = useScoreStore((state) => state.getOneScore); // Función para obtener el puntaje de un usuario
+	const { getAllQuestions, getOneQuestion } = useQuestionStore(); // Funciones para obtener preguntas
+	const { updateScore, createScore, getOneScore } = useScoreStore(); // Funciones para el puntaje de un usuario
+	const { authId, authUsername, authImg } = useAuthStore(); // Datos del usuario autenticado
 	const [isLoading, setIsLoading] = useState(true); // Estado para indicar si se está cargando la página
 	const [selectedQuestions, setSelectedQuestions] = useState([]); // Estado para almacenar las preguntas seleccionadas
 	const [currentQuestion, setCurrentQuestion] = useState(0); // Índice de la pregunta actual
@@ -50,30 +47,16 @@ function InGame() {
 	// Variable para decir cuanto porcentaje lleva cargado
 	const [progressLoad, setProgressLoad] = useState(0);
 
-	// Funcion para aumentar el valor del porcentaje de carga
-	const increaseProgress = () => {
-		setProgressLoad((prevProgress) => {
-			const newProgress = prevProgress + 100 / QuestionQuantity;
-			return Math.floor(newProgress); // Redondea al número entero más cercano
-		});
-	};
-
-	const authId = useAuthStore((state) => state.authId);
-	const authUsername = useAuthStore((state) => state.authUsername);
-	const authImg = useAuthStore((state) => state.authImg);
-
-	const onComplete = () => {
-		setProgress(0);
-		if (currentQuestion + 1 === selectedQuestions.length) {
-			setAllQuestionsAnswered(true); // Todas las preguntas se han respondido
-		} else {
-			setCurrentQuestion(currentQuestion + 1);
-		}
-	};
-
 	useEffect(() => {
 		const fetchAllQuestions = async () => {
 			setIsLoading(true);
+			// Funcion para aumentar el valor del porcentaje de carga
+			const increaseProgress = () => {
+				setProgressLoad((prevProgress) => {
+					const newProgress = prevProgress + 100 / QuestionQuantity;
+					return Math.floor(newProgress); // Redondea al número entero más cercano
+				});
+			};
 			const response = await getAllQuestions();
 			const idsArray = response.data.map((question) => question.id_question);
 			// Función para seleccionar IDs únicos de forma aleatoria
@@ -103,7 +86,7 @@ function InGame() {
 			setIsLoading(false);
 		};
 		fetchAllQuestions();
-	}, [getOneQuestion]);
+	}, [getOneQuestion, QuestionQuantity, getAllQuestions]);
 
 	useEffect(() => {
 		if (!isLoading) {
@@ -125,6 +108,15 @@ function InGame() {
 			const intervalo = 16.666; // Intervalo de actualización en milisegundos
 			const incFPS = 100 / duracionSegundos / 60; // Calcular el incremento por fotograma
 
+			const onComplete = () => {
+				setProgress(0);
+				if (currentQuestion + 1 === selectedQuestions.length) {
+					setAllQuestionsAnswered(true); // Todas las preguntas se han respondido
+				} else {
+					setCurrentQuestion(currentQuestion + 1);
+				}
+			};
+
 			function actualizarBarra() {
 				setProgress((prevProgress) => {
 					const newProgress = prevProgress + incFPS;
@@ -145,7 +137,7 @@ function InGame() {
 				clearInterval(interval);
 			};
 		}
-	}, [isLoading, currentQuestion]);
+	}, [isLoading, currentQuestion, selectedQuestions.length]);
 
 	// Funcion para debuggear
 	useEffect(() => {
