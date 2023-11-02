@@ -47,6 +47,17 @@ function InGame() {
 		new Array(QuestionQuantity).fill(null)
 	);
 
+	// Variable para decir cuanto porcentaje lleva cargado
+	const [progressLoad, setProgressLoad] = useState(0);
+
+	// Funcion para aumentar el valor del porcentaje de carga
+	const increaseProgress = () => {
+		setProgressLoad((prevProgress) => {
+			const newProgress = prevProgress + 50 / QuestionQuantity;
+			return Math.floor(newProgress); // Redondea al número entero más cercano
+		});
+	};
+
 	const authId = useAuthStore((state) => state.authId);
 	const authUsername = useAuthStore((state) => state.authUsername);
 	const authImg = useAuthStore((state) => state.authImg);
@@ -80,6 +91,7 @@ function InGame() {
 			for (const id of selectedIds) {
 				const questionData = await getOneQuestion(id);
 				selectedQuestions.push(questionData.data[0]);
+				increaseProgress();
 			}
 			setSelectedQuestions(selectedQuestions);
 
@@ -193,7 +205,7 @@ function InGame() {
 	return (
 		<>
 			{isLoading === true ? (
-				<WaitRoom />
+				<WaitRoom progress={progressLoad} />
 			) : (
 				<>
 					{allQuestionsAnswered ? ( // Comprueba si todas las preguntas se han respondido
