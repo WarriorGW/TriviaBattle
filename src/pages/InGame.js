@@ -53,7 +53,7 @@ function InGame() {
 	// Funcion para aumentar el valor del porcentaje de carga
 	const increaseProgress = () => {
 		setProgressLoad((prevProgress) => {
-			const newProgress = prevProgress + 50 / QuestionQuantity;
+			const newProgress = prevProgress + 100 / QuestionQuantity;
 			return Math.floor(newProgress); // Redondea al número entero más cercano
 		});
 	};
